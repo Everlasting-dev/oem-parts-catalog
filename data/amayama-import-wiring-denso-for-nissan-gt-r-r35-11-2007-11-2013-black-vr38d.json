@@ -1,0 +1,1001 @@
+{
+  "title": "Wiring (denso)",
+  "sourceUrl": "https://www.amayama.com/en/genuine-catalogs/epc/nissan-japan/gt-r/r35/2549-vr38dett/electric/240",
+  "diagramImageUrl": "",
+  "parts": [
+    {
+      "ref": "24382",
+      "partNumber": "24382-7990B",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/243827990b"
+    },
+    {
+      "ref": "01456",
+      "partNumber": "01456-00411",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/0145600411"
+    },
+    {
+      "ref": "24312",
+      "partNumber": "24312-JF00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24312jf00a"
+    },
+    {
+      "ref": "24012",
+      "partNumber": "24012-62B0A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2401262b0a"
+    },
+    {
+      "ref": "24012",
+      "partNumber": "24012-JF00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24012jf00a"
+    },
+    {
+      "ref": "24012",
+      "partNumber": "24012-KB70A",
+      "description": "Applies: C.(PURE+BLACK+PREMIUM+EGOIST)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24012kb70a"
+    },
+    {
+      "ref": "24012",
+      "partNumber": "24012-KJ10A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24012kj10a"
+    },
+    {
+      "ref": "25237",
+      "partNumber": "25237-AM600",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/25237am600"
+    },
+    {
+      "ref": "24319",
+      "partNumber": "24319-8991A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM); Notes: T-MINI FUSE 10A",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/243198991a"
+    },
+    {
+      "ref": "24319",
+      "partNumber": "24319-8991B",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM); Notes: T-MINI FUSE 15A",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/243198991b"
+    },
+    {
+      "ref": "24319",
+      "partNumber": "24319-8992C",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM); Notes: T-MINI FUSE 20A",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/243198992c"
+    },
+    {
+      "ref": "24370",
+      "partNumber": "24370-C994B",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24370c994b"
+    },
+    {
+      "ref": "24370",
+      "partNumber": "24370-C992B",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24370c992b"
+    },
+    {
+      "ref": "24382",
+      "partNumber": "24382-AM600",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24382am600"
+    },
+    {
+      "ref": "24381",
+      "partNumber": "24381-7990A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/243817990a"
+    },
+    {
+      "ref": "24388",
+      "partNumber": "24388-JF00B",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24388jf00b"
+    },
+    {
+      "ref": "24033",
+      "partNumber": "24033-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24033jf00a"
+    },
+    {
+      "ref": "24033",
+      "partNumber": "24033-KB50A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24033kb50a"
+    },
+    {
+      "ref": "24138",
+      "partNumber": "24138-JF00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24138jf00a"
+    },
+    {
+      "ref": "24372",
+      "partNumber": "24372-JF00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24372jf00a"
+    },
+    {
+      "ref": "24388",
+      "partNumber": "24388-JF00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24388jf00a"
+    },
+    {
+      "ref": "80497",
+      "partNumber": "80497-AX01A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/80497ax01a"
+    },
+    {
+      "ref": "08146",
+      "partNumber": "08146-6165G",
+      "description": "Clamp",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/081466165g"
+    },
+    {
+      "ref": "24011",
+      "partNumber": "24011-JF00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24011jf00a"
+    },
+    {
+      "ref": "24011",
+      "partNumber": "24011-JF01A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24011jf01a"
+    },
+    {
+      "ref": "24011",
+      "partNumber": "24011-KB70A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24011kb70a"
+    },
+    {
+      "ref": "24270",
+      "partNumber": "24270-JF00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24270jf00a"
+    },
+    {
+      "ref": "24236",
+      "partNumber": "24236-JF00B",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24236jf00b"
+    },
+    {
+      "ref": "24079",
+      "partNumber": "24079-JF01A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24079jf01a"
+    },
+    {
+      "ref": "24136",
+      "partNumber": "24136-JF00C",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24136jf00c"
+    },
+    {
+      "ref": "24079",
+      "partNumber": "24079-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24079jf00a"
+    },
+    {
+      "ref": "24239",
+      "partNumber": "24239-JF00C",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24239jf00c"
+    },
+    {
+      "ref": "24136",
+      "partNumber": "24136-JF00D",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24136jf00d"
+    },
+    {
+      "ref": "24271",
+      "partNumber": "24271-JF01A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24271jf01a"
+    },
+    {
+      "ref": "24272",
+      "partNumber": "24272-JF01A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24272jf01a"
+    },
+    {
+      "ref": "24136",
+      "partNumber": "24136-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24136jf00a"
+    },
+    {
+      "ref": "24236",
+      "partNumber": "24236-JF00C",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24236jf00c"
+    },
+    {
+      "ref": "24136",
+      "partNumber": "24136-JF00B",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24136jf00b"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-38B0A",
+      "description": "Applies: C.(PURE+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2401038b0a"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-38B0B",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2401038b0b"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-62B0A",
+      "description": "Applies: C.(PURE+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2401062b0a"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-62B0C",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2401062b0c"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-JF00A",
+      "description": "Applies: C.(GTR+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24010jf00a"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-JF00B",
+      "description": "Applies: *C.(GTR+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24010jf00b"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-JW90A",
+      "description": "Applies: C.(GTR+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24010jw90a"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-JW90B",
+      "description": "Applies: *C.(GTR+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24010jw90b"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-KB70A",
+      "description": "Applies: C.(PURE+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24010kb70a"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-KB70B",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24010kb70b"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-KJ10A",
+      "description": "Applies: C.(PURE+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24010kj10a"
+    },
+    {
+      "ref": "24010",
+      "partNumber": "24010-KJ10B",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24010kj10b"
+    },
+    {
+      "ref": "01225",
+      "partNumber": "01225-00371",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/0122500371"
+    },
+    {
+      "ref": "24018",
+      "partNumber": "24018-JF00A",
+      "description": "Applies: C.(GTR+BLACK+SPECV)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24018jf00a"
+    },
+    {
+      "ref": "24018",
+      "partNumber": "24018-JF00B",
+      "description": "Applies: *C.(GTR+BLACK+SPECV) SpecCode: [CLAS2]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24018jf00b"
+    },
+    {
+      "ref": "24317",
+      "partNumber": "24317-JK00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24317jk00a"
+    },
+    {
+      "ref": "24317",
+      "partNumber": "24317-JK00B",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24317jk00b"
+    },
+    {
+      "ref": "24319",
+      "partNumber": "24319-89910",
+      "description": "Applies: C; Notes: T-MINI FUSE 10A",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2431989910"
+    },
+    {
+      "ref": "24319",
+      "partNumber": "24319-89915",
+      "description": "Applies: C; Notes: T-MINI FUSE 15A",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2431989915"
+    },
+    {
+      "ref": "24319",
+      "partNumber": "24319-89920",
+      "description": "Applies: C; Notes: T-MINI FUSE 20A",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2431989920"
+    },
+    {
+      "ref": "24313",
+      "partNumber": "24313-JW90A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24313jw90a"
+    },
+    {
+      "ref": "24350",
+      "partNumber": "24350-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24350jf00a"
+    },
+    {
+      "ref": "24350",
+      "partNumber": "24350-JW90A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24350jw90a"
+    },
+    {
+      "ref": "24350",
+      "partNumber": "24350-KB50A",
+      "description": "Replacement",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24350kb50a"
+    },
+    {
+      "ref": "24350",
+      "partNumber": "24350-KB51A",
+      "description": "Replacement",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24350kb51a"
+    },
+    {
+      "ref": "24351",
+      "partNumber": "24351-79903",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2435179903"
+    },
+    {
+      "ref": "24321",
+      "partNumber": "24321-79903",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2432179903"
+    },
+    {
+      "ref": "24356",
+      "partNumber": "24356-JK00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24356jk00a"
+    },
+    {
+      "ref": "24356",
+      "partNumber": "24356-JK00B",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24356jk00b"
+    },
+    {
+      "ref": "24346",
+      "partNumber": "24346-AG100",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24346ag100"
+    },
+    {
+      "ref": "28098",
+      "partNumber": "28098-1DR0A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/280981dr0a"
+    },
+    {
+      "ref": "28098",
+      "partNumber": "28098-JF00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/28098jf00a"
+    },
+    {
+      "ref": "08168",
+      "partNumber": "08168-6161A",
+      "description": "Bolt",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/081686161a"
+    },
+    {
+      "ref": "08168",
+      "partNumber": "08168-6121A",
+      "description": "Screw",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/081686121a"
+    },
+    {
+      "ref": "24060",
+      "partNumber": "24060-63B0A",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [ABAGS] ; [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2406063b0a"
+    },
+    {
+      "ref": "24060",
+      "partNumber": "24060-JF20A",
+      "description": "Applies: C.(GTR+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24060jf20a"
+    },
+    {
+      "ref": "24060",
+      "partNumber": "24060-JF21A",
+      "description": "Applies: *C.(GTR+BLACK) SpecCode: [ABAGS] ; [CLAS2]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24060jf21a"
+    },
+    {
+      "ref": "24060",
+      "partNumber": "24060-KB50A",
+      "description": "Applies: C.(PURE+BLACK+PREMIUM+EGOIST)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24060kb50a"
+    },
+    {
+      "ref": "24050",
+      "partNumber": "24050-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24050jf00a"
+    },
+    {
+      "ref": "24050",
+      "partNumber": "24050-JF00B",
+      "description": "Applies: C.(PURE+BLACK+NISMO)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24050jf00b"
+    },
+    {
+      "ref": "24050",
+      "partNumber": "24050-KJ10D",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24050kj10d"
+    },
+    {
+      "ref": "24050",
+      "partNumber": "24050-KJ10C",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24050kj10c"
+    },
+    {
+      "ref": "24124",
+      "partNumber": "24124-JF00A",
+      "description": "Applies: C.(GTR+BLACK+SPECV)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24124jf00a"
+    },
+    {
+      "ref": "24124",
+      "partNumber": "24124-JF00B",
+      "description": "Applies: *C.(GTR+BLACK+SPECV) SpecCode: [CLAS2]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24124jf00b"
+    },
+    {
+      "ref": "24124",
+      "partNumber": "24124-JF00C",
+      "description": "Applies: *C.(GTR+BLACK+SPECV) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24124jf00c"
+    },
+    {
+      "ref": "24124",
+      "partNumber": "24124-JF00D",
+      "description": "Applies: *C.(GTR+BLACK+SPECV) SpecCode: [CLAS2] ; [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24124jf00d"
+    },
+    {
+      "ref": "24125",
+      "partNumber": "24125-JF00A",
+      "description": "Applies: C.(GTR+BLACK+SPECV)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24125jf00a"
+    },
+    {
+      "ref": "24125",
+      "partNumber": "24125-JF00B",
+      "description": "Applies: *C.(GTR+BLACK+SPECV) SpecCode: [CLAS2]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24125jf00b"
+    },
+    {
+      "ref": "24125",
+      "partNumber": "24125-JF00C",
+      "description": "Applies: *C.(GTR+BLACK+SPECV) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24125jf00c"
+    },
+    {
+      "ref": "24125",
+      "partNumber": "24125-JF00D",
+      "description": "Applies: *C.(GTR+BLACK+SPECV) SpecCode: [CLAS2] ; [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24125jf00d"
+    },
+    {
+      "ref": "24058",
+      "partNumber": "24058-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24058jf00a"
+    },
+    {
+      "ref": "24014",
+      "partNumber": "24014-62B0A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2401462b0a"
+    },
+    {
+      "ref": "24014",
+      "partNumber": "24014-JF00A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24014jf00a"
+    },
+    {
+      "ref": "24014",
+      "partNumber": "24014-JW90A",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24014jw90a"
+    },
+    {
+      "ref": "24014",
+      "partNumber": "24014-KB70A",
+      "description": "Applies: C.(PURE+BLACK+PREMIUM+EGOIST)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24014kb70a"
+    },
+    {
+      "ref": "01456",
+      "partNumber": "01456-00031",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM); Notes: FOR SHOCK SHIELD",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/0145600031"
+    },
+    {
+      "ref": "24029",
+      "partNumber": "24029-62B0A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2402962b0a"
+    },
+    {
+      "ref": "24029",
+      "partNumber": "24029-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24029jf00a"
+    },
+    {
+      "ref": "24136",
+      "partNumber": "24136-AL54B",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24136al54b"
+    },
+    {
+      "ref": "24055",
+      "partNumber": "24055-62B0B",
+      "description": "Applies: C.(BLACK+PREMIUM+NISMO)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2405562b0b"
+    },
+    {
+      "ref": "24055",
+      "partNumber": "24055-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24055jf00a"
+    },
+    {
+      "ref": "24055",
+      "partNumber": "24055-KJ10A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24055kj10a"
+    },
+    {
+      "ref": "24055",
+      "partNumber": "24055-KJ10B",
+      "description": "Applies: C.(BLACK+PREMIUM+EGOIST)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24055kj10b"
+    },
+    {
+      "ref": "24027",
+      "partNumber": "24027-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24027jf00a"
+    },
+    {
+      "ref": "24239",
+      "partNumber": "24239-JF03C",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24239jf03c"
+    },
+    {
+      "ref": "24239",
+      "partNumber": "24239-JF03B",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24239jf03b"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-62B0A",
+      "description": "Applies: C.(PURE+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2401762b0a"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-62B0B",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2401762b0b"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-JF00A",
+      "description": "Applies: C.(GTR+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017jf00a"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-JF00B",
+      "description": "Applies: *C.(GTR+BLACK) SpecCode: [ABAGS] ; [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017jf00b"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-JF01A",
+      "description": "Applies: *C.(GTR+BLACK) SpecCode: [YEARA]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017jf01a"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-JF01B",
+      "description": "Applies: *C.(GTR+BLACK) SpecCode: [SPKRB] ; [YEARA]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017jf01b"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-JW90A",
+      "description": "Applies: C.(GTR+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017jw90a"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-JW90B",
+      "description": "Applies: *C.(GTR+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017jw90b"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-KB70A",
+      "description": "Applies: C.(PURE+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017kb70a"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-KB70B",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017kb70b"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-KB72B",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017kb72b"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-KJ10A",
+      "description": "Applies: C.(PURE+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017kj10a"
+    },
+    {
+      "ref": "24017",
+      "partNumber": "24017-KJ10B",
+      "description": "Applies: *C.(PURE+BLACK) SpecCode: [SPKRB]",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24017kj10b"
+    },
+    {
+      "ref": "08146",
+      "partNumber": "08146-6122G",
+      "description": "Bolt",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/081466122g"
+    },
+    {
+      "ref": "24077",
+      "partNumber": "24077-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24077jf00a"
+    },
+    {
+      "ref": "24076",
+      "partNumber": "24076-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24076jf00a"
+    },
+    {
+      "ref": "24076",
+      "partNumber": "24076-KB70A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24076kb70a"
+    },
+    {
+      "ref": "24040",
+      "partNumber": "24040-JK00A",
+      "description": "Applies: C.(GTR+BLACK)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24040jk00a"
+    },
+    {
+      "ref": "24239",
+      "partNumber": "24239-JF01C",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24239jf01c"
+    },
+    {
+      "ref": "24345",
+      "partNumber": "24345-79913",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2434579913"
+    },
+    {
+      "ref": "24345",
+      "partNumber": "24345-7993A",
+      "description": "Replacement",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/243457993a"
+    },
+    {
+      "ref": "01221",
+      "partNumber": "01221-00381",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/0122100381"
+    },
+    {
+      "ref": "24083",
+      "partNumber": "24083-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24083jf00a"
+    },
+    {
+      "ref": "24380",
+      "partNumber": "24380-79915",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2438079915"
+    },
+    {
+      "ref": "24080",
+      "partNumber": "24080-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24080jf00a"
+    },
+    {
+      "ref": "24080",
+      "partNumber": "24080-KB70A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24080kb70a"
+    },
+    {
+      "ref": "24340",
+      "partNumber": "24340-7F002",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/243407f002"
+    },
+    {
+      "ref": "24083",
+      "partNumber": "24083-JF00B",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24083jf00b"
+    },
+    {
+      "ref": "24236",
+      "partNumber": "24236-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24236jf00a"
+    },
+    {
+      "ref": "24239",
+      "partNumber": "24239-JF00A",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24239jf00a"
+    },
+    {
+      "ref": "24360",
+      "partNumber": "24360-60U00",
+      "description": "Applies: C.(GTR+BLACK+PREMIUM)",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/2436060u00"
+    },
+    {
+      "ref": "24239",
+      "partNumber": "24239-JF01B",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24239jf01b"
+    },
+    {
+      "ref": "24239",
+      "partNumber": "24239-JF00B",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24239jf00b"
+    },
+    {
+      "ref": "08146",
+      "partNumber": "08146-8162G",
+      "description": "Bolt",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/081468162g"
+    },
+    {
+      "ref": "08918",
+      "partNumber": "08918-3062A",
+      "description": "3.23",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/089183062a"
+    },
+    {
+      "ref": "24070",
+      "partNumber": "24070-KB50A",
+      "description": "Applies: C; Notes: RR FOG HARNESS",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24070kb50a"
+    },
+    {
+      "ref": "24239",
+      "partNumber": "24239-KB51B",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/24239kb51b"
+    },
+    {
+      "ref": "76884",
+      "partNumber": "76884-40U10",
+      "description": "Applies: C",
+      "qty": "",
+      "amayamaUrl": "https://www.amayama.com/en/part/nissan/7688440u10"
+    }
+  ]
+}

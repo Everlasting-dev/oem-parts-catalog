@@ -1,0 +1,2680 @@
+{
+  "summary": {
+    "partCount": 2118,
+    "diagramCount": 155,
+    "partsMissingLinks": 0,
+    "duplicateDiagramTitles": [
+      [
+        "Floor Fitting",
+        2
+      ],
+      [
+        "Vacuum piping & canister",
+        10
+      ]
+    ],
+    "diagramsNeedingReview": 25
+  },
+  "diagramsNeedingReview": [
+    {
+      "id": "diagram-001",
+      "title": "Bare & Short Engine",
+      "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
+      "hotspotRefs": 0,
+      "scrapedRefs": 1,
+      "partNumbers": [],
+      "primaryParts": [],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-018",
+      "title": "Fuel Pump Controller",
+      "subtitle": "Fuel pump modulator / controller shown here, not the full pump assembly.",
+      "hotspotRefs": 2,
+      "scrapedRefs": 2,
+      "partNumbers": [
+        "17001-JF00A",
+        "01456-00411"
+      ],
+      "primaryParts": [
+        "17001-JF00A Modulator-Fuel"
+      ],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-021",
+      "title": "Accelerator Linkage",
+      "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
+      "hotspotRefs": 2,
+      "scrapedRefs": 2,
+      "partNumbers": [
+        "18002-JF10A",
+        "01225-00371"
+      ],
+      "primaryParts": [
+        "18002-JF10A Lever Complete"
+      ],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-046",
+      "title": "Licence Plate Lamp",
+      "subtitle": "Specification: LED; App. model: C • [07.2018-]",
+      "hotspotRefs": 1,
+      "scrapedRefs": 1,
+      "partNumbers": [
+        "26510-CD00B"
+      ],
+      "primaryParts": [
+        "26510-CD00B Lamp Assy-Licen"
+      ],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-048",
+      "title": "High Mounting Stop Lamp",
+      "subtitle": "App. model: C • [11.2013-11.2014]",
+      "hotspotRefs": 1,
+      "scrapedRefs": 1,
+      "partNumbers": [
+        "26590-89S0A"
+      ],
+      "primaryParts": [
+        "26590-89S0A Lamp Assy-Stop"
+      ],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-053",
+      "title": "Compressor",
+      "subtitle": "App. model: C • [11.2013-11.2014]",
+      "hotspotRefs": 1,
+      "scrapedRefs": 1,
+      "partNumbers": [
+        "92600-JF00C"
+      ],
+      "primaryParts": [
+        "92600-JF00C Compressor-Cool"
+      ],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-064",
+      "title": "Transmission Shift Control",
+      "subtitle": "App. model: GR6 • [11.2013-11.2014]",
+      "hotspotRefs": 2,
+      "scrapedRefs": 2,
+      "partNumbers": [
+        "32154-JF00B",
+        "32834-JF00A"
+      ],
+      "primaryParts": [],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-065",
+      "title": "Transfer Assembly & Fitting",
+      "subtitle": "App. model: VR38DETT • [11.2014-04.2016]",
+      "hotspotRefs": 0,
+      "scrapedRefs": 0,
+      "partNumbers": [],
+      "primaryParts": [],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-066",
+      "title": "Transfer Case",
+      "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
+      "hotspotRefs": 1,
+      "scrapedRefs": 1,
+      "partNumbers": [
+        "38189-JF00A"
+      ],
+      "primaryParts": [],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-067",
+      "title": "Transfer Gear",
+      "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
+      "hotspotRefs": 2,
+      "scrapedRefs": 2,
+      "partNumbers": [
+        "38216-U301A",
+        "38210-JF00C"
+      ],
+      "primaryParts": [
+        "38210-JF00C Flg Assy-Compan"
+      ],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-069",
+      "title": "Transfer Control Parts",
+      "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
+      "hotspotRefs": 2,
+      "scrapedRefs": 2,
+      "partNumbers": [
+        "41650-KB51A",
+        "01456-00031"
+      ],
+      "primaryParts": [
+        "41650-KB51A Cont Assy-Torq"
+      ],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "diagram-112",
+      "title": "Floor Fitting",
+      "subtitle": "Specification: FRONT NISMO; App. model: C • [06.2014-11.2014]",
+      "hotspotRefs": 21,
+      "scrapedRefs": 21,
+      "partNumbers": [
+        "74848-AL530",
+        "75890-62B0A",
+        "75895-89S0A",
+        "74890-JF00A",
+        "08146-6165H",
+        "08146-6205H",
+        "08146-8202G",
+        "081B6-8205M",
+        "08913-6065A",
+        "01553-09321",
+        "01241-01151",
+        "62318-4M400",
+        "74847-AL500",
+        "75830-89S1A",
+        "01658-02143",
+        "75882-89S0A",
+        "75895-89S0B",
+        "75895-89S1B",
+        "75895-89S2B",
+        "75881-JF02B"
+      ],
+      "primaryParts": [
+        "74848-AL530 Cover Assy Bat",
+        "75890-62B0A Cover-Engine Lo",
+        "75895-89S0A Protector",
+        "74890-JF00A Rubber-Jack Mtg",
+        "74847-AL500 Seal-Hole Cover",
+        "75830-89S1A Cover-Engine Lo",
+        "01658-02143 Plug",
+        "75882-89S0A Guard A-Fr Udr",
+        "75895-89S0B Protector",
+        "75895-89S1B Protector",
+        "75895-89S2B Protector",
+        "75881-JF02B Cover-Fr,Under"
+      ],
+      "duplicateTitleCount": 2
+    },
+    {
+      "id": "diagram-113",
+      "title": "Floor Fitting",
+      "subtitle": "Specification: INSUL; App. model: C • [11.2013-11.2014]",
+      "hotspotRefs": 2,
+      "scrapedRefs": 2,
+      "partNumbers": [
+        "74881-KB50C",
+        "74881-KJ10A"
+      ],
+      "primaryParts": [
+        "74881-KB50C Insulator",
+        "74881-KJ10A Insulator"
+      ],
+      "duplicateTitleCount": 2
+    },
+    {
+      "id": "diagram-143",
+      "title": "Tool Kit & Maintenance Manual",
+      "subtitle": "App. model: C • [08.2017-]",
+      "hotspotRefs": 2,
+      "scrapedRefs": 2,
+      "partNumbers": [
+        "99545-JF00B",
+        "51112-1KA0A"
+      ],
+      "primaryParts": [
+        "51112-1KA0A Hook"
+      ],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "amayama-wiring-denso",
+      "title": "Wiring (denso)",
+      "subtitle": "Imported from Amayama",
+      "hotspotRefs": 0,
+      "scrapedRefs": 0,
+      "partNumbers": [],
+      "primaryParts": [],
+      "duplicateTitleCount": 1
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-001-0",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング1＆キャニスター • 11.2007 - 11.2010 • VR38DETT",
+      "hotspotRefs": 18,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "22365-JF00A",
+        "22365-JF00C",
+        "16439-N210A",
+        "14912-JF01D",
+        "14912-JF04A",
+        "14958-JK00A",
+        "14912-JF00B",
+        "01558-00411",
+        "24220-4P220",
+        "14912-JF02A",
+        "14912-JF00A",
+        "14930-JA10A",
+        "14930-JA10B",
+        "22320-JF02A",
+        "14912-JF01A",
+        "14912-JF00C",
+        "14912-JF04B",
+        "14912-JF01E",
+        "14950-6N209"
+      ],
+      "primaryParts": [
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "16439-N210A Clamp-Hose",
+        "14912-JF01D Hose Evapo",
+        "14912-JF04A Tube-Evapo Cont",
+        "14958-JK00A Tank, vacuum",
+        "14912-JF00B Hose Assy",
+        "01558-00411 Clamp",
+        "24220-4P220 Tube Assy-Injec",
+        "14912-JF02A Hose Evapo",
+        "14912-JF00A Hose Assy",
+        "14930-JA10A Valve assembly, control",
+        "14930-JA10B Valve assembly-control",
+        "22320-JF02A Hose-Vacuum",
+        "14912-JF01A Hose Evapo",
+        "14912-JF00C Hose Assy",
+        "14912-JF04B Tube-Evapo Cont",
+        "14912-JF01E Hose Evapo",
+        "14950-6N209 Evaporative emission canister"
+      ],
+      "duplicateTitleCount": 10
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-001-1",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング1＆キャニスター • 11.2010 - 11.2011 • VR38DETT",
+      "hotspotRefs": 18,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "22365-JF00A",
+        "22365-JF00C",
+        "16439-N210A",
+        "14912-JF01D",
+        "14912-JF04A",
+        "14958-JK00A",
+        "14912-JF00B",
+        "01558-00411",
+        "24220-4P220",
+        "14912-JF02A",
+        "14912-JF00A",
+        "14930-JA10A",
+        "14930-JA10B",
+        "22320-JF02A",
+        "14912-JF01A",
+        "14912-JF00C",
+        "14912-JF04B",
+        "14912-JF01E",
+        "14950-6N209"
+      ],
+      "primaryParts": [
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "16439-N210A Clamp-Hose",
+        "14912-JF01D Hose Evapo",
+        "14912-JF04A Tube-Evapo Cont",
+        "14958-JK00A Tank, vacuum",
+        "14912-JF00B Hose Assy",
+        "01558-00411 Clamp",
+        "24220-4P220 Tube Assy-Injec",
+        "14912-JF02A Hose Evapo",
+        "14912-JF00A Hose Assy",
+        "14930-JA10A Valve assembly, control",
+        "14930-JA10B Valve assembly-control",
+        "22320-JF02A Hose-Vacuum",
+        "14912-JF01A Hose Evapo",
+        "14912-JF00C Hose Assy",
+        "14912-JF04B Tube-Evapo Cont",
+        "14912-JF01E Hose Evapo",
+        "14950-6N209 Evaporative emission canister"
+      ],
+      "duplicateTitleCount": 10
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-001-2",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング1＆キャニスター • 11.2011 - 11.2013 • VR38DETT",
+      "hotspotRefs": 18,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "22365-JF00A",
+        "22365-JF00C",
+        "16439-N210A",
+        "14912-JF01D",
+        "14912-JF04A",
+        "14958-JK00A",
+        "14912-JF00B",
+        "01558-00411",
+        "24220-4P220",
+        "14912-JF02A",
+        "14912-JF00A",
+        "14930-JA10A",
+        "14930-JA10B",
+        "22320-JF02A",
+        "14912-JF01A",
+        "14912-JF00C",
+        "14912-JF04B",
+        "14912-JF01E",
+        "14950-6N209"
+      ],
+      "primaryParts": [
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "16439-N210A Clamp-Hose",
+        "14912-JF01D Hose Evapo",
+        "14912-JF04A Tube-Evapo Cont",
+        "14958-JK00A Tank, vacuum",
+        "14912-JF00B Hose Assy",
+        "01558-00411 Clamp",
+        "24220-4P220 Tube Assy-Injec",
+        "14912-JF02A Hose Evapo",
+        "14912-JF00A Hose Assy",
+        "14930-JA10A Valve assembly, control",
+        "14930-JA10B Valve assembly-control",
+        "22320-JF02A Hose-Vacuum",
+        "14912-JF01A Hose Evapo",
+        "14912-JF00C Hose Assy",
+        "14912-JF04B Tube-Evapo Cont",
+        "14912-JF01E Hose Evapo",
+        "14950-6N209 Evaporative emission canister"
+      ],
+      "duplicateTitleCount": 10
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-001-3",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング1＆キャニスター • 11.2013 - 11.2014 • VR38DETT",
+      "hotspotRefs": 18,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "22365-JF00A",
+        "22365-JF00C",
+        "16439-N210A",
+        "14912-JF01D",
+        "14912-JF04A",
+        "14958-JK00A",
+        "14912-JF00B",
+        "01558-00411",
+        "24220-4P220",
+        "14912-JF02A",
+        "14912-JF00A",
+        "14930-JA10A",
+        "14930-JA10B",
+        "22320-JF02A",
+        "14912-JF01A",
+        "14912-JF00C",
+        "14912-JF04B",
+        "14912-JF01E",
+        "14950-6N209"
+      ],
+      "primaryParts": [
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "16439-N210A Clamp-Hose",
+        "14912-JF01D Hose Evapo",
+        "14912-JF04A Tube-Evapo Cont",
+        "14958-JK00A Tank, vacuum",
+        "14912-JF00B Hose Assy",
+        "01558-00411 Clamp",
+        "24220-4P220 Tube Assy-Injec",
+        "14912-JF02A Hose Evapo",
+        "14912-JF00A Hose Assy",
+        "14930-JA10A Valve assembly, control",
+        "14930-JA10B Valve assembly-control",
+        "22320-JF02A Hose-Vacuum",
+        "14912-JF01A Hose Evapo",
+        "14912-JF00C Hose Assy",
+        "14912-JF04B Tube-Evapo Cont",
+        "14912-JF01E Hose Evapo",
+        "14950-6N209 Evaporative emission canister"
+      ],
+      "duplicateTitleCount": 10
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-002-0",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング2＆センサー • 11.2007 - 12.2009 • VR38DETT",
+      "hotspotRefs": 17,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "01558-00401",
+        "16439-N210A",
+        "22320-JF02B",
+        "16439-JF02A",
+        "22320-JF00A",
+        "24220-AQ800",
+        "22320-JF01B",
+        "14960-JF00A",
+        "16439-N210D",
+        "22320-JF00B",
+        "22320-JF00C",
+        "22320-JF00D",
+        "16122-JF00A",
+        "14956-JF00A",
+        "14957-JF00A",
+        "22365-JF00A",
+        "22365-JF00C",
+        "22320-JF00E"
+      ],
+      "primaryParts": [
+        "01558-00401 Clamp",
+        "16439-N210A Clamp-Hose",
+        "22320-JF02B Hose, vacuum control b; Hose-vacuum control",
+        "16439-JF02A Clamp, hose b",
+        "22320-JF00A Hose, vacuum control b; Hose-vacuum control",
+        "24220-AQ800 Clamp-hose,b",
+        "22320-JF01B Hose, vacuum control b; Hose-vacuum control",
+        "14960-JF00A Connector a",
+        "16439-N210D Clamp",
+        "22320-JF00B Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00C Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00D Hose, vacuum control b; Hose-vacuum control",
+        "14956-JF00A Solenoid valve assembly",
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "22320-JF00E Hose, vacuum control b; Hose-vacuum control"
+      ],
+      "duplicateTitleCount": 10
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-003-0",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング2＆センサー(YEARA) • 12.2008 - 12.2009 • *VR38DETT.(GTR+BLACK+PREMIUM)",
+      "hotspotRefs": 17,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "01558-00401",
+        "16439-N210A",
+        "22320-JF02B",
+        "16439-JF02A",
+        "22320-JF00A",
+        "24220-AQ800",
+        "22320-JF01B",
+        "14960-JF00A",
+        "16439-N210D",
+        "22320-JF00B",
+        "22320-JF00C",
+        "22320-JF00D",
+        "16122-JF00A",
+        "14956-JF00A",
+        "14957-JF00A",
+        "22365-JF00A",
+        "22365-JF00C",
+        "22320-JF00E"
+      ],
+      "primaryParts": [
+        "01558-00401 Clamp",
+        "16439-N210A Clamp-Hose",
+        "22320-JF02B Hose, vacuum control b; Hose-vacuum control",
+        "16439-JF02A Clamp, hose b",
+        "22320-JF00A Hose, vacuum control b; Hose-vacuum control",
+        "24220-AQ800 Clamp-hose,b",
+        "22320-JF01B Hose, vacuum control b; Hose-vacuum control",
+        "14960-JF00A Connector a",
+        "16439-N210D Clamp",
+        "22320-JF00B Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00C Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00D Hose, vacuum control b; Hose-vacuum control",
+        "14956-JF00A Solenoid valve assembly",
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "22320-JF00E Hose, vacuum control b; Hose-vacuum control"
+      ],
+      "duplicateTitleCount": 10
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-003-1",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング2＆センサー • 12.2009 - 11.2010 • VR38DETT",
+      "hotspotRefs": 17,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "01558-00401",
+        "16439-N210A",
+        "22320-JF02B",
+        "16439-JF02A",
+        "22320-JF00A",
+        "24220-AQ800",
+        "22320-JF01B",
+        "14960-JF00A",
+        "16439-N210D",
+        "22320-JF00B",
+        "22320-JF00C",
+        "22320-JF00D",
+        "16122-JF00A",
+        "14956-JF00A",
+        "14957-JF00A",
+        "22365-JF00A",
+        "22365-JF00C",
+        "22320-JF00E"
+      ],
+      "primaryParts": [
+        "01558-00401 Clamp",
+        "16439-N210A Clamp-Hose",
+        "22320-JF02B Hose, vacuum control b; Hose-vacuum control",
+        "16439-JF02A Clamp, hose b",
+        "22320-JF00A Hose, vacuum control b; Hose-vacuum control",
+        "24220-AQ800 Clamp-hose,b",
+        "22320-JF01B Hose, vacuum control b; Hose-vacuum control",
+        "14960-JF00A Connector a",
+        "16439-N210D Clamp",
+        "22320-JF00B Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00C Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00D Hose, vacuum control b; Hose-vacuum control",
+        "14956-JF00A Solenoid valve assembly",
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "22320-JF00E Hose, vacuum control b; Hose-vacuum control"
+      ],
+      "duplicateTitleCount": 10
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-003-2",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング2＆センサー • 11.2010 - 11.2011 • VR38DETT",
+      "hotspotRefs": 17,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "01558-00401",
+        "16439-N210A",
+        "22320-JF02B",
+        "16439-JF02A",
+        "22320-JF00A",
+        "24220-AQ800",
+        "22320-JF01B",
+        "14960-JF00A",
+        "16439-N210D",
+        "22320-JF00B",
+        "22320-JF00C",
+        "22320-JF00D",
+        "16122-JF00A",
+        "14956-JF00A",
+        "14957-JF00A",
+        "22365-JF00A",
+        "22365-JF00C",
+        "22320-JF00E"
+      ],
+      "primaryParts": [
+        "01558-00401 Clamp",
+        "16439-N210A Clamp-Hose",
+        "22320-JF02B Hose, vacuum control b; Hose-vacuum control",
+        "16439-JF02A Clamp, hose b",
+        "22320-JF00A Hose, vacuum control b; Hose-vacuum control",
+        "24220-AQ800 Clamp-hose,b",
+        "22320-JF01B Hose, vacuum control b; Hose-vacuum control",
+        "14960-JF00A Connector a",
+        "16439-N210D Clamp",
+        "22320-JF00B Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00C Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00D Hose, vacuum control b; Hose-vacuum control",
+        "14956-JF00A Solenoid valve assembly",
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "22320-JF00E Hose, vacuum control b; Hose-vacuum control"
+      ],
+      "duplicateTitleCount": 10
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-003-3",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング2＆センサー • 11.2011 - 11.2013 • VR38DETT",
+      "hotspotRefs": 17,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "01558-00401",
+        "16439-N210A",
+        "22320-JF02B",
+        "16439-JF02A",
+        "22320-JF00A",
+        "24220-AQ800",
+        "22320-JF01B",
+        "14960-JF00A",
+        "16439-N210D",
+        "22320-JF00B",
+        "22320-JF00C",
+        "22320-JF00D",
+        "16122-JF00A",
+        "14956-JF00A",
+        "14957-JF00A",
+        "22365-JF00A",
+        "22365-JF00C",
+        "22320-JF00E"
+      ],
+      "primaryParts": [
+        "01558-00401 Clamp",
+        "16439-N210A Clamp-Hose",
+        "22320-JF02B Hose, vacuum control b; Hose-vacuum control",
+        "16439-JF02A Clamp, hose b",
+        "22320-JF00A Hose, vacuum control b; Hose-vacuum control",
+        "24220-AQ800 Clamp-hose,b",
+        "22320-JF01B Hose, vacuum control b; Hose-vacuum control",
+        "14960-JF00A Connector a",
+        "16439-N210D Clamp",
+        "22320-JF00B Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00C Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00D Hose, vacuum control b; Hose-vacuum control",
+        "14956-JF00A Solenoid valve assembly",
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "22320-JF00E Hose, vacuum control b; Hose-vacuum control"
+      ],
+      "duplicateTitleCount": 10
+    },
+    {
+      "id": "amayama-vacuum-piping-canister-223a-003-4",
+      "title": "Vacuum piping & canister",
+      "subtitle": "パイピング2＆センサー • 11.2013 - 11.2014 • VR38DETT",
+      "hotspotRefs": 17,
+      "scrapedRefs": 0,
+      "partNumbers": [
+        "01558-00401",
+        "16439-N210A",
+        "22320-JF02B",
+        "16439-JF02A",
+        "22320-JF00A",
+        "24220-AQ800",
+        "22320-JF01B",
+        "14960-JF00A",
+        "16439-N210D",
+        "22320-JF00B",
+        "22320-JF00C",
+        "22320-JF00D",
+        "16122-JF00A",
+        "14956-JF00A",
+        "14957-JF00A",
+        "22365-JF00A",
+        "22365-JF00C",
+        "22320-JF00E"
+      ],
+      "primaryParts": [
+        "01558-00401 Clamp",
+        "16439-N210A Clamp-Hose",
+        "22320-JF02B Hose, vacuum control b; Hose-vacuum control",
+        "16439-JF02A Clamp, hose b",
+        "22320-JF00A Hose, vacuum control b; Hose-vacuum control",
+        "24220-AQ800 Clamp-hose,b",
+        "22320-JF01B Hose, vacuum control b; Hose-vacuum control",
+        "14960-JF00A Connector a",
+        "16439-N210D Clamp",
+        "22320-JF00B Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00C Hose, vacuum control b; Hose-vacuum control",
+        "22320-JF00D Hose, vacuum control b; Hose-vacuum control",
+        "14956-JF00A Solenoid valve assembly",
+        "22365-JF00A Sensor",
+        "22365-JF00C Evap control system pressure sensor",
+        "22320-JF00E Hose, vacuum control b; Hose-vacuum control"
+      ],
+      "duplicateTitleCount": 10
+    }
+  ],
+  "partsMissingLinks": [],
+  "mergeCandidates": [
+    {
+      "descriptionKey": "outlet water",
+      "partNumbers": [
+        "11060-62B1A",
+        "11060-JF00C"
+      ]
+    },
+    {
+      "descriptionKey": "connecting rod bush",
+      "partNumbers": [
+        "12111-JF00A",
+        "12111-JF01A",
+        "12111-JF02A",
+        "12111-JF03A",
+        "12111-JF04A",
+        "12117-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "bearing all sizes",
+      "partNumbers": [
+        "12207-JF00A",
+        "12207-JF00B",
+        "12207-JF01A",
+        "12207-JF01B",
+        "12207-JF02A",
+        "12207-JF02B",
+        "12207-JF03A",
+        "12207-JF03B",
+        "12207-JF04A",
+        "12207-JF04B",
+        "12207-JF05A",
+        "12207-JF05B",
+        "12207-JF06A",
+        "12207-JF06B",
+        "12207-JF07A"
+      ]
+    },
+    {
+      "descriptionKey": "gasket rocker cover",
+      "partNumbers": [
+        "13270-JF00A",
+        "13270-JF01A"
+      ]
+    },
+    {
+      "descriptionKey": "tank assy fuel",
+      "partNumbers": [
+        "17202-80B1A",
+        "17202-KB60A"
+      ]
+    },
+    {
+      "descriptionKey": "thermostat assy",
+      "partNumbers": [
+        "21200-JF01A",
+        "21200-KB50A"
+      ]
+    },
+    {
+      "descriptionKey": "air duct intake",
+      "partNumbers": [
+        "21468-62B0A",
+        "21468-6AV0A",
+        "21468-KB50A"
+      ]
+    },
+    {
+      "descriptionKey": "motor assy fan",
+      "partNumbers": [
+        "21487-JF00B",
+        "21487-JF01B"
+      ]
+    },
+    {
+      "descriptionKey": "air fuel ratio sensor",
+      "partNumbers": [
+        "22693-JF00A",
+        "22693-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "solenoid valve assy valve timing control",
+      "partNumbers": [
+        "23796-AU00D",
+        "23796-JK24B"
+      ]
+    },
+    {
+      "descriptionKey": "harness main",
+      "partNumbers": [
+        "24010-38B1A",
+        "24010-38B1B",
+        "24010-62B3A",
+        "24010-62B3B",
+        "24010-6AW0A",
+        "24010-6AW0B",
+        "24010-6AW1B",
+        "24010-6AW1C",
+        "24010-6HR0E",
+        "24010-6HR1A",
+        "24010-6HR2A",
+        "24010-6HR2C",
+        "24010-6HS0E",
+        "24010-6HS1A",
+        "24010-JF10A",
+        "24010-JF10B",
+        "24010-JW92A",
+        "24010-JW92B",
+        "24010-JW92C",
+        "24010-JW92D",
+        "24010-KB10A",
+        "24010-KB10B",
+        "24010-KJ11A",
+        "24010-KJ11B"
+      ]
+    },
+    {
+      "descriptionKey": "harness egi",
+      "partNumbers": [
+        "24011-6AW0A",
+        "24011-6HS0A",
+        "24011-JF10A",
+        "24011-KB10A",
+        "24011-KB70A"
+      ]
+    },
+    {
+      "descriptionKey": "harness engine room",
+      "partNumbers": [
+        "24012-62B3A",
+        "24012-6AW0A",
+        "24012-6HR0A",
+        "24012-JF10A",
+        "24012-JF81A",
+        "24012-KB10A",
+        "24012-KB11A",
+        "24012-62B0A",
+        "24012-KB70A",
+        "24012-KJ10A"
+      ]
+    },
+    {
+      "descriptionKey": "harness body",
+      "partNumbers": [
+        "24014-38B1A",
+        "24014-38B1B",
+        "24014-62B3A",
+        "24014-62B3B",
+        "24014-6AW0A",
+        "24014-6AW0B",
+        "24014-6HR0D",
+        "24014-6HR0E",
+        "24014-6HS0E",
+        "24014-JF10A",
+        "24014-JF10B",
+        "24014-JF10C",
+        "24014-JF81A",
+        "24014-JF81B",
+        "24014-KB10A",
+        "24014-KB12B",
+        "24014-KJ11A",
+        "24014-KJ11B"
+      ]
+    },
+    {
+      "descriptionKey": "harness sub body",
+      "partNumbers": [
+        "24017-38B1A",
+        "24017-62B3A",
+        "24017-6AW0A",
+        "24017-6HR0A",
+        "24017-JF10A",
+        "24017-JF10B",
+        "24017-JF81A",
+        "24017-KB10A",
+        "24017-KJ11A"
+      ]
+    },
+    {
+      "descriptionKey": "harness alternator",
+      "partNumbers": [
+        "24076-JF10A",
+        "24076-KB10A",
+        "24076-KB70A"
+      ]
+    },
+    {
+      "descriptionKey": "cable assy battery earth",
+      "partNumbers": [
+        "24080-JF10A",
+        "24080-KB10A"
+      ]
+    },
+    {
+      "descriptionKey": "block assy junction",
+      "partNumbers": [
+        "24350-JF00A",
+        "24350-JW90A",
+        "24350-KB50A",
+        "24350-KB51A"
+      ]
+    },
+    {
+      "descriptionKey": "engine oil pressure sensor",
+      "partNumbers": [
+        "25070-CD000",
+        "25070-CD00A"
+      ]
+    },
+    {
+      "descriptionKey": "relay",
+      "partNumbers": [
+        "25230-7990A",
+        "25230-79942"
+      ]
+    },
+    {
+      "descriptionKey": "relay egi",
+      "partNumbers": [
+        "25230-79917",
+        "25230-79944",
+        "25230-7995A",
+        "25230-7996A",
+        "25230-9F915"
+      ]
+    },
+    {
+      "descriptionKey": "switch assy ascd cancel",
+      "partNumbers": [
+        "25300-3RA0A",
+        "25300-AT300"
+      ]
+    },
+    {
+      "descriptionKey": "clip",
+      "partNumbers": [
+        "25320-4M405",
+        "16439-56S0A",
+        "16598-JF00A",
+        "01553-09321",
+        "17571-EJ70A",
+        "01558-00521",
+        "26398-JF00C",
+        "46271-EW00A",
+        "92551-JF00A",
+        "92553-JF00A",
+        "92554-JF00A",
+        "92555-JF02A",
+        "92527-7990B",
+        "28945-AQ000",
+        "28945-AQ010",
+        "46271-V5400",
+        "16439-17B0A",
+        "49732-JF00A",
+        "49732-JF02A",
+        "49730-01J60",
+        "49791-WA000",
+        "62228-KB50A",
+        "62228-89S0A",
+        "62228-89S0B",
+        "62228-JF00C",
+        "62598-JF00A",
+        "01553-05323",
+        "01553-10501",
+        "63848-35F00",
+        "01553-10541",
+        "66919-JL00A",
+        "63848-5L300",
+        "66916-VC300",
+        "96938-4U01A",
+        "96938-ED000",
+        "73998-AL600",
+        "73998-AA000",
+        "73998-AM800",
+        "62318-4M400",
+        "73998-CD000",
+        "01553-01A50",
+        "76882-AR002",
+        "01553-09131",
+        "01553-10631",
+        "01553-30001",
+        "76988-AM800",
+        "76988-JF00A",
+        "63878-01E10",
+        "62318-24U00",
+        "85284-EG000",
+        "01553-09611"
+      ]
+    },
+    {
+      "descriptionKey": "switch assy stop lamp",
+      "partNumbers": [
+        "25320-AX00B",
+        "25320-AX00C",
+        "25320-JN00A"
+      ]
+    },
+    {
+      "descriptionKey": "amplifier av",
+      "partNumbers": [
+        "28061-62B2A",
+        "28061-6AV2A",
+        "28061-6HS2A",
+        "28061-JF00A",
+        "28061-JF20A"
+      ]
+    },
+    {
+      "descriptionKey": "controller assy bcm",
+      "partNumbers": [
+        "284B1-1EA0B",
+        "284B1-1EA5B",
+        "284B1-1EA7B",
+        "284B1-1EA9D",
+        "284B1-1ET0B",
+        "284B1-6AV0A",
+        "284B1-6AV1A",
+        "284B1-JF31A",
+        "284B1-JF31B"
+      ]
+    },
+    {
+      "descriptionKey": "controller unit ipdm engine room",
+      "partNumbers": [
+        "284B7-62B6A",
+        "284B7-JF01A"
+      ]
+    },
+    {
+      "descriptionKey": "flange assy side",
+      "partNumbers": [
+        "38220-38B0A",
+        "38220-38B0B",
+        "38220-62B0A",
+        "38220-62B0B",
+        "38220-JF00A",
+        "38220-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "shaft side differential",
+      "partNumbers": [
+        "38231-JF00A",
+        "38231-JK500"
+      ]
+    },
+    {
+      "descriptionKey": "seal o ring",
+      "partNumbers": [
+        "38343-JF00A",
+        "15066-31U00",
+        "15066-EB300",
+        "21049-JF00A",
+        "21049-AE000",
+        "21049-31U00",
+        "92477-4GF1A",
+        "92477-4GF0A",
+        "49359-AA000",
+        "49862-04E00",
+        "49345-6N200"
+      ]
+    },
+    {
+      "descriptionKey": "shim adjust side bearing",
+      "partNumbers": [
+        "38453-JF00A",
+        "38453-JF01A",
+        "38453-JF02A",
+        "38453-JF03A",
+        "38453-JF04A",
+        "38453-JF05A",
+        "38453-JF06A",
+        "38453-JF07A",
+        "38453-JF08A",
+        "38453-JF09A",
+        "38453-JF10A",
+        "38453-JF11A",
+        "38453-JF12A",
+        "38453-JF13A",
+        "38453-JF14A",
+        "38453-JF15A",
+        "38453-JF16A",
+        "38453-JF17A",
+        "38453-JF18A",
+        "38453-JF19A",
+        "38453-JF20A",
+        "38453-JF21A",
+        "38453-JF22A",
+        "38453-JF23A",
+        "38453-JF24A",
+        "38453-JF25A",
+        "38453-JF26A",
+        "38453-JF27A",
+        "38453-JF28A",
+        "38453-JF29A",
+        "38453-JF30A",
+        "38453-JF31A",
+        "38453-JF32A",
+        "38453-JF33A",
+        "38453-JF34A",
+        "38453-JF35A",
+        "38453-JF36A",
+        "38453-JF37A"
+      ]
+    },
+    {
+      "descriptionKey": "shaft assy rear drive",
+      "partNumbers": [
+        "39600-80B0A",
+        "39600-80B0C",
+        "39600-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "housing assy rear axle rh",
+      "partNumbers": [
+        "43018-JF00A",
+        "43018-JW90A",
+        "43018-JW90B"
+      ]
+    },
+    {
+      "descriptionKey": "actuator assy antiskid",
+      "partNumbers": [
+        "47660-62B0B",
+        "47660-62B1B",
+        "47660-JF01A",
+        "47660-JF04A",
+        "47660-KB50B"
+      ]
+    },
+    {
+      "descriptionKey": "sensor assy steering angle",
+      "partNumbers": [
+        "47945-3FY0A",
+        "47945-5MA1A",
+        "47945-JY00A"
+      ]
+    },
+    {
+      "descriptionKey": "link compl transverse rh",
+      "partNumbers": [
+        "54500-38B0A",
+        "54500-6AV0A"
+      ]
+    },
+    {
+      "descriptionKey": "link compl transverse lh",
+      "partNumbers": [
+        "54501-38B0A",
+        "54501-6AV0A"
+      ]
+    },
+    {
+      "descriptionKey": "link compl front suspension upper rh",
+      "partNumbers": [
+        "54524-62B0A",
+        "54524-JF00C",
+        "54524-JF50A"
+      ]
+    },
+    {
+      "descriptionKey": "link compl front suspension upper lh",
+      "partNumbers": [
+        "54525-62B0A",
+        "54525-JF00C",
+        "54525-JF50A"
+      ]
+    },
+    {
+      "descriptionKey": "arm assy rear suspension rh",
+      "partNumbers": [
+        "55501-JF00A",
+        "55501-KB50A"
+      ]
+    },
+    {
+      "descriptionKey": "cover bumper bracket",
+      "partNumbers": [
+        "622A0-6AV0A",
+        "622A0-KB50A"
+      ]
+    },
+    {
+      "descriptionKey": "ornament front",
+      "partNumbers": [
+        "62892-6AV0A",
+        "62892-JF00A",
+        "62892-JF00B",
+        "62892-JF01A",
+        "62892-JF60A"
+      ]
+    },
+    {
+      "descriptionKey": "protector front fender rh",
+      "partNumbers": [
+        "63842-62B0A",
+        "63842-62B0B",
+        "63842-JF00A",
+        "63842-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "protector front fender lh",
+      "partNumbers": [
+        "63843-62B0A",
+        "63843-62B0B",
+        "63843-JF00A",
+        "63843-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "protector front fender front rh",
+      "partNumbers": [
+        "63844-62B2A",
+        "63844-6AV2A",
+        "63844-6AV2C",
+        "63844-6HT2C",
+        "63844-JF00A",
+        "63844-JF00B",
+        "63844-JF02B"
+      ]
+    },
+    {
+      "descriptionKey": "protector front fender front lh",
+      "partNumbers": [
+        "63845-62B2A",
+        "63845-6AV2A",
+        "63845-6AV2C",
+        "63845-6HT2C",
+        "63845-JF00A",
+        "63845-JF00B",
+        "63845-JF02B"
+      ]
+    },
+    {
+      "descriptionKey": "seal hood front",
+      "partNumbers": [
+        "65820-62B0A",
+        "65820-6AV0A",
+        "65820-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "protector rear wheel house rh",
+      "partNumbers": [
+        "76748-6AV0A",
+        "76748-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "protector rear wheel house lh",
+      "partNumbers": [
+        "76749-6AV0A",
+        "76749-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "emblem trunk lid",
+      "partNumbers": [
+        "84894-JF00A",
+        "84894-JF60A",
+        "84894-JF60B"
+      ]
+    },
+    {
+      "descriptionKey": "dowel block",
+      "partNumbers": [
+        "11022-31U0B",
+        "11022-31U01"
+      ]
+    },
+    {
+      "descriptionKey": "dowel",
+      "partNumbers": [
+        "11022-77A00",
+        "11046-73402"
+      ]
+    },
+    {
+      "descriptionKey": "gasket",
+      "partNumbers": [
+        "11026-60U01",
+        "11026-JK20B",
+        "11026-41B00",
+        "15053-JF00A",
+        "15239-JF00A",
+        "14465-4P210",
+        "20692-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "gasket cylinder",
+      "partNumbers": [
+        "11044-JF01A",
+        "11044-JF01B"
+      ]
+    },
+    {
+      "descriptionKey": "brkt camsft ang",
+      "partNumbers": [
+        "13055-JF00A",
+        "13055-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "cover assy valv",
+      "partNumbers": [
+        "13264-JF00D",
+        "13264-JF01C"
+      ]
+    },
+    {
+      "descriptionKey": "bolt hex",
+      "partNumbers": [
+        "081B0-8251A",
+        "081B0-8401A",
+        "081B6-6125M",
+        "081B6-6165M",
+        "081B8-6201A",
+        "08120-64028",
+        "081B0-6161A",
+        "081B0-6255M",
+        "081B0-6201A",
+        "081B0-8405M",
+        "081B0-8305M",
+        "081A0-6121A",
+        "081B0-6301A",
+        "081B0-6501A",
+        "08146-8202G",
+        "08146-8252G",
+        "08156-61633",
+        "08146-6122G",
+        "08146-6162G",
+        "08146-6205H",
+        "08146-6305H",
+        "081B0-6401A",
+        "081B8-6122A",
+        "08146-6202H",
+        "08156-6165N",
+        "08120-61633",
+        "08120-8302A",
+        "08146-8122G",
+        "08146-8162G",
+        "08146-6162H",
+        "08146-6165H",
+        "08146-6125G",
+        "08156-6125M",
+        "08156-61228",
+        "08146-8161G",
+        "081A4-0301A",
+        "08147-0162G",
+        "08146-6252G",
+        "08146-6352G",
+        "01121-04761",
+        "08120-8162E",
+        "08156-63033",
+        "08120-8201E",
+        "08120-8501E",
+        "08146-6125H",
+        "08146-6255H",
+        "08146-6255G",
+        "08146-6122H",
+        "80498-40U0B",
+        "08146-6165G",
+        "081A7-0201A"
+      ]
+    },
+    {
+      "descriptionKey": "nut flange hex",
+      "partNumbers": [
+        "08918-3061A",
+        "08918-3401A",
+        "08918-3081A",
+        "08918-3082A",
+        "08918-3062A"
+      ]
+    },
+    {
+      "descriptionKey": "pin dowel",
+      "partNumbers": [
+        "11022-31U00",
+        "32105-0P000"
+      ]
+    },
+    {
+      "descriptionKey": "bolt",
+      "partNumbers": [
+        "01125-E6041",
+        "13224-AD22B",
+        "11298-4M411",
+        "11298-AG001",
+        "11298-4M406",
+        "11298-2J212",
+        "11298-JF00A",
+        "10004-4W00C",
+        "14069-JD70A",
+        "081A8-6121A",
+        "54459-0M00E",
+        "081A8-6201A",
+        "081A8-8251A",
+        "08158-62528",
+        "08158-62533",
+        "08158-6205N",
+        "081A8-6251A",
+        "11916-JF00A",
+        "11916-JF01A",
+        "081A1-0451A",
+        "25628-3H00A",
+        "11916-JF00D",
+        "31377-JF00C",
+        "31377-JF00E",
+        "11298-4M418",
+        "40178-EG06C",
+        "55479-4P00A",
+        "54459-8J00A",
+        "55226-AQ50A",
+        "55226-JA01C",
+        "55222-0M00B",
+        "87850-8990A",
+        "081B6-8901A",
+        "48935-5V10A",
+        "48935-4P00A",
+        "48935-JF00B",
+        "49164-1AA0A",
+        "49738-1BA0A",
+        "49738-JF00A",
+        "49738-4W00A",
+        "62297-JF01B",
+        "62297-JF00A",
+        "62297-KB51A",
+        "62297-JF00C",
+        "01125-03491",
+        "01125-00931",
+        "01125-03421",
+        "081B6-8205M",
+        "01121-N6141",
+        "673N8-JF00A",
+        "14069-CA01A",
+        "80498-CE40A",
+        "62297-1BA0A",
+        "11298-4M417",
+        "01121-07251",
+        "16122-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "insulator",
+      "partNumbers": [
+        "11220-JF00D",
+        "17561-JF30D",
+        "27288-JK64A",
+        "27288-JK65A",
+        "46272-3S200",
+        "54444-JF01A",
+        "48382-JF10A",
+        "49733-6L000",
+        "49733-4P015",
+        "49733-21U22",
+        "49733-01J60",
+        "27288-AG000",
+        "72717-JF30A",
+        "74881-KB50C",
+        "74881-KJ10A",
+        "76884-8H502",
+        "80864-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "bracket",
+      "partNumbers": [
+        "11232-JF00A",
+        "11233-JF00A",
+        "15238-JF00D",
+        "20731-JF00A",
+        "20722-JF00A",
+        "24239-JF00B",
+        "24239-JF01B",
+        "26920-KB50A",
+        "26920-KB51A",
+        "26925-KB50A",
+        "27750-JK60B",
+        "25233-5AA0A",
+        "31069-JF05D",
+        "54314-JF00A",
+        "54315-JF00A",
+        "48988-JF00A",
+        "48988-JF00B",
+        "48988-JF00C",
+        "11926-JF01A",
+        "11940-JF00A",
+        "62576-JF00A",
+        "62577-JF00A",
+        "625D2-JF00A",
+        "625D3-JF00A",
+        "84460-JF10A",
+        "88392-JK000",
+        "25237-AM600",
+        "24136-AL54B"
+      ]
+    },
+    {
+      "descriptionKey": "nut",
+      "partNumbers": [
+        "01225-00931",
+        "14094-4P100",
+        "01225-00371",
+        "01221-00351",
+        "20602-41G0A",
+        "01225-00062",
+        "80497-AX01A",
+        "01221-00361",
+        "01225-00901",
+        "08918-6081A",
+        "01225-00521",
+        "01223-00241",
+        "48514-JF00A",
+        "01241-00113",
+        "01217-00251",
+        "84656-AM800",
+        "01221-00391",
+        "08918-60610"
+      ]
+    },
+    {
+      "descriptionKey": "tensioner assy",
+      "partNumbers": [
+        "11955-1EA0D",
+        "13070-JK21B",
+        "13070-JK21C"
+      ]
+    },
+    {
+      "descriptionKey": "valve control",
+      "partNumbers": [
+        "11810-JF00A",
+        "14930-JA10D",
+        "14935-JF00D"
+      ]
+    },
+    {
+      "descriptionKey": "hose blow by a",
+      "partNumbers": [
+        "11823-JF00B",
+        "11823-JF01B"
+      ]
+    },
+    {
+      "descriptionKey": "pipe blow by",
+      "partNumbers": [
+        "11825-JF00A",
+        "11825-JF01A"
+      ]
+    },
+    {
+      "descriptionKey": "ring snap",
+      "partNumbers": [
+        "12032-03J00",
+        "39708-CG000"
+      ]
+    },
+    {
+      "descriptionKey": "camshaft assy",
+      "partNumbers": [
+        "13020-JF00A",
+        "13020-JF00B",
+        "13020-JF00C",
+        "13020-JF00D"
+      ]
+    },
+    {
+      "descriptionKey": "chain cam shaft",
+      "partNumbers": [
+        "13028-JF00A",
+        "13028-JK20B"
+      ]
+    },
+    {
+      "descriptionKey": "tension chain",
+      "partNumbers": [
+        "13070-EY00A",
+        "13070-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "guide chain",
+      "partNumbers": [
+        "13085-JF00A",
+        "13085-EY00A"
+      ]
+    },
+    {
+      "descriptionKey": "spring valve",
+      "partNumbers": [
+        "13203-JF00A",
+        "13203-JF00C"
+      ]
+    },
+    {
+      "descriptionKey": "bolt cam gear",
+      "partNumbers": [
+        "13012-JF00A",
+        "13012-6N210"
+      ]
+    },
+    {
+      "descriptionKey": "bolt tentioner",
+      "partNumbers": [
+        "13075-4W00A",
+        "13075-4W01A"
+      ]
+    },
+    {
+      "descriptionKey": "bolt flange",
+      "partNumbers": [
+        "081B1-0801A",
+        "081B1-0905M",
+        "081A6-8161A",
+        "081A0-8201A",
+        "081A6-8121A",
+        "081A6-8902A",
+        "081A6-8162A"
+      ]
+    },
+    {
+      "descriptionKey": "pin",
+      "partNumbers": [
+        "11022-JF00A",
+        "11022-31U03",
+        "41217-JF20A"
+      ]
+    },
+    {
+      "descriptionKey": "ring o",
+      "partNumbers": [
+        "15066-31U02",
+        "15066-31U03",
+        "15066-JA10A",
+        "21049-JK20A",
+        "21049-JK20B",
+        "21304-JF00A",
+        "15066-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "filter assy oil",
+      "partNumbers": [
+        "15200-AR000",
+        "15208-31U0B"
+      ]
+    },
+    {
+      "descriptionKey": "tube assy oil",
+      "partNumbers": [
+        "15192-JF00A",
+        "15192-JF00C"
+      ]
+    },
+    {
+      "descriptionKey": "clamp hose",
+      "partNumbers": [
+        "16439-JF00B",
+        "16439-7S01B",
+        "14464-0E00B",
+        "16439-42L0A",
+        "01558-00721",
+        "01558-00561",
+        "16439-N210A",
+        "49732-79915"
+      ]
+    },
+    {
+      "descriptionKey": "hose water",
+      "partNumbers": [
+        "14055-JF02B",
+        "14055-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "insulater heat",
+      "partNumbers": [
+        "14450-JF01D",
+        "14450-JF01C"
+      ]
+    },
+    {
+      "descriptionKey": "gasket eye bolt",
+      "partNumbers": [
+        "15189-JF00A",
+        "15189-69F00",
+        "15189-40P00"
+      ]
+    },
+    {
+      "descriptionKey": "bolt eye",
+      "partNumbers": [
+        "16432-JF00A",
+        "16432-VK50A"
+      ]
+    },
+    {
+      "descriptionKey": "tube assy water",
+      "partNumbers": [
+        "14499-JF00B",
+        "14498-JF01B"
+      ]
+    },
+    {
+      "descriptionKey": "hose air",
+      "partNumbers": [
+        "14860-JF01B",
+        "14860-JF02B",
+        "14860-JF07B",
+        "14860-JF04A"
+      ]
+    },
+    {
+      "descriptionKey": "valve a air cut",
+      "partNumbers": [
+        "14830-JF03A",
+        "14830-JF04A"
+      ]
+    },
+    {
+      "descriptionKey": "bolt flg hexgon",
+      "partNumbers": [
+        "081A6-6165M",
+        "081A6-6161A",
+        "081A6-6202A",
+        "081A6-6122A",
+        "081B4-2455M",
+        "081B4-2355M",
+        "081A6-6125M"
+      ]
+    },
+    {
+      "descriptionKey": "hose air regula",
+      "partNumbers": [
+        "14056-JF01A",
+        "14056-JF02A",
+        "14056-JF03A"
+      ]
+    },
+    {
+      "descriptionKey": "bolt a p to bkt",
+      "partNumbers": [
+        "14895-JF01A",
+        "14895-JF02A"
+      ]
+    },
+    {
+      "descriptionKey": "mounting rubber",
+      "partNumbers": [
+        "14814-JF01A",
+        "16557-AR000",
+        "16557-AL500",
+        "16557-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "conn hose",
+      "partNumbers": [
+        "14875-JF01A",
+        "14875-JF03A"
+      ]
+    },
+    {
+      "descriptionKey": "coller",
+      "partNumbers": [
+        "14874-JF01A",
+        "14874-JF02A"
+      ]
+    },
+    {
+      "descriptionKey": "strainer oil",
+      "partNumbers": [
+        "15050-JF01A",
+        "15050-JF00A",
+        "46093-64J05"
+      ]
+    },
+    {
+      "descriptionKey": "chambr throttle",
+      "partNumbers": [
+        "16119-JF00E",
+        "16119-JF00F"
+      ]
+    },
+    {
+      "descriptionKey": "tube assy injec",
+      "partNumbers": [
+        "24220-8H310",
+        "24220-4P220"
+      ]
+    },
+    {
+      "descriptionKey": "screw machine",
+      "partNumbers": [
+        "08363-6305D",
+        "08360-41225",
+        "08340-5082A",
+        "08360-51214",
+        "08310-51062",
+        "08363-6125B",
+        "08363-6305B"
+      ]
+    },
+    {
+      "descriptionKey": "o ring",
+      "partNumbers": [
+        "16618-JA10A",
+        "16618-10V10",
+        "16618-8J000",
+        "16618-EA000",
+        "22131-EN205",
+        "92471-N8210",
+        "92472-N8221",
+        "92474-N8210",
+        "92471-N8221",
+        "92472-N8210",
+        "92473-N8221",
+        "31526-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "clamp injector",
+      "partNumbers": [
+        "17571-5L30A",
+        "17571-7Y00A"
+      ]
+    },
+    {
+      "descriptionKey": "regulator assy",
+      "partNumbers": [
+        "22670-JF00A",
+        "23215-JF01A"
+      ]
+    },
+    {
+      "descriptionKey": "a damper fuel",
+      "partNumbers": [
+        "22675-JA10A",
+        "22675-JF00B",
+        "22675-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "stud coarse",
+      "partNumbers": [
+        "08233-82010",
+        "08236-62210"
+      ]
+    },
+    {
+      "descriptionKey": "retainer",
+      "partNumbers": [
+        "16566-JF00A",
+        "17341-40U00",
+        "17341-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "grommet",
+      "partNumbers": [
+        "17240-AN000",
+        "27289-EG000",
+        "46366-JF00A",
+        "46366-JF01A",
+        "46366-EG010",
+        "46366-EG020",
+        "64890-U7400",
+        "85099-JF30A",
+        "88796-6P000"
+      ]
+    },
+    {
+      "descriptionKey": "nut hex",
+      "partNumbers": [
+        "08911-1062G",
+        "08911-10537",
+        "08911-1081G",
+        "01223-00041",
+        "08911-1082G",
+        "08911-1052G",
+        "64198-JF00A",
+        "64198-JF00B",
+        "64198-JF00C",
+        "08918-1081A",
+        "08911-2062H"
+      ]
+    },
+    {
+      "descriptionKey": "bolt door hinge",
+      "partNumbers": [
+        "01121-06671",
+        "17598-ET000"
+      ]
+    },
+    {
+      "descriptionKey": "screw",
+      "partNumbers": [
+        "01436-01821",
+        "32929-WL01A",
+        "01451-00581",
+        "25365-4GA0A",
+        "97197-AD710",
+        "27111-2Y00A",
+        "27111-2Y00B",
+        "92128-JF00A",
+        "92128-JF00B",
+        "01436-01841",
+        "08168-6121A",
+        "01456-00631",
+        "28899-AD00A",
+        "01456-00031",
+        "01454-00431",
+        "01451-00841",
+        "08168-6161A",
+        "01125-03631",
+        "809A9-JF70C",
+        "08313-41625",
+        "76838-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "clamp",
+      "partNumbers": [
+        "16439-EB31B",
+        "01558-00411",
+        "16439-V500C",
+        "20565-JF00A",
+        "16439-7S02A",
+        "24432-AA000",
+        "54614-4N000",
+        "46289-AM600",
+        "49729-2J00B",
+        "49729-2J01B",
+        "49732-CL70A",
+        "01558-00401",
+        "16439-N210D"
+      ]
+    },
+    {
+      "descriptionKey": "tube assy",
+      "partNumbers": [
+        "17221-KB60A",
+        "17502-JF00A",
+        "46252-JF12A",
+        "46283-JF15B"
+      ]
+    },
+    {
+      "descriptionKey": "hose",
+      "partNumbers": [
+        "17226-JF31A",
+        "17226-JF31B",
+        "17335-JF31A",
+        "92400-JF00A",
+        "92410-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "shim fuel tank",
+      "partNumbers": [
+        "17243-1PN0A",
+        "17243-JF00A",
+        "17243-JF01B",
+        "17243-JF01C"
+      ]
+    },
+    {
+      "descriptionKey": "protr fuel",
+      "partNumbers": [
+        "17285-JF01A",
+        "17285-JF00B",
+        "17285-JW90A",
+        "17285-JF01C",
+        "17285-JF01D",
+        "17285-JF01E",
+        "17285-JF00C"
+      ]
+    },
+    {
+      "descriptionKey": "hose breather",
+      "partNumbers": [
+        "17337-JF31A",
+        "17336-JF31A",
+        "31098-JF00B",
+        "31098-JF05B"
+      ]
+    },
+    {
+      "descriptionKey": "tube evaporatio",
+      "partNumbers": [
+        "17339-JF30A",
+        "17339-JF31B"
+      ]
+    },
+    {
+      "descriptionKey": "protector",
+      "partNumbers": [
+        "17575-JF00C",
+        "46314-JF00A",
+        "75895-89S0A",
+        "75895-89S0B",
+        "75895-89S1B",
+        "75895-89S2B"
+      ]
+    },
+    {
+      "descriptionKey": "hose evapo",
+      "partNumbers": [
+        "14912-JF10A",
+        "14912-JF01A",
+        "14912-JF01D",
+        "14912-JF01E",
+        "14912-JF02A"
+      ]
+    },
+    {
+      "descriptionKey": "tube breather",
+      "partNumbers": [
+        "17338-JF30A",
+        "31098-JF05C"
+      ]
+    },
+    {
+      "descriptionKey": "reter quick con",
+      "partNumbers": [
+        "17532-79902",
+        "17532-7990D"
+      ]
+    },
+    {
+      "descriptionKey": "hose drain",
+      "partNumbers": [
+        "18791-JF31B",
+        "92590-JF10A"
+      ]
+    },
+    {
+      "descriptionKey": "connector",
+      "partNumbers": [
+        "18792-5U300",
+        "92417-0W811"
+      ]
+    },
+    {
+      "descriptionKey": "muffler assy",
+      "partNumbers": [
+        "20100-KB50A",
+        "20300-KJ20A"
+      ]
+    },
+    {
+      "descriptionKey": "bolt special",
+      "partNumbers": [
+        "20606-AF40A",
+        "54459-0M00C"
+      ]
+    },
+    {
+      "descriptionKey": "mounting assy e",
+      "partNumbers": [
+        "20621-KB50A",
+        "20621-KB50B"
+      ]
+    },
+    {
+      "descriptionKey": "mounting",
+      "partNumbers": [
+        "20651-JF00A",
+        "20651-KB50A",
+        "21508-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "converter",
+      "partNumbers": [
+        "B08B2-JF20A",
+        "B08B3-JF20A"
+      ]
+    },
+    {
+      "descriptionKey": "gasket water in",
+      "partNumbers": [
+        "13050-JF00A",
+        "13050-31U00"
+      ]
+    },
+    {
+      "descriptionKey": "cap assy pressu",
+      "partNumbers": [
+        "21430-C991A",
+        "21430-89S0A"
+      ]
+    },
+    {
+      "descriptionKey": "label caution",
+      "partNumbers": [
+        "21435-C991A",
+        "21435-89S0A",
+        "98590-79920"
+      ]
+    },
+    {
+      "descriptionKey": "bracket pipe",
+      "partNumbers": [
+        "21311-JF02A",
+        "21311-JF00A",
+        "21311-JF01A"
+      ]
+    },
+    {
+      "descriptionKey": "bracket oil fil",
+      "partNumbers": [
+        "21340-JF00A",
+        "21340-JF01A",
+        "21340-JF02A"
+      ]
+    },
+    {
+      "descriptionKey": "element oil",
+      "partNumbers": [
+        "21355-JF00B",
+        "21355-JF01B"
+      ]
+    },
+    {
+      "descriptionKey": "hose assy flexi",
+      "partNumbers": [
+        "21355-JF06A",
+        "21355-JF05A"
+      ]
+    },
+    {
+      "descriptionKey": "hose reserve",
+      "partNumbers": [
+        "21742-JF10B",
+        "21743-JF00A",
+        "21741-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "valve assy",
+      "partNumbers": [
+        "14939-EA200",
+        "49165-WL70A"
+      ]
+    },
+    {
+      "descriptionKey": "sensor boost",
+      "partNumbers": [
+        "22365-JF00D",
+        "22365-AM60A"
+      ]
+    },
+    {
+      "descriptionKey": "tube evapo cont",
+      "partNumbers": [
+        "14912-JF04A",
+        "14912-JF04B"
+      ]
+    },
+    {
+      "descriptionKey": "hose assy",
+      "partNumbers": [
+        "14912-JF00A",
+        "14912-JF00B",
+        "14912-JF00C"
+      ]
+    },
+    {
+      "descriptionKey": "sensor assy pre",
+      "partNumbers": [
+        "22650-JF00B",
+        "49763-6N20A"
+      ]
+    },
+    {
+      "descriptionKey": "cover rear",
+      "partNumbers": [
+        "23127-JF01A",
+        "23337-ET80A"
+      ]
+    },
+    {
+      "descriptionKey": "pulley assy",
+      "partNumbers": [
+        "23150-BC40A",
+        "11925-JK21A",
+        "11925-JK20D"
+      ]
+    },
+    {
+      "descriptionKey": "screw set",
+      "partNumbers": [
+        "23200-BC40A",
+        "23200-EG911",
+        "23115-20P10",
+        "D1136-JF20A"
+      ]
+    },
+    {
+      "descriptionKey": "bearing ball",
+      "partNumbers": [
+        "23120-30R1A",
+        "23120-22J2A"
+      ]
+    },
+    {
+      "descriptionKey": "bolt through",
+      "partNumbers": [
+        "23131-JF01A",
+        "23340-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "harness assy",
+      "partNumbers": [
+        "24077-JF10A",
+        "26038-62B1A"
+      ]
+    },
+    {
+      "descriptionKey": "cable battery",
+      "partNumbers": [
+        "24083-JF00A",
+        "24083-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "bracket assy",
+      "partNumbers": [
+        "24236-JF00A",
+        "49121-JF00A",
+        "86868-JL00A",
+        "86869-JL00A"
+      ]
+    },
+    {
+      "descriptionKey": "bracket clip",
+      "partNumbers": [
+        "24239-JF00A",
+        "24239-JF01C"
+      ]
+    },
+    {
+      "descriptionKey": "rod battery fix",
+      "partNumbers": [
+        "24425-8990D",
+        "24425-8990B"
+      ]
+    },
+    {
+      "descriptionKey": "horn assy",
+      "partNumbers": [
+        "25610-JF00B",
+        "25620-JF00B",
+        "25605-JF20A"
+      ]
+    },
+    {
+      "descriptionKey": "protector head",
+      "partNumbers": [
+        "26320-JF00A",
+        "26325-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "bulb",
+      "partNumbers": [
+        "26272-8991A",
+        "26261-04W00",
+        "26282-KB50A"
+      ]
+    },
+    {
+      "descriptionKey": "lamp assy",
+      "partNumbers": [
+        "26600-KB50C",
+        "26605-KB50C"
+      ]
+    },
+    {
+      "descriptionKey": "nut u",
+      "partNumbers": [
+        "08913-6365A",
+        "08913-6065A"
+      ]
+    },
+    {
+      "descriptionKey": "lens spot lamp",
+      "partNumbers": [
+        "26431-JF00A",
+        "26432-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "lamp comb rr rh",
+      "partNumbers": [
+        "26550-62B1A",
+        "26550-JF35A"
+      ]
+    },
+    {
+      "descriptionKey": "lamp comb rr lh",
+      "partNumbers": [
+        "26555-62B1A",
+        "26555-JF35A"
+      ]
+    },
+    {
+      "descriptionKey": "link assy",
+      "partNumbers": [
+        "27155-JK60A",
+        "27155-JK61A",
+        "28840-JF30A"
+      ]
+    },
+    {
+      "descriptionKey": "bolt heater",
+      "partNumbers": [
+        "27199-2J00A",
+        "01456-00421",
+        "01456-00371"
+      ]
+    },
+    {
+      "descriptionKey": "packing",
+      "partNumbers": [
+        "27175-JK60A",
+        "28921-50Y00"
+      ]
+    },
+    {
+      "descriptionKey": "lever air mix",
+      "partNumbers": [
+        "27156-JK60A",
+        "27156-JK61A",
+        "27156-EG200",
+        "27162-JK60A"
+      ]
+    },
+    {
+      "descriptionKey": "bracket harness",
+      "partNumbers": [
+        "27218-JK00A",
+        "24138-JF00A",
+        "24236-JF00B",
+        "24239-JF00C",
+        "24236-JF00C"
+      ]
+    },
+    {
+      "descriptionKey": "spring",
+      "partNumbers": [
+        "27551-JK60A",
+        "49167-7P900"
+      ]
+    },
+    {
+      "descriptionKey": "actuator assy",
+      "partNumbers": [
+        "27731-JN00A",
+        "78850-AM81E"
+      ]
+    },
+    {
+      "descriptionKey": "pipe assy",
+      "partNumbers": [
+        "27283-JK60A",
+        "27283-JK61A"
+      ]
+    },
+    {
+      "descriptionKey": "seal cooling",
+      "partNumbers": [
+        "27287-JK60A",
+        "27287-EG10A",
+        "27287-EG110"
+      ]
+    },
+    {
+      "descriptionKey": "screw tapping",
+      "partNumbers": [
+        "08543-51210",
+        "08543-51642",
+        "08566-6205A",
+        "08543-41610",
+        "08543-51242",
+        "08566-6255A",
+        "08566-6162A",
+        "08540-3105A"
+      ]
+    },
+    {
+      "descriptionKey": "nozzle defrostr",
+      "partNumbers": [
+        "27810-JF10A",
+        "27811-JF10A"
+      ]
+    },
+    {
+      "descriptionKey": "pipe front",
+      "partNumbers": [
+        "92440-JF11A",
+        "92441-JF01A"
+      ]
+    },
+    {
+      "descriptionKey": "hose flexible",
+      "partNumbers": [
+        "92480-JF11A",
+        "92481-JF10A",
+        "92490-JF11A",
+        "92491-JF10A"
+      ]
+    },
+    {
+      "descriptionKey": "label",
+      "partNumbers": [
+        "27090-C991C",
+        "14805-80B0A"
+      ]
+    },
+    {
+      "descriptionKey": "bracket liquid",
+      "partNumbers": [
+        "92135-4W000",
+        "92145-4W000"
+      ]
+    },
+    {
+      "descriptionKey": "cap valve",
+      "partNumbers": [
+        "92499-89921",
+        "92499-89920"
+      ]
+    },
+    {
+      "descriptionKey": "hose water heat",
+      "partNumbers": [
+        "92402-JF00A",
+        "92401-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "speaker unit",
+      "partNumbers": [
+        "28148-JK10A",
+        "28149-JK10A",
+        "28156-JM20A",
+        "28153-1JB0A",
+        "28153-5CA2A"
+      ]
+    },
+    {
+      "descriptionKey": "grille speaker",
+      "partNumbers": [
+        "28176-JF03A",
+        "28176-KB55B",
+        "28177-KB55B"
+      ]
+    },
+    {
+      "descriptionKey": "blade wiper",
+      "partNumbers": [
+        "28890-JF30A",
+        "28890-39B1A"
+      ]
+    },
+    {
+      "descriptionKey": "arm assy wiper",
+      "partNumbers": [
+        "28881-JF30A",
+        "28886-39B0A"
+      ]
+    },
+    {
+      "descriptionKey": "link connecting",
+      "partNumbers": [
+        "28841-JF00A",
+        "28842-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "refill wiper",
+      "partNumbers": [
+        "28895-JF00A",
+        "28895-1EA0A"
+      ]
+    },
+    {
+      "descriptionKey": "plug filler",
+      "partNumbers": [
+        "32103-4N21A",
+        "32103-4N21D"
+      ]
+    },
+    {
+      "descriptionKey": "gasket plug",
+      "partNumbers": [
+        "11026-4N200",
+        "11026-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "plug",
+      "partNumbers": [
+        "31305-JF00B",
+        "01515-00231",
+        "64892-W5000",
+        "01658-02143",
+        "74816-AL500"
+      ]
+    },
+    {
+      "descriptionKey": "washer",
+      "partNumbers": [
+        "32154-JF00A",
+        "32154-JF00B",
+        "38139-61001",
+        "40037-1CA0A"
+      ]
+    },
+    {
+      "descriptionKey": "braket",
+      "partNumbers": [
+        "34939-JF00A",
+        "34939-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "pin snap",
+      "partNumbers": [
+        "01532-JF00A",
+        "00923-1081A"
+      ]
+    },
+    {
+      "descriptionKey": "cover slide",
+      "partNumbers": [
+        "96932-JF00A",
+        "96932-JF00B"
+      ]
+    },
+    {
+      "descriptionKey": "bolt fix propel",
+      "partNumbers": [
+        "37120-JF00A",
+        "37120-JD00B",
+        "37120-CG10A",
+        "37120-JF01A"
+      ]
+    },
+    {
+      "descriptionKey": "washer lock",
+      "partNumbers": [
+        "37121-0E605",
+        "49726-50W00"
+      ]
+    },
+    {
+      "descriptionKey": "breather",
+      "partNumbers": [
+        "32103-JF01A",
+        "32103-4N20C"
+      ]
+    },
+    {
+      "descriptionKey": "shim adj",
+      "partNumbers": [
+        "38453-AR004",
+        "38453-AR018"
+      ]
+    },
+    {
+      "descriptionKey": "band boot",
+      "partNumbers": [
+        "39242-CG000",
+        "39742-CG100",
+        "39242-CG010",
+        "39742-CG110",
+        "39242-2B000",
+        "39242-EA020",
+        "39742-EA010",
+        "39742-8J000"
+      ]
+    },
+    {
+      "descriptionKey": "repair kit dust",
+      "partNumbers": [
+        "39241-CG027",
+        "39741-CG026",
+        "39241-EG026",
+        "39741-EG025"
+      ]
+    },
+    {
+      "descriptionKey": "joint assy",
+      "partNumbers": [
+        "39211-JF00A",
+        "39711-JF00A"
+      ]
+    },
+    {
+      "descriptionKey": "bolt fix d s",
+      "partNumbers": [
+        "39734-17V20",
+        "39735-17V60"
+      ]
+    },
+    {
+      "descriptionKey": "seat lwr ball j",
+      "partNumbers": [
+        "40173-EG000",
+        "40173-33P00"
+      ]
+    },
+    {
+      "descriptionKey": "rotor disc brak",
+      "partNumbers": [
+        "40206-62B0A",
+        "43206-62B0A"
+      ]
+    },
+    {
+      "descriptionKey": "bolt hub",
+      "partNumbers": [
+        "43222-62B0A",
+        "43222-62B1A"
+      ]
+    },
+    {
+      "descriptionKey": "pin cotter spli",
+      "partNumbers": [
+        "08921-3252A",
+        "08921-3202A"
+      ]
+    },
+    {
+      "descriptionKey": "nut brg driving",
+      "partNumbers": [
+        "40262-1CA0A",
+        "01225-00941"
+      ]
+    }
+  ]
+}

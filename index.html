@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R35 Parts Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="catalog-shell">
+    <header class="topbar">
+      <div class="topbar-copy">
+        <p class="eyebrow">Nissan GT-R R35 • OEM Parts Catalog</p>
+        <h1><a id="home-link" class="home-link" href="index.html">Systems Explorer</a></h1>
+      </div>
+      <div class="topbar-search">
+        <label class="field-label" for="global-search">Search all systems</label>
+        <input id="global-search" type="search" placeholder="Search system names, part numbers, descriptions..." autocomplete="off">
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="left-rail">
+        <section class="panel systems-panel">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">Systems</p>
+              <h2>All systems</h2>
+            </div>
+            <span id="system-count" class="meta-pill">0</span>
+          </div>
+          <div id="system-list" class="system-list"></div>
+        </section>
+
+        <section class="panel subsystems-panel">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">Sub Systems</p>
+              <h2 id="subsystem-title">Choose a system</h2>
+            </div>
+            <span id="subsystem-count" class="meta-pill">0</span>
+          </div>
+          <div id="subsystem-list" class="subsystem-list"></div>
+        </section>
+      </aside>
+
+      <section class="center-stage">
+        <section class="panel stage-panel">
+          <div class="panel-head stage-head">
+            <div>
+              <p class="panel-kicker">Diagram Window</p>
+              <h2 id="stage-title">All systems</h2>
+              <p id="stage-note" class="panel-note">Select a system to load its diagram variants and linked records.</p>
+            </div>
+            <span id="match-count" class="meta-pill">0 matched parts</span>
+          </div>
+
+          <div class="stage-toolbar">
+            <label class="field-label" for="local-search">Search current section</label>
+            <input id="local-search" type="search" placeholder="Filter items in the selected system..." autocomplete="off">
+          </div>
+
+          <div id="stage-content" class="stage-content"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="data/catalog-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
