@@ -9,11 +9,14 @@
     "scrape:amayama": "node scripts/scrape-amayama-catalog.js",
     "build:archive": "node scripts/build-catalog-archive-manifest.js",
     "export:db": "powershell -ExecutionPolicy Bypass -File .\\scripts\\export-catalog-workbook.ps1",
-    "build": "node scripts/build-hotspots.js",
+    "build": "echo Static site - no build step",
+    "build:hotspots": "node scripts/build-hotspots.js",
     "audit": "node scripts/audit-catalog.js",
     "import:amayama": "node scripts/import-amayama-batch.js",
     "verify:suppliers": "node scripts/verify-supplier-pages.js",
-    "pipeline": "node scripts/detect-hotspots.js && node scripts/scrape-diagram-parts.js && node scripts/build-hotspots.js && node scripts/audit-catalog.js"
+    "pipeline": "node scripts/detect-hotspots.js && node scripts/scrape-diagram-parts.js && node scripts/build-hotspots.js && node scripts/audit-catalog.js",
+    "print:a4": "node scripts/build-print-a4-workbook.js",
+    "print:sheet1": "node scripts/sheet1-composite-a4-landscape.js"
   },
   "keywords": [],
   "author": "",
