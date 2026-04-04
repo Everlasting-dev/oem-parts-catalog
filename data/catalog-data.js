@@ -1,6 +1,6 @@
 window.CATALOG_DATA = {
   "importedAt": "2026-03-31T23:36:08",
-  "workbookPath": "c:\\Users\\akram\\Downloads\\PARTS R 35 JAPAN OEM_organized.xlsx",
+  "workbookPath": "R35 Master Parts Catalog.xlsx",
   "sources": [
     "https://yoshiparts.com/",
     "https://www.amayama.com/",

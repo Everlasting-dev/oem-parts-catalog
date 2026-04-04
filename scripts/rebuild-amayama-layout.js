@@ -16,8 +16,7 @@ const ExcelJS = require("exceljs");
 
 const ROOT = path.join(__dirname, "..");
 const JSON_PATH = path.join(ROOT, "data", "catalog-data.json");
-const EXCEL_SOURCE = path.join(ROOT, "PARTS R 35 JAPAN OEM_amayama_style.xlsx");
-const EXCEL_OUT    = path.join(ROOT, "PARTS R 35 JAPAN OEM_amayama_style_REBUILT.xlsx");
+const EXCEL_PATH = path.join(ROOT, "R35 Master Parts Catalog.xlsx");
 const ASSETS_DIR = path.join(ROOT, "assets", "diagrams");
 
 // ── Colour palette ──────────────────────────────────────────────────────────
@@ -111,7 +110,7 @@ async function main() {
   // ── Open workbook ──────────────────────────────────────────────────────
   console.log("Opening workbook …");
   const workbook = new ExcelJS.Workbook();
-  await workbook.xlsx.readFile(EXCEL_SOURCE);
+  await workbook.xlsx.readFile(EXCEL_PATH);
 
   // Remove old sheet
   const old = workbook.getWorksheet("Amayama Layout");
@@ -289,8 +288,8 @@ async function main() {
 
   // ── Save workbook ──────────────────────────────────────────────────────
   console.log("\nSaving workbook … (this may take a moment with embedded images)");
-  await workbook.xlsx.writeFile(EXCEL_OUT);
-  console.log("Done! Saved to:", EXCEL_OUT);
+  await workbook.xlsx.writeFile(EXCEL_PATH);
+  console.log("Done! Saved to:", EXCEL_PATH);
   console.log("\nNOTE: Original file is unchanged. Review the rebuilt file then rename/replace as needed.");
   console.log(`\nSummary:`);
   console.log(`  Sections written : ${sections.length}`);

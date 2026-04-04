@@ -16,7 +16,7 @@ const XLSX = require('xlsx');
 
 const PROJECT_ROOT  = path.resolve(__dirname, '..');
 const CATALOG_FILE  = path.join(PROJECT_ROOT, 'data', 'catalog-data.json');
-const EXCEL_FILE    = path.join(PROJECT_ROOT, 'PARTS%20R%2035%20JAPAN%20OEM_amayama_style_with_variant_db_plus_manifold_plus_antiskid.xlsx');
+const EXCEL_FILE    = path.join(PROJECT_ROOT, 'R35 Master Parts Catalog.xlsx');
 
 // ── helpers ────────────────────────────────────────────────────────────────
 

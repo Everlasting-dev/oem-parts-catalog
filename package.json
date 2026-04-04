@@ -19,7 +19,7 @@
     "print:sheet1": "node scripts/sheet1-composite-a4-landscape.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Akram",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {

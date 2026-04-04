@@ -1,5 +1,5 @@
 param(
-  [string]$WorkbookPath = 'c:\Users\akram\Downloads\PARTS R 35 JAPAN OEM_organized.xlsx',
+  [string]$WorkbookPath = $(Join-Path (Split-Path $PSScriptRoot -Parent) 'R35 Master Parts Catalog.xlsx'),
   [string]$ProjectRoot = '.'
 )
 

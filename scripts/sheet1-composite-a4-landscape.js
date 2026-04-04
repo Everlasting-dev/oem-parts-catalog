@@ -2,7 +2,7 @@
 /**
  * sheet1-composite-a4-landscape.js
  *
- * Reads an Excel file (default: R35 Master Parts Catalog_NEW.xlsx), extracts every
+ * Reads an Excel file (default: R35 Master Parts Catalog.xlsx), extracts every
  * embedded picture from "Sheet1" / "Sheet 1", and builds a NEW workbook where
  * EACH image is on its OWN worksheet — A4 **landscape**, fit to one page.
  * Printing the whole workbook = one diagram per printed page (48 pages for 48 images).
@@ -21,7 +21,7 @@ const sharp   = require("sharp");
 
 const ROOT = path.join(__dirname, "..");
 
-const DEFAULT_BOOK = path.join(ROOT, "R35 Master Parts Catalog_NEW.xlsx");
+const DEFAULT_BOOK = path.join(ROOT, "R35 Master Parts Catalog.xlsx");
 const OUT_XLSX     = path.join(ROOT, "R35 Sheet1 Print A4 Landscape.xlsx");
 
 /** Max pixel size for the image on the sheet (landscape: wide × shorter) */

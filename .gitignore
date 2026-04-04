@@ -21,3 +21,8 @@ Desktop.ini
 
 # Excel temp lock files (~$...)
 ~$*.xlsx
+
+# Generated print / staging workbooks (recreated by npm scripts)
+/R35 Diagram Prints A4.xlsx
+/R35 Sheet1 Print A4 Landscape.xlsx
+/R35 Master Parts Catalog_NEW.xlsx
