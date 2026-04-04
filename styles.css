@@ -44,6 +44,31 @@ a {
   flex-direction: column;
 }
 
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav-btn {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.mobile-nav-btn.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.mobile-nav-btn:disabled {
+  opacity: 0.45;
+}
+
 .topbar {
   position: sticky;
   top: 0;
@@ -139,6 +164,8 @@ a {
   border: 1px solid var(--line);
   background: var(--panel);
   box-shadow: var(--shadow);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .panel-head {
@@ -191,9 +218,10 @@ a {
   width: 100%;
   border: 1px solid transparent;
   background: transparent;
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
   transition: 120ms ease;
+  border-radius: 12px;
 }
 
 .system-item:hover,
@@ -260,6 +288,7 @@ a {
   background: var(--panel-soft);
   padding: 10px;
   cursor: pointer;
+  border-radius: 16px;
 }
 
 .system-card:hover {
@@ -323,6 +352,8 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .diagram-card-header,
@@ -395,10 +426,10 @@ a {
 
 .hotspot {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  margin-left: -8px;
-  margin-top: -8px;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  margin-top: -9px;
   border: 1px solid rgba(255, 255, 255, 0.95);
   background: rgba(47, 111, 149, 0.74);
   border-radius: 50%;
@@ -408,10 +439,10 @@ a {
 
 .hotspot.active,
 .hotspot.hovered {
-  width: 20px;
-  height: 20px;
-  margin-left: -10px;
-  margin-top: -10px;
+  width: 22px;
+  height: 22px;
+  margin-left: -11px;
+  margin-top: -11px;
   background: rgba(216, 80, 35, 0.95);
   box-shadow: 0 0 0 3px rgba(216, 80, 35, 0.18);
   z-index: 2;
@@ -683,5 +714,193 @@ a {
 
   .diagram-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  :root {
+    --topbar-height: 132px;
+  }
+
+  body {
+    background: linear-gradient(180deg, #f9fbfd 0%, #eef2f5 52%, #e8eef3 100%);
+  }
+
+  .topbar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: stretch;
+    padding: 14px;
+  }
+
+  .topbar h1 {
+    font-size: 24px;
+  }
+
+  .topbar-search input,
+  .stage-toolbar input {
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .mobile-nav {
+    position: sticky;
+    top: var(--topbar-height);
+    z-index: 190;
+    display: flex;
+    gap: 8px;
+    padding: 10px 14px 0;
+    overflow-x: auto;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.96) 100%);
+  }
+
+  .mobile-nav-btn {
+    flex: 0 0 auto;
+    min-height: 40px;
+  }
+
+  .workspace {
+    padding: 12px;
+  }
+
+  .catalog-shell[data-mobile-view="systems"] .subsystems-panel,
+  .catalog-shell[data-mobile-view="systems"] .center-stage,
+  .catalog-shell[data-mobile-view="subsystems"] .systems-panel,
+  .catalog-shell[data-mobile-view="subsystems"] .center-stage,
+  .catalog-shell[data-mobile-view="stage"] .left-rail {
+    display: none;
+  }
+
+  .catalog-shell[data-mobile-view="systems"] .systems-panel,
+  .catalog-shell[data-mobile-view="subsystems"] .subsystems-panel,
+  .catalog-shell[data-mobile-view="stage"] .center-stage {
+    display: flex;
+  }
+
+  .system-list,
+  .subsystem-list,
+  .stage-content,
+  .diagram-parts-table-wrap {
+    overflow: visible;
+  }
+
+  .panel-head,
+  .stage-toolbar,
+  .stage-content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .panel-head {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .panel-head h2,
+  .diagram-card h3,
+  .diagram-parts-head h3 {
+    font-size: 17px;
+  }
+
+  .meta-pill {
+    min-height: 30px;
+    padding: 0 9px;
+    font-size: 11px;
+  }
+
+  .system-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diagram-stack {
+    gap: 12px;
+  }
+
+  .diagram-row {
+    gap: 10px;
+  }
+
+  .diagram-canvas {
+    min-height: 180px;
+  }
+
+  .parts-table {
+    min-width: 760px;
+  }
+
+  .parts-table th,
+  .parts-table td {
+    padding: 8px 9px;
+  }
+
+  .part-detail-card {
+    padding: 12px;
+  }
+
+  .part-detail-card-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .detail-head-links {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+
+  .variants-table {
+    min-width: 560px;
+  }
+}
+
+@media (max-width: 560px) {
+  .workspace {
+    padding: 10px;
+  }
+
+  .system-item,
+  .subsystem-item {
+    padding: 13px 12px;
+  }
+
+  .system-item strong,
+  .subsystem-item strong {
+    font-size: 14px;
+  }
+
+  .system-item span,
+  .subsystem-item span,
+  .system-card p,
+  .panel-note,
+  .diagram-meta {
+    font-size: 12px;
+  }
+
+  .diagram-card-header,
+  .diagram-parts-head,
+  .stage-toolbar {
+    padding: 10px 12px;
+  }
+
+  .stage-content {
+    padding: 10px;
+  }
+
+  .empty-state {
+    padding: 28px 14px;
+  }
+
+  .hotspot {
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+
+  .hotspot.active,
+  .hotspot.hovered {
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
   }
 }

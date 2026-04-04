@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="catalog-shell">
+  <div class="catalog-shell" data-mobile-view="systems">
     <header class="topbar">
       <div class="topbar-copy">
         <p class="eyebrow">Nissan GT-R R35 • OEM Parts Catalog</p>
@@ -22,9 +22,15 @@
       </div>
     </header>
 
+    <nav class="mobile-nav" aria-label="Mobile section navigation">
+      <button type="button" class="mobile-nav-btn active" data-mobile-view="systems">Systems</button>
+      <button type="button" class="mobile-nav-btn" data-mobile-view="subsystems">Sub Systems</button>
+      <button type="button" class="mobile-nav-btn" data-mobile-view="stage">Diagram</button>
+    </nav>
+
     <main class="workspace">
       <aside class="left-rail">
-        <section class="panel systems-panel">
+        <section class="panel systems-panel" id="systems-panel">
           <div class="panel-head">
             <div>
               <p class="panel-kicker">Systems</p>
@@ -35,7 +41,7 @@
           <div id="system-list" class="system-list"></div>
         </section>
 
-        <section class="panel subsystems-panel">
+        <section class="panel subsystems-panel" id="subsystems-panel">
           <div class="panel-head">
             <div>
               <p class="panel-kicker">Sub Systems</p>
@@ -48,7 +54,7 @@
       </aside>
 
       <section class="center-stage">
-        <section class="panel stage-panel">
+        <section class="panel stage-panel" id="stage-panel">
           <div class="panel-head stage-head">
             <div>
               <p class="panel-kicker">Diagram Window</p>

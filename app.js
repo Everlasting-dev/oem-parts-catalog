@@ -7,6 +7,7 @@ const state = {
   activeSubsystemId: null,
   activeRowKey: null,
   hoveredRowKey: null,
+  mobileView: "systems",
 };
 
 const partsByNumber = new Map((catalog.parts || []).map(part => [part.partNumber, part]));
@@ -21,6 +22,8 @@ const SYSTEM_MERGE_ALIASES = new Map([
 
 const globalSearch = document.getElementById("global-search");
 const localSearch = document.getElementById("local-search");
+const catalogShell = document.querySelector(".catalog-shell");
+const mobileNavButtons = [...document.querySelectorAll(".mobile-nav-btn")];
 const systemCount = document.getElementById("system-count");
 const subsystemCount = document.getElementById("subsystem-count");
 const systemList = document.getElementById("system-list");
@@ -30,6 +33,38 @@ const stageTitle = document.getElementById("stage-title");
 const stageNote = document.getElementById("stage-note");
 const matchCount = document.getElementById("match-count");
 const stageContent = document.getElementById("stage-content");
+
+function isMobileViewport() {
+  return window.matchMedia("(max-width: 820px)").matches;
+}
+
+function setMobileView(view) {
+  state.mobileView = view;
+  if (catalogShell) catalogShell.dataset.mobileView = view;
+}
+
+function syncMobileView() {
+  if (!isMobileViewport()) {
+    setMobileView("systems");
+    return;
+  }
+
+  if (!state.activeSystemId && state.mobileView !== "systems") {
+    setMobileView("systems");
+    return;
+  }
+
+  setMobileView(state.mobileView || "systems");
+}
+
+function renderMobileNav() {
+  const hasSystem = Boolean(state.activeSystemId);
+  for (const button of mobileNavButtons) {
+    const view = button.dataset.mobileView || "systems";
+    button.classList.toggle("active", state.mobileView === view);
+    button.disabled = (view === "subsystems" || view === "stage") && !hasSystem;
+  }
+}
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -234,6 +269,7 @@ function renderSystems() {
       state.hoveredRowKey = null;
       state.localQuery = "";
       localSearch.value = "";
+      if (isMobileViewport()) setMobileView(system.diagrams.length ? "subsystems" : "stage");
       render();
     });
     systemList.appendChild(button);
@@ -267,6 +303,7 @@ function renderSubsystems(system) {
     `;
     button.addEventListener("click", () => {
       state.activeSubsystemId = diagram.id;
+      if (isMobileViewport()) setMobileView("stage");
       document.getElementById(`diagram-row-${CSS.escape(diagram.id)}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
       render();
     });
@@ -303,6 +340,7 @@ function renderSystemLanding(visibleSystems) {
       if (!system) return;
       state.activeSystemId = system.id;
       state.activeSubsystemId = system.diagrams[0]?.id || null;
+      if (isMobileViewport()) setMobileView(system.diagrams.length ? "subsystems" : "stage");
       render();
     });
   }
@@ -512,6 +550,7 @@ function renderDiagramRows(system) {
     hotspot.addEventListener("click", () => {
       state.activeRowKey = hotspot.dataset.rowKey || null;
       state.activeSubsystemId = hotspot.dataset.diagramId || state.activeSubsystemId;
+      if (isMobileViewport()) setMobileView("stage");
       render();
       const expansion = stageContent.querySelector(".expansion-row");
       expansion?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -526,6 +565,7 @@ function renderDiagramRows(system) {
       const newKey = state.activeRowKey === row.dataset.rowKey ? null : (row.dataset.rowKey || null);
       state.activeRowKey = newKey;
       state.activeSubsystemId = row.dataset.diagramId || state.activeSubsystemId;
+      if (isMobileViewport()) setMobileView("stage");
       render();
       if (newKey) {
         const expansion = stageContent.querySelector(".expansion-row");
@@ -552,6 +592,7 @@ function renderDiagramRows(system) {
 }
 
 function render() {
+  syncMobileView();
   const visibleSystems = getVisibleSystems();
 
   if (state.activeSystemId && !visibleSystems.some(system => system.id === state.activeSystemId)) {
@@ -573,6 +614,7 @@ function render() {
   renderSystems();
   renderSubsystems(system);
   renderDiagramRows(system);
+  renderMobileNav();
 }
 
 let _debounceGlobal = 0;
@@ -595,6 +637,19 @@ localSearch.addEventListener("input", event => {
     state.activeRowKey = null;
     render();
   }, 180);
+});
+
+for (const button of mobileNavButtons) {
+  button.addEventListener("click", () => {
+    if (button.disabled) return;
+    setMobileView(button.dataset.mobileView || "systems");
+    renderMobileNav();
+  });
+}
+
+window.addEventListener("resize", () => {
+  syncMobileView();
+  renderMobileNav();
 });
 
 render();
