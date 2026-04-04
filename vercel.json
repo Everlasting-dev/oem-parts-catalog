@@ -2,6 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "name": "r35-oem-parts-catalog",
   "framework": null,
+  "outputDirectory": ".",
   "installCommand": "echo 'Static deploy — skipping dependency install' && exit 0",
   "buildCommand": "echo 'Static deploy — no build' && exit 0"
 }
