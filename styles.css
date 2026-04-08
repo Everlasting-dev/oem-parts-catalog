@@ -1,15 +1,15 @@
 :root {
-  --bg: #eef2f5;
+  --bg: #edf1f5;
   --panel: #ffffff;
-  --panel-soft: #f7f9fb;
-  --line: #d6dde3;
-  --line-strong: #bcc8d1;
-  --text: #192734;
-  --muted: #607182;
-  --accent: #2f6f95;
-  --accent-soft: #e6f0f6;
-  --accent-strong: #1b4f70;
-  --shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  --panel-soft: #f6f8fb;
+  --line: #d8e0e7;
+  --line-strong: #bcc9d4;
+  --text: #182633;
+  --muted: #5f7184;
+  --accent: #2c6f97;
+  --accent-soft: #e7f0f7;
+  --accent-strong: #174d6f;
+  --shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
   /* Approximate sticky header height — keeps sidebar from sliding under the bar */
   --topbar-height: 88px;
 }
@@ -29,7 +29,9 @@ body {
 body {
   font-family: "IBM Plex Sans", sans-serif;
   color: var(--text);
-  background: linear-gradient(180deg, #f7f9fb 0%, #eef2f5 100%);
+  background:
+    radial-gradient(circle at top, rgba(44, 111, 151, 0.06), transparent 28%),
+    linear-gradient(180deg, #f8fafc 0%, #edf1f5 100%);
 }
 
 button,
@@ -83,8 +85,8 @@ a {
   align-items: end;
   padding: 14px 18px;
   border-bottom: 1px solid var(--line);
-  background: #fff;
-  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+  background: linear-gradient(180deg, #ffffff, #f9fbfd);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
 }
 
 .eyebrow,
@@ -177,10 +179,11 @@ a {
   height: 40px;
   padding: 0 12px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--panel-soft);
   color: var(--text);
   outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
 }
 
 .topbar-search input:focus,
@@ -202,25 +205,39 @@ a {
 }
 
 .protected-main {
-  width: min(760px, calc(100% - 28px));
+  width: min(1180px, calc(100% - 28px));
   margin: 24px auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  gap: 18px;
 }
 
 .protected-panel {
   overflow: visible;
 }
 
+.protected-sidebar {
+  overflow: visible;
+}
+
+.protected-sidebar-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
 .protected-panel-body {
-  padding: 20px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
 .protected-message {
-  padding: 14px 16px;
+  padding: 15px 16px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 14px;
   background: var(--panel-soft);
   line-height: 1.55;
 }
@@ -260,6 +277,37 @@ a {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  padding-top: 4px;
+}
+
+.protected-about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.protected-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.protected-about-head h3 {
+  margin: 0;
+}
+
+.protected-about-copy {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.protected-about-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   padding-top: 4px;
 }
 
@@ -309,7 +357,7 @@ a {
   border: 1px solid var(--line);
   background: var(--panel);
   box-shadow: var(--shadow);
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
 }
 
@@ -318,9 +366,9 @@ a {
   justify-content: space-between;
   gap: 12px;
   align-items: flex-start;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-bottom: 1px solid var(--line);
-  background: linear-gradient(180deg, #ffffff, #f7f9fb);
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
 }
 
 .panel-head h2 {
@@ -366,13 +414,14 @@ a {
   padding: 12px;
   cursor: pointer;
   transition: 120ms ease;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .system-item:hover,
 .subsystem-item:hover {
   border-color: var(--line);
   background: var(--panel-soft);
+  transform: translateY(-1px);
 }
 
 .system-item.active,
@@ -411,7 +460,7 @@ a {
 }
 
 .stage-toolbar {
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-bottom: 1px solid var(--line);
   background: #fbfcfd;
 }
@@ -419,7 +468,7 @@ a {
 .stage-content {
   min-height: 0;
   overflow: auto;
-  padding: 12px;
+  padding: 14px;
 }
 
 .system-grid {
@@ -431,14 +480,17 @@ a {
 .system-card {
   border: 1px solid var(--line);
   background: var(--panel-soft);
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 18px;
+  transition: border-color 120ms ease, background 120ms ease, transform 120ms ease, box-shadow 120ms ease;
 }
 
 .system-card:hover {
   border-color: var(--line-strong);
   background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
 .system-card-gallery {
@@ -462,6 +514,16 @@ a {
   object-fit: contain;
   border: 1px solid var(--line);
   background: #fff;
+  opacity: 0;
+  filter: blur(12px);
+  transform: scale(1.015);
+  transition: opacity 320ms ease, filter 420ms ease, transform 420ms ease;
+}
+
+.system-card-image.is-ready {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
 }
 
 .system-card h3 {
@@ -498,15 +560,22 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
 }
 
 .diagram-card-header,
 .diagram-parts-head {
-  padding: 8px 10px;
+  padding: 10px 12px;
   border-bottom: 1px solid var(--line);
   background: #fafcfd;
+}
+
+.diagram-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .diagram-card h3,
@@ -569,11 +638,33 @@ a {
   min-width: 100%;
   height: auto;
   opacity: 0;
-  transition: opacity 240ms ease;
+  filter: blur(14px);
+  transform: scale(1.01);
+  transition: opacity 320ms ease, filter 480ms ease, transform 480ms ease;
 }
 
-.diagram-canvas:not(.is-loading) .diagram-image {
+.diagram-image.is-ready {
   opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.diagram-toggle-btn {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-soft);
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.diagram-toggle-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .diagram-parts-table-wrap {
@@ -620,6 +711,9 @@ a {
   font-size: 10px;
   font-weight: 700;
   line-height: 1;
+  opacity: 0.12;
+  transform: scale(0.88);
+  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 
 .hotspot.active,
@@ -631,15 +725,22 @@ a {
   background: rgba(216, 80, 35, 0.95);
   box-shadow: 0 0 0 3px rgba(216, 80, 35, 0.18);
   z-index: 2;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .hotspot.dimmed {
-  opacity: 0.18;
+  opacity: 0.06;
 }
 
 .hotspot span {
   pointer-events: none;
   white-space: nowrap;
+}
+
+.diagram-figure:hover .hotspot:not(.active):not(.hovered) {
+  opacity: 0.42;
+  transform: scale(1);
 }
 
 .parts-table {
@@ -650,7 +751,7 @@ a {
 
 .parts-table th,
 .parts-table td {
-  padding: 6px 8px;
+  padding: 7px 9px;
   border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
@@ -672,7 +773,7 @@ a {
 
 .parts-table tr:hover,
 .parts-table tr.hovered {
-  background: #f9fbfd;
+  background: #f7fafc;
 }
 
 .parts-table tr.active {
@@ -686,8 +787,8 @@ a {
 }
 
 .part-detail-card {
-  padding: 12px 14px 14px;
-  background: #f0f6fc;
+  padding: 14px 16px 16px;
+  background: #f1f6fb;
   border-top: 1px solid rgba(37, 99, 235, 0.18);
 }
 
@@ -1049,16 +1150,25 @@ a {
     padding: 8px 9px;
   }
 
+  .diagram-card-header {
+    flex-wrap: wrap;
+  }
+
   .part-detail-card {
     padding: 12px;
   }
 
   .protected-main {
-    width: min(100% - 24px, 760px);
+    width: min(100% - 24px, 1180px);
     margin: 16px auto;
+    grid-template-columns: 1fr;
   }
 
   .protected-panel-body {
+    padding: 16px;
+  }
+
+  .protected-sidebar-body {
     padding: 16px;
   }
 
@@ -1084,6 +1194,18 @@ a {
 
   .variants-table {
     min-width: 560px;
+  }
+
+  .diagram-figure .hotspot:not(.active):not(.hovered) {
+    opacity: 0;
+    transform: scale(0.78);
+    pointer-events: none;
+  }
+
+  .diagram-figure.show-mobile-hotspots .hotspot:not(.active):not(.hovered) {
+    opacity: 0.34;
+    transform: scale(1);
+    pointer-events: auto;
   }
 }
 

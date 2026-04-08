@@ -8,6 +8,7 @@ const state = {
   activeDiagramId: null,
   activeRowKey: null,
   mobileView: "systems",
+  mobileHotspotsVisible: false,
 };
 
 const partsByNumber = new Map((catalog.parts || []).map(part => [part.partNumber, part]));
@@ -46,6 +47,7 @@ function setMobileView(view) {
 
 function syncMobileView() {
   if (!isMobileViewport()) {
+    state.mobileHotspotsVisible = false;
     setMobileView("systems");
     return;
   }
@@ -658,11 +660,9 @@ function renderDiagramRows(system) {
       <div class="system-grid">
         ${visibleSystems.map(item => `
           <article class="system-card" data-system-id="${escapeHtml(item.id)}">
-            ${item.previewImages.length ? `
-              <div class="system-card-gallery ${item.previewImages.length > 1 ? "dual" : "single"}">
-                ${item.previewImages.map((src, index) => `
-                  <img class="system-card-image" src="${encodeURI(src)}" alt="${escapeHtml(`${item.title} preview ${index + 1}`)}" loading="lazy">
-                `).join("")}
+            ${item.previewImages[0] ? `
+              <div class="system-card-gallery single">
+                <img class="system-card-image" src="${encodeURI(item.previewImages[0])}" alt="${escapeHtml(`${item.title} preview`)}" loading="lazy">
               </div>
             ` : ""}
             <h3>${escapeHtml(item.title)}</h3>
@@ -685,6 +685,19 @@ function renderDiagramRows(system) {
         render();
       });
     }
+
+    for (const image of stageContent.querySelectorAll(".system-card-image")) {
+      const markReady = () => image.classList.add("is-ready");
+      image.classList.remove("is-ready");
+
+      if (image.complete && image.naturalWidth > 0) {
+        markReady();
+        continue;
+      }
+
+      image.addEventListener("load", markReady, { once: true });
+    }
+
     return;
   }
 
@@ -705,6 +718,7 @@ function renderDiagramRows(system) {
   const hotspotTargets = getHotspotTargets(activeDiagram);
   const activeRow = diagramRows.find(row => row.key === state.activeRowKey) || null;
   const activePncKey = activeRow?.pncKey || "";
+  const mobileHotspotsVisible = isMobileViewport() && state.mobileHotspotsVisible;
 
   stageTitle.textContent = system.title;
   stageNote.textContent = useGroups
@@ -717,12 +731,22 @@ function renderDiagramRows(system) {
       <section class="diagram-row" id="diagram-row-${escapeHtml(activeDiagram.id)}">
         <article class="diagram-card">
           <div class="diagram-card-header">
-            <h3>${escapeHtml(activeDiagram.title || system.title)}</h3>
-            <div class="diagram-meta">${escapeHtml(getVariantLabel(activeDiagram))}</div>
+            <div>
+              <h3>${escapeHtml(activeDiagram.title || system.title)}</h3>
+              <div class="diagram-meta">${escapeHtml(getVariantLabel(activeDiagram))}</div>
+            </div>
+            ${isMobileViewport() ? `
+              <button
+                type="button"
+                class="diagram-toggle-btn"
+                data-toggle-mobile-hotspots="true"
+                aria-pressed="${mobileHotspotsVisible ? "true" : "false"}"
+              >${mobileHotspotsVisible ? "Hide callouts" : "Show callouts"}</button>
+            ` : ""}
           </div>
           <div class="diagram-canvas is-loading">
             <div class="diagram-loading">Loading diagram...</div>
-            <div class="diagram-figure">
+            <div class="diagram-figure${mobileHotspotsVisible ? " show-mobile-hotspots" : ""}">
               <img
                 class="diagram-image"
                 src="${encodeURI(getPreferredImage(activeDiagram))}"
@@ -837,6 +861,13 @@ function renderDiagramRows(system) {
     });
   }
 
+  for (const button of stageContent.querySelectorAll("[data-toggle-mobile-hotspots='true']")) {
+    button.addEventListener("click", () => {
+      state.mobileHotspotsVisible = !state.mobileHotspotsVisible;
+      render();
+    });
+  }
+
   for (const row of stageContent.querySelectorAll("tbody tr[data-row-key]")) {
     row.addEventListener("mouseenter", () => applyHover(row.dataset.pncKey));
     row.addEventListener("mouseleave", clearHover);
@@ -858,14 +889,24 @@ function renderDiagramRows(system) {
     if (event.target.closest("a")) event.stopPropagation();
   }, true);
 
-  for (const image of stageContent.querySelectorAll(".diagram-image")) {
+  for (const image of stageContent.querySelectorAll(".diagram-image, .system-card-image")) {
     const canvas = image.closest(".diagram-canvas");
+    const markReady = () => image.classList.add("is-ready");
     const clearLoading = () => canvas?.classList.remove("is-loading");
-    if (image.complete) {
+
+    image.classList.remove("is-ready");
+
+    if (image.complete && image.naturalWidth > 0) {
+      markReady();
       clearLoading();
       continue;
     }
-    image.addEventListener("load", clearLoading, { once: true });
+
+    image.addEventListener("load", () => {
+      markReady();
+      clearLoading();
+    }, { once: true });
+
     image.addEventListener("error", clearLoading, { once: true });
   }
 }

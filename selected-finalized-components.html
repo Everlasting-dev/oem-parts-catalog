@@ -3,34 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selected Finalized Components</title>
+  <title>Finalized Components Register</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard-dark.css">
 </head>
 <body>
   <div class="catalog-shell protected-shell">
     <header class="topbar">
       <div class="topbar-copy">
         <p class="eyebrow">Nissan GT-R R35 • OEM Parts Catalog</p>
-        <h1><a class="home-link" href="index.html">Selected Finalized Components</a></h1>
+        <h1><a class="home-link" href="index.html">Finalized Components Register</a></h1>
         <div class="topbar-links">
           <a class="secondary-link" href="index.html">Back to Systems Explorer</a>
         </div>
       </div>
       <div class="topbar-search protected-topbar-copy">
         <label class="field-label" for="protected-password">Protected Access</label>
-        <p class="protected-intro">Enter the shared password to view or download the workbook.</p>
+        <p class="protected-intro">Enter the shared password to access the approved workbook and supporting reference material.</p>
       </div>
     </header>
 
     <main class="protected-main">
+      <aside class="panel protected-sidebar">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">About This Resource</p>
+            <h2>Document Profile</h2>
+          </div>
+        </div>
+        <div class="protected-sidebar-body">
+          <section class="protected-about">
+            <div class="protected-about-head">
+              <h3>Finalized Components Register</h3>
+            </div>
+            <p class="protected-about-copy">
+              This controlled workbook serves as an internal reference for approved part selections, component review, and cross-checking during catalog development work.
+            </p>
+            <p class="protected-about-copy">
+              It complements the R35 OEM Parts Catalog application by providing a mobile-friendly access point for the latest reviewed component register when the desktop workbook is not immediately available.
+            </p>
+          </section>
+
+          <section class="protected-summary">
+            <p class="panel-kicker">Document Details</p>
+            <div class="protected-about-meta">
+              <span class="meta-pill">Author: Everlasting</span>
+              <span class="meta-pill">Document Type: Internal Reference</span>
+              <span class="meta-pill">Access: Password Protected</span>
+            </div>
+          </section>
+        </div>
+      </aside>
+
       <section class="panel protected-panel">
         <div class="panel-head">
           <div>
-            <p class="panel-kicker">Private File</p>
-            <h2 id="protected-title">Selected Finalized Components</h2>
+            <p class="panel-kicker">Controlled Document</p>
+            <h2 id="protected-title">Finalized Components Register</h2>
           </div>
           <span class="meta-pill" id="protected-status">Locked</span>
         </div>
@@ -48,14 +80,14 @@
             </div>
           </form>
 
-          <section id="protected-actions" class="protected-actions" hidden>
+          <section id="protected-actions" class="protected-actions">
             <div class="protected-actions-copy">
-              <h3>Workbook access granted</h3>
-              <p>Use the actions below to open the shared file in Google Drive or download it to your device.</p>
+              <h3 id="protected-actions-title">Workbook access locked</h3>
+              <p id="protected-actions-note">Unlock the page to enable viewing or downloading the workbook.</p>
             </div>
             <div class="protected-action-buttons">
-              <a id="view-workbook-link" class="primary-btn" href="#" target="_blank" rel="noopener noreferrer">View workbook</a>
-              <a id="download-workbook-link" class="secondary-btn" href="#" target="_blank" rel="noopener noreferrer" download>Download Excel</a>
+              <a id="view-workbook-link" class="primary-btn is-disabled" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true" tabindex="-1">View workbook</a>
+              <a id="download-workbook-link" class="secondary-btn is-disabled" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true" tabindex="-1" download>Download Excel</a>
             </div>
           </section>
         </div>
