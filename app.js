@@ -4,9 +4,9 @@ const state = {
   globalQuery: "",
   localQuery: "",
   activeSystemId: null,
-  activeSubsystemId: null,
+  activeGroupId: null,
+  activeDiagramId: null,
   activeRowKey: null,
-  hoveredRowKey: null,
   mobileView: "systems",
 };
 
@@ -33,6 +33,7 @@ const stageTitle = document.getElementById("stage-title");
 const stageNote = document.getElementById("stage-note");
 const matchCount = document.getElementById("match-count");
 const stageContent = document.getElementById("stage-content");
+let isRestoringUrlState = false;
 
 function isMobileViewport() {
   return window.matchMedia("(max-width: 820px)").matches;
@@ -85,6 +86,48 @@ function titleCase(text) {
     .join(" ");
 }
 
+function cleanBulletText(text) {
+  return String(text || "").replace(/Ã¢â‚¬Â¢|â€¢/g, " | ");
+}
+
+const UI_TRANSLATIONS = [
+  [/EGI\s*ﾊｰﾈｽ\s*1/gi, "EGI HARN 1"],
+  [/EGI\s*ﾊｰﾈｽ\s*2/gi, "EGI HARN 2"],
+  [/ALTNTR\s*ﾊｰﾈｽ/gi, "ALTNTR HARN"],
+  [/ｴﾝｼﾞﾝ\s*ﾙｰﾑ/gi, "ENGINE ROOM HARN"],
+  [/ﾒｲﾝ\s*ﾊｰﾈｽ/gi, "MAIN HARN"],
+  [/ﾙｰﾑﾗﾝﾌﾟ\s*&\s*ﾄﾞｱ\s*ﾊｰﾈｽ/gi, "ROOM LAMP & DOOR HARN"],
+  [/ﾎﾞﾃﾞｨ\s*ﾊｰﾈｽ\s*1/gi, "BODY HARN 1"],
+  [/ﾎﾞﾃﾞｨ\s*ﾊｰﾈｽ\s*2/gi, "BODY HARN 2"],
+  [/ﾊﾞｯﾃﾘｰﾏﾜﾘ/gi, "BATTERY AREA"],
+  [/ﾊﾟｲﾋﾟﾝｸﾞ1＆ｷｬﾆｽﾀｰ/gi, "PIPING 1 & CANISTER"],
+  [/ﾊﾟｲﾋﾟﾝｸﾞ2＆ｾﾝｻｰ\(YEARA\)/gi, "PIPING 2 & SENSOR (YEAR A)"],
+  [/ﾊﾟｲﾋﾟﾝｸﾞ2＆ｾﾝｻｰ/gi, "PIPING 2 & SENSOR"],
+  [/パイピング1＆キャニスター/gi, "PIPING 1 & CANISTER"],
+  [/パイピング2＆センサー\(YEARA\)/gi, "PIPING 2 & SENSOR (YEAR A)"],
+  [/パイピング2＆センサー/gi, "PIPING 2 & SENSOR"],
+  [/エンジンルーム/gi, "ENGINE ROOM HARN"],
+  [/エンジン ルーム/gi, "ENGINE ROOM HARN"],
+  [/ボディハーネス\s*1/gi, "BODY HARN 1"],
+  [/ボディハーネス\s*2/gi, "BODY HARN 2"],
+  [/メインハーネス/gi, "MAIN HARN"],
+];
+
+function translateUiText(text) {
+  let value = String(text || "");
+  for (const [pattern, replacement] of UI_TRANSLATIONS) {
+    value = value.replace(pattern, replacement);
+  }
+  return value;
+}
+
+function splitDiagramSubtitle(text) {
+  return cleanBulletText(text)
+    .split("|")
+    .map(chunk => chunk.trim())
+    .filter(Boolean);
+}
+
 function canonicalSystemSlug(diagram) {
   const raw = normalise(diagram.viewFamilyTitle || diagram.title || diagram.id);
   return SYSTEM_MERGE_ALIASES.get(raw) || raw || "untitled-system";
@@ -93,23 +136,69 @@ function canonicalSystemSlug(diagram) {
 function canonicalSystemTitle(diagram) {
   const rawTitle = String(diagram.viewFamilyTitle || diagram.title || "Untitled system").trim();
   const alias = SYSTEM_MERGE_ALIASES.get(normalise(rawTitle));
-  return alias ? titleCase(alias) : rawTitle;
+  return translateUiText(alias ? titleCase(alias) : rawTitle);
 }
 
 function makeSystemId(diagram) {
   return `system-${canonicalSystemSlug(diagram)}`;
 }
 
-function getVariantLabel(diagram) {
-  return diagram.subtitle || diagram.title || diagram.id;
-}
-
 function getPreferredImage(diagram) {
   return diagram?.apiImageUrl || diagram?.imagePath || "";
 }
 
+function getVariantLabel(diagram) {
+  const base = translateUiText(cleanBulletText(diagram.subtitle || diagram.title || diagram.id));
+  return diagram.pageVariantLabel ? `${translateUiText(diagram.pageVariantLabel)} | ${base}` : base;
+}
+
+function getVariantSortKey(diagram) {
+  return diagram?.sortKey || getVariantLabel(diagram);
+}
+
+function getDiagramGroupTitle(diagram) {
+  function normalizeFamilyName(rawText) {
+    const text = translateUiText(cleanBulletText(rawText || ""));
+    if (!text) return "";
+
+    const specMatch = text.match(/specification:\s*([^;|]+)/i);
+    if (specMatch) return specMatch[1].trim();
+
+    const beforeDateMatch = text.match(/^(.+?)\s*\|\s*\d{2}\.\d{4}\s*-\s*(?:\d{2}\.\d{4}|\.\.\.)/i);
+    if (beforeDateMatch) return beforeDateMatch[1].trim();
+
+    const firstChunk = text.split("|").map(chunk => chunk.trim()).filter(Boolean)[0] || "";
+    const cleaned = firstChunk
+      .replace(/app\.\s*model:.*$/i, "")
+      .replace(/\[[^\]]+\]$/g, "")
+      .replace(/[|\s-]+$/g, "")
+      .trim();
+    return cleaned;
+  }
+
+  const fromSubtitle = normalizeFamilyName(diagram?.subtitle || "");
+  if (fromSubtitle && !/^app\.\s*model/i.test(fromSubtitle) && !/^imported from amayama/i.test(fromSubtitle)) {
+    return fromSubtitle;
+  }
+
+  const fromTitle = normalizeFamilyName(diagram?.title || "");
+  if (fromTitle && !/^imported from amayama/i.test(fromTitle)) {
+    return fromTitle;
+  }
+
+  return "Variant";
+}
+
+function makeGroupId(systemId, title) {
+  return `${systemId}::${normalise(title) || "group"}`;
+}
+
 function rowKey(diagramId, hotspot) {
   return `${diagramId}|${hotspot.callout || ""}|${hotspot.partNumber || ""}`;
+}
+
+function pncKey(diagramId, callout) {
+  return `${diagramId}|${callout || ""}`;
 }
 
 function supplierKey(sourceName) {
@@ -125,19 +214,54 @@ function supplierLabel(sourceName) {
   if (key === "amayama") return "Amayama";
   if (key === "npd") return "NPD";
   if (key === "yoshi") return "Yoshi";
-  try { return new URL(sourceName).hostname.replace(/^www\./, ""); } catch { return sourceName; }
+  try {
+    return new URL(sourceName).hostname.replace(/^www\./, "");
+  } catch {
+    return sourceName;
+  }
 }
 
-// Renders an outbound link that always works from file:// pages.
-// Uses a data-href attribute + inline onclick so window.open() is called
-// directly in the user's click gesture — this bypasses popup blockers that
-// can interfere with target="_blank" on file:// origins.
 function outboundLink(url, label, cssClass, titleText) {
-  const safeUrl  = escapeHtml(url);
+  const safeUrl = escapeHtml(url);
   const safeLabel = escapeHtml(label);
-  const safeCls  = escapeHtml(cssClass || "");
+  const safeCls = escapeHtml(cssClass || "");
   const safeTitle = titleText ? ` title="${escapeHtml(titleText)}"` : "";
   return `<a href="${safeUrl}" data-href="${safeUrl}" class="${safeCls}"${safeTitle} onclick="event.preventDefault();event.stopPropagation();window.open(this.dataset.href,'_blank','noopener,noreferrer')">${safeLabel}</a>`;
+}
+
+function buildUrlState() {
+  const params = new URLSearchParams();
+  if (state.activeSystemId) params.set("system", state.activeSystemId);
+  if (state.activeGroupId) params.set("group", state.activeGroupId);
+  if (state.activeDiagramId) params.set("diagram", state.activeDiagramId);
+  if (state.activeRowKey) params.set("row", state.activeRowKey);
+  if (state.globalQuery) params.set("q", state.globalQuery);
+  if (state.localQuery) params.set("local", state.localQuery);
+  return params.toString();
+}
+
+function applyUrlState() {
+  const hash = window.location.hash.startsWith("#") ? window.location.hash.slice(1) : window.location.hash;
+  const params = new URLSearchParams(hash);
+
+  state.activeSystemId = params.get("system") || null;
+  state.activeGroupId = params.get("group") || null;
+  state.activeDiagramId = params.get("diagram") || null;
+  state.activeRowKey = params.get("row") || null;
+  state.globalQuery = params.get("q") || "";
+  state.localQuery = params.get("local") || "";
+
+  if (globalSearch) globalSearch.value = state.globalQuery;
+  if (localSearch) localSearch.value = state.localQuery;
+}
+
+function syncUrlState() {
+  const nextHash = buildUrlState();
+  const currentHash = window.location.hash.startsWith("#") ? window.location.hash.slice(1) : window.location.hash;
+  if (nextHash === currentHash) return;
+  isRestoringUrlState = true;
+  window.location.hash = nextHash;
+  isRestoringUrlState = false;
 }
 
 function buildSystems() {
@@ -173,7 +297,10 @@ function buildSystems() {
             partNumbers.map(partNumber => partsByNumber.get(partNumber)?.description || "").join(" ")
           }`
         ),
-        diagrams: system.diagrams.sort((a, b) => getVariantLabel(a).localeCompare(getVariantLabel(b))),
+        diagrams: system.diagrams.sort((a, b) =>
+          getVariantSortKey(a).localeCompare(getVariantSortKey(b)) ||
+          getVariantLabel(a).localeCompare(getVariantLabel(b))
+        ),
       };
     })
     .sort((a, b) => a.title.localeCompare(b.title));
@@ -191,8 +318,80 @@ function getActiveSystem() {
   return allSystems.find(system => system.id === state.activeSystemId) || null;
 }
 
+function buildGroups(system) {
+  if (!system) return [];
+
+  const groups = new Map();
+  for (const diagram of system.diagrams || []) {
+    const title = getDiagramGroupTitle(diagram);
+    const id = makeGroupId(system.id, title);
+    if (!groups.has(id)) {
+      groups.set(id, {
+        id,
+        title,
+        diagrams: [],
+        partNumbers: new Set(),
+      });
+    }
+
+    const group = groups.get(id);
+    group.diagrams.push(diagram);
+    for (const hotspot of diagram.hotspots || []) {
+      if (hotspot.partNumber) group.partNumbers.add(hotspot.partNumber);
+    }
+  }
+
+  return [...groups.values()]
+    .map(group => ({
+      ...group,
+      partCount: group.partNumbers.size,
+      diagrams: group.diagrams.sort((a, b) =>
+        getVariantSortKey(a).localeCompare(getVariantSortKey(b)) ||
+        getVariantLabel(a).localeCompare(getVariantLabel(b))
+      ),
+    }))
+    .filter(group => group.partCount > 0)
+    .sort((a, b) => a.title.localeCompare(b.title));
+}
+
+function shouldUseGroupLanding(system) {
+  const groups = buildGroups(system);
+  if (groups.length <= 1) return false;
+  return groups.some(group => normalise(group.title) !== normalise(system.title));
+}
+
+function getActiveGroup(system) {
+  if (!system || !shouldUseGroupLanding(system)) return null;
+  return buildGroups(system).find(group => group.id === state.activeGroupId) || null;
+}
+
 function getVisibleSubsystems(system) {
-  return system ? system.diagrams : [];
+  if (!system) return [];
+  if (!shouldUseGroupLanding(system)) return system.diagrams;
+
+  const group = getActiveGroup(system);
+  return group ? group.diagrams : [];
+}
+
+function getHotspotTargets(diagram) {
+  const seen = new Set();
+  const targets = [];
+
+  for (const hotspot of diagram?.hotspots || []) {
+    if (!hotspot.callout) continue;
+    const key = `${hotspot.callout}|${hotspot.x}|${hotspot.y}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    targets.push({
+      callout: hotspot.callout,
+      x: hotspot.x,
+      y: hotspot.y,
+      pncKey: pncKey(diagram.id, hotspot.callout),
+      title: `${hotspot.callout} ${hotspot.partNumber || ""}`.trim(),
+    });
+  }
+
+  return targets;
 }
 
 function buildRowsForDiagram(diagram) {
@@ -217,6 +416,7 @@ function buildRowsForDiagram(diagram) {
 
     const row = {
       key,
+      pncKey: pncKey(diagram.id, hotspot.callout),
       diagramId: diagram.id,
       callout: hotspot.callout || "",
       partNumber: hotspot.partNumber,
@@ -242,11 +442,6 @@ function buildRowsForDiagram(diagram) {
   );
 }
 
-function buildRowsForSystem(system) {
-  if (!system) return [];
-  return system.diagrams.flatMap(buildRowsForDiagram);
-}
-
 function renderSystems() {
   const visibleSystems = getVisibleSystems();
   systemList.innerHTML = "";
@@ -260,13 +455,14 @@ function renderSystems() {
     if (!visibleSystems.some(item => item.id === system.id) && state.globalQuery) button.classList.add("dimmed");
     button.innerHTML = `
       <strong>${escapeHtml(system.title)}</strong>
-      <span>${system.diagrams.length} sub systems • ${system.partNumbers.length} matched parts</span>
+      <span>${system.diagrams.length} sub systems | ${system.partNumbers.length} matched parts</span>
     `;
     button.addEventListener("click", () => {
+      const useGroups = shouldUseGroupLanding(system);
       state.activeSystemId = system.id;
-      state.activeSubsystemId = system.diagrams[0]?.id || null;
+      state.activeGroupId = null;
+      state.activeDiagramId = useGroups ? null : (system.diagrams[0]?.id || null);
       state.activeRowKey = null;
-      state.hoveredRowKey = null;
       state.localQuery = "";
       localSearch.value = "";
       if (isMobileViewport()) setMobileView(system.diagrams.length ? "subsystems" : "stage");
@@ -276,11 +472,52 @@ function renderSystems() {
   }
 }
 
+function renderGroupLanding(system) {
+  const groups = buildGroups(system);
+  stageTitle.textContent = system.title;
+  stageNote.textContent = "Select a family to open its variants, diagrams, and linked parts.";
+  matchCount.textContent = `${system.partNumbers.length} indexed parts`;
+
+  stageContent.innerHTML = `
+    <div class="system-grid">
+      ${groups.map(group => `
+        <article class="system-card" data-group-id="${escapeHtml(group.id)}">
+          ${group.diagrams[0] ? `
+            <div class="system-card-gallery single">
+              <img class="system-card-image" src="${encodeURI(getPreferredImage(group.diagrams[0]))}" alt="${escapeHtml(`${group.title} preview`)}" loading="lazy">
+            </div>
+          ` : ""}
+          <h3>${escapeHtml(group.title)}</h3>
+          <p>${group.diagrams.length} variants | ${group.partCount} matched parts</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+
+  for (const card of stageContent.querySelectorAll(".system-card")) {
+    card.addEventListener("click", () => {
+      const group = groups.find(item => item.id === card.dataset.groupId);
+      if (!group) return;
+      state.activeGroupId = group.id;
+      state.activeDiagramId = group.diagrams[0]?.id || null;
+      state.activeRowKey = null;
+      if (isMobileViewport()) setMobileView("subsystems");
+      render();
+    });
+  }
+}
+
 function renderSubsystems(system) {
   subsystemList.innerHTML = "";
-  subsystemTitle.textContent = system ? system.title : "Choose a system";
+  const useGroups = shouldUseGroupLanding(system);
+  const activeGroup = getActiveGroup(system);
+  const groups = useGroups ? buildGroups(system) : [];
   const subsystems = getVisibleSubsystems(system);
-  subsystemCount.textContent = `${subsystems.length}`;
+
+  subsystemTitle.textContent = system
+    ? (useGroups ? (activeGroup?.title || "Families") : system.title)
+    : "Choose a system";
+  subsystemCount.textContent = `${useGroups ? (activeGroup ? subsystems.length : groups.length) : subsystems.length}`;
 
   if (!system) {
     subsystemList.innerHTML = `
@@ -292,57 +529,59 @@ function renderSubsystems(system) {
     return;
   }
 
+  if (useGroups && !activeGroup) {
+    for (const group of groups) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "subsystem-item";
+      button.innerHTML = `
+        <strong>${escapeHtml(group.title)}</strong>
+        <span>${group.diagrams.length} variants | ${group.partCount} matched parts</span>
+      `;
+      button.addEventListener("click", () => {
+        state.activeGroupId = group.id;
+        state.activeDiagramId = group.diagrams[0]?.id || null;
+        state.activeRowKey = null;
+        render();
+      });
+      subsystemList.appendChild(button);
+    }
+    return;
+  }
+
+  if (useGroups && activeGroup) {
+    const backButton = document.createElement("button");
+    backButton.type = "button";
+    backButton.className = "subsystem-item";
+    backButton.innerHTML = `
+      <strong>All families</strong>
+      <span>Back to the family explorer</span>
+    `;
+    backButton.addEventListener("click", () => {
+      state.activeGroupId = null;
+      state.activeDiagramId = null;
+      state.activeRowKey = null;
+      render();
+    });
+    subsystemList.appendChild(backButton);
+  }
+
   for (const diagram of subsystems) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "subsystem-item";
-    if (diagram.id === state.activeSubsystemId) button.classList.add("active");
+    if (diagram.id === state.activeDiagramId) button.classList.add("active");
     button.innerHTML = `
       <strong>${escapeHtml(diagram.title || system.title)}</strong>
       <span>${escapeHtml(getVariantLabel(diagram))}</span>
     `;
     button.addEventListener("click", () => {
-      state.activeSubsystemId = diagram.id;
+      state.activeDiagramId = diagram.id;
+      state.activeRowKey = null;
       if (isMobileViewport()) setMobileView("stage");
-      document.getElementById(`diagram-row-${CSS.escape(diagram.id)}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
       render();
     });
     subsystemList.appendChild(button);
-  }
-}
-
-function renderSystemLanding(visibleSystems) {
-  stageTitle.textContent = "All systems";
-  stageNote.textContent = "Select a system to open its sub systems, diagrams, and linked parts.";
-  matchCount.textContent = `${visibleSystems.reduce((sum, system) => sum + system.partNumbers.length, 0)} indexed parts`;
-
-  stageContent.innerHTML = `
-    <div class="system-grid">
-      ${visibleSystems.map(system => `
-        <article class="system-card" data-system-id="${escapeHtml(system.id)}">
-          ${system.previewImages.length ? `
-            <div class="system-card-gallery ${system.previewImages.length > 1 ? "dual" : "single"}">
-              ${system.previewImages.map((src, index) => `
-                <img class="system-card-image" src="${encodeURI(src)}" alt="${escapeHtml(`${system.title} preview ${index + 1}`)}" loading="lazy">
-              `).join("")}
-            </div>
-          ` : ""}
-          <h3>${escapeHtml(system.title)}</h3>
-          <p>${system.diagrams.length} sub systems • ${system.partNumbers.length} matched parts</p>
-        </article>
-      `).join("")}
-    </div>
-  `;
-
-  for (const card of stageContent.querySelectorAll(".system-card")) {
-    card.addEventListener("click", () => {
-      const system = allSystems.find(item => item.id === card.dataset.systemId);
-      if (!system) return;
-      state.activeSystemId = system.id;
-      state.activeSubsystemId = system.diagrams[0]?.id || null;
-      if (isMobileViewport()) setMobileView(system.diagrams.length ? "subsystems" : "stage");
-      render();
-    });
   }
 }
 
@@ -365,23 +604,19 @@ function renderPartDetailCard(row) {
     ).join("");
     return `
       <tr class="${isCurrent ? "variant-row-current" : ""}">
-        <td>${escapeHtml(v.period || "—")}</td>
+        <td>${escapeHtml(v.period || "-")}</td>
         <td>
-          ${v.links?.[0]?.url
-            ? outboundLink(v.links[0].url, v.partNumber, "pn-link")
-            : escapeHtml(v.partNumber)
-          }
+          ${v.links?.[0]?.url ? outboundLink(v.links[0].url, v.partNumber, "pn-link") : escapeHtml(v.partNumber)}
           ${isCurrent ? `<span class="variant-current-badge">selected</span>` : ""}
         </td>
-        <td>${escapeHtml(v.description || part.description || "—")}</td>
-        <td>${escapeHtml(v.appliesDetails || "—")}</td>
+        <td>${escapeHtml(v.description || part.description || "-")}</td>
+        <td>${escapeHtml(v.appliesDetails || "-")}</td>
         <td class="col-buy">${vLinks}</td>
       </tr>`;
   }).join("");
 
   const headBtns = (part.links || []).map(link =>
-    outboundLink(link.url, supplierLabel(link.sourceName),
-      `supplier-btn supplier-btn--${supplierKey(link.sourceName)}`)
+    outboundLink(link.url, supplierLabel(link.sourceName), `supplier-btn supplier-btn--${supplierKey(link.sourceName)}`)
   ).join("");
 
   return `
@@ -393,7 +628,7 @@ function renderPartDetailCard(row) {
         <span class="detail-head-links">${headBtns}</span>
       </div>
       ${allVariants.length > 1 ? `
-        <p class="detail-variants-label">${allVariants.length} known variants for this part series — by production period</p>
+        <p class="detail-variants-label">${allVariants.length} known variants for this part series | by production period</p>
         <div class="variants-table-wrap">
           <table class="variants-table">
             <thead>
@@ -414,22 +649,68 @@ function renderPartDetailCard(row) {
 
 function renderDiagramRows(system) {
   if (!system) {
-    renderSystemLanding(getVisibleSystems());
+    const visibleSystems = getVisibleSystems();
+    stageTitle.textContent = "All systems";
+    stageNote.textContent = "Select a system to open its sub systems, diagrams, and linked parts.";
+    matchCount.textContent = `${visibleSystems.reduce((sum, item) => sum + item.partNumbers.length, 0)} indexed parts`;
+
+    stageContent.innerHTML = `
+      <div class="system-grid">
+        ${visibleSystems.map(item => `
+          <article class="system-card" data-system-id="${escapeHtml(item.id)}">
+            ${item.previewImages.length ? `
+              <div class="system-card-gallery ${item.previewImages.length > 1 ? "dual" : "single"}">
+                ${item.previewImages.map((src, index) => `
+                  <img class="system-card-image" src="${encodeURI(src)}" alt="${escapeHtml(`${item.title} preview ${index + 1}`)}" loading="lazy">
+                `).join("")}
+              </div>
+            ` : ""}
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${item.diagrams.length} sub systems | ${item.partNumbers.length} matched parts</p>
+          </article>
+        `).join("")}
+      </div>
+    `;
+
+    for (const card of stageContent.querySelectorAll(".system-card")) {
+      card.addEventListener("click", () => {
+        const nextSystem = allSystems.find(item => item.id === card.dataset.systemId);
+        if (!nextSystem) return;
+        const useGroups = shouldUseGroupLanding(nextSystem);
+        state.activeSystemId = nextSystem.id;
+        state.activeGroupId = null;
+        state.activeDiagramId = useGroups ? null : (nextSystem.diagrams[0]?.id || null);
+        state.activeRowKey = null;
+        if (isMobileViewport()) setMobileView(nextSystem.diagrams.length ? "subsystems" : "stage");
+        render();
+      });
+    }
     return;
   }
 
-  // Only render the active sub-diagram — not all at once
-  const activeDiagram = system.diagrams.find(d => d.id === state.activeSubsystemId) || system.diagrams[0];
+  const useGroups = shouldUseGroupLanding(system);
+  const activeGroup = getActiveGroup(system);
+  const visibleSubsystems = getVisibleSubsystems(system);
+
+  if (useGroups && !activeGroup) {
+    renderGroupLanding(system);
+    return;
+  }
+
+  const activeDiagram = visibleSubsystems.find(diagram => diagram.id === state.activeDiagramId) || visibleSubsystems[0];
   if (!activeDiagram) return;
 
   const diagramRows = buildRowsForDiagram(activeDiagram);
-  const totalParts = system.partNumbers.length;
+  const visiblePncKeys = new Set(diagramRows.map(row => row.pncKey));
+  const hotspotTargets = getHotspotTargets(activeDiagram);
+  const activeRow = diagramRows.find(row => row.key === state.activeRowKey) || null;
+  const activePncKey = activeRow?.pncKey || "";
 
   stageTitle.textContent = system.title;
-  stageNote.textContent = `${system.diagrams.length} sub systems • viewing: ${getVariantLabel(activeDiagram)}`;
-  matchCount.textContent = `${totalParts} indexed parts`;
-
-  const filteredKeys = new Set(diagramRows.map(row => row.key));
+  stageNote.textContent = useGroups
+    ? `${activeGroup?.title || "Family"} | ${visibleSubsystems.length} variants | viewing: ${getVariantLabel(activeDiagram)}`
+    : `${system.diagrams.length} sub systems | viewing: ${getVariantLabel(activeDiagram)}`;
+  matchCount.textContent = `${system.partNumbers.length} indexed parts`;
 
   stageContent.innerHTML = `
     <div class="diagram-stack">
@@ -441,27 +722,26 @@ function renderDiagramRows(system) {
           </div>
           <div class="diagram-canvas is-loading">
             <div class="diagram-loading">Loading diagram...</div>
-            <img
-              class="diagram-image"
-              src="${encodeURI(getPreferredImage(activeDiagram))}"
-              alt="${escapeHtml(activeDiagram.title || system.title)}"
-              decoding="async"
-            >
-            ${(activeDiagram.hotspots || []).map(hotspot => {
-              const key = rowKey(activeDiagram.id, hotspot);
-              const active = key === state.activeRowKey;
-              const visible = filteredKeys.has(key);
-              return `
+            <div class="diagram-figure">
+              <img
+                class="diagram-image"
+                src="${encodeURI(getPreferredImage(activeDiagram))}"
+                alt="${escapeHtml(activeDiagram.title || system.title)}"
+                decoding="async"
+              >
+              ${hotspotTargets.map(target => `
                 <button
-                  class="hotspot${active ? " active" : ""}${visible ? "" : " dimmed"}"
-                  style="left:${hotspot.x}%; top:${hotspot.y}%"
-                  data-row-key="${escapeHtml(key)}"
+                  class="hotspot${target.pncKey === activePncKey ? " active" : ""}${visiblePncKeys.has(target.pncKey) ? "" : " dimmed"}"
+                  style="left:${target.x}%; top:${target.y}%"
+                  data-pnc-key="${escapeHtml(target.pncKey)}"
                   data-diagram-id="${escapeHtml(activeDiagram.id)}"
+                  data-callout="${escapeHtml(target.callout)}"
                   type="button"
-                  title="${escapeHtml(`${hotspot.callout} ${hotspot.partNumber}`)}"
-                ></button>
-              `;
-            }).join("")}
+                  title="${escapeHtml(target.title)}"
+                  aria-label="${escapeHtml(target.title)}"
+                ><span>${escapeHtml(target.callout)}</span></button>
+              `).join("")}
+            </div>
           </div>
         </article>
         <section class="diagram-parts-window">
@@ -478,6 +758,7 @@ function renderDiagramRows(system) {
               <table class="parts-table">
                 <thead>
                   <tr>
+                    <th class="col-ref">Ref</th>
                     <th class="col-oem">OEM</th>
                     <th class="col-desc">Description</th>
                     <th class="col-applies">Applies / Details</th>
@@ -497,23 +778,22 @@ function renderDiagramRows(system) {
                     return `
                     <tr
                       data-row-key="${escapeHtml(row.key)}"
+                      data-pnc-key="${escapeHtml(row.pncKey)}"
                       data-diagram-id="${escapeHtml(row.diagramId)}"
                       class="${isActive ? "active" : ""}"
-                      title="Click to see all variant part numbers"
+                      title="Click to inspect this part and highlight its callout"
                     >
-                      <td class="col-oem">${primaryUrl
-                        ? outboundLink(primaryUrl, row.partNumber, "pn-link")
-                        : escapeHtml(row.partNumber)
-                      }</td>
+                      <td class="col-ref"><span class="callout-badge">${escapeHtml(row.callout || "-")}</span></td>
+                      <td class="col-oem">${primaryUrl ? outboundLink(primaryUrl, row.partNumber, "pn-link") : escapeHtml(row.partNumber)}</td>
                       <td>${escapeHtml(row.description || "")}</td>
-                      <td>${escapeHtml(row.appliesDetails || row.callout || "")}</td>
+                      <td>${escapeHtml(row.appliesDetails || "")}</td>
                       <td>${escapeHtml(row.period || "")}</td>
                       <td>${escapeHtml(row.notes || "")}</td>
                       <td class="col-buy">${supplierBtns}</td>
                     </tr>
                     ${isActive ? `
                     <tr class="expansion-row">
-                      <td colspan="6">${renderPartDetailCard(row)}</td>
+                      <td colspan="7">${renderPartDetailCard(row)}</td>
                     </tr>` : ""}
                     `;
                   }).join("")}
@@ -531,25 +811,25 @@ function renderDiagramRows(system) {
     </div>
   `;
 
-  // ── Hover highlighting (CSS-only, no re-render) ────────────────────────
   function clearHover() {
     for (const el of stageContent.querySelectorAll(".hovered")) el.classList.remove("hovered");
   }
 
-  function applyHover(rowKeyValue) {
+  function applyHover(pncKeyValue) {
     clearHover();
-    if (!rowKeyValue) return;
-    for (const el of stageContent.querySelectorAll(`[data-row-key="${CSS.escape(rowKeyValue)}"]`)) {
+    if (!pncKeyValue) return;
+    for (const el of stageContent.querySelectorAll(`[data-pnc-key="${CSS.escape(pncKeyValue)}"]`)) {
       el.classList.add("hovered");
     }
   }
 
   for (const hotspot of stageContent.querySelectorAll(".hotspot")) {
-    hotspot.addEventListener("mouseenter", () => applyHover(hotspot.dataset.rowKey));
+    hotspot.addEventListener("mouseenter", () => applyHover(hotspot.dataset.pncKey));
     hotspot.addEventListener("mouseleave", clearHover);
     hotspot.addEventListener("click", () => {
-      state.activeRowKey = hotspot.dataset.rowKey || null;
-      state.activeSubsystemId = hotspot.dataset.diagramId || state.activeSubsystemId;
+      const nextRow = diagramRows.find(row => row.pncKey === hotspot.dataset.pncKey) || null;
+      state.activeDiagramId = hotspot.dataset.diagramId || state.activeDiagramId;
+      state.activeRowKey = nextRow?.key || null;
       if (isMobileViewport()) setMobileView("stage");
       render();
       const expansion = stageContent.querySelector(".expansion-row");
@@ -558,13 +838,13 @@ function renderDiagramRows(system) {
   }
 
   for (const row of stageContent.querySelectorAll("tbody tr[data-row-key]")) {
-    row.addEventListener("mouseenter", () => applyHover(row.dataset.rowKey));
+    row.addEventListener("mouseenter", () => applyHover(row.dataset.pncKey));
     row.addEventListener("mouseleave", clearHover);
     row.addEventListener("click", event => {
       if (event.target.closest("a")) return;
       const newKey = state.activeRowKey === row.dataset.rowKey ? null : (row.dataset.rowKey || null);
       state.activeRowKey = newKey;
-      state.activeSubsystemId = row.dataset.diagramId || state.activeSubsystemId;
+      state.activeDiagramId = row.dataset.diagramId || state.activeDiagramId;
       if (isMobileViewport()) setMobileView("stage");
       render();
       if (newKey) {
@@ -574,7 +854,6 @@ function renderDiagramRows(system) {
     });
   }
 
-  // Links inside the table should not trigger row-select.
   stageContent.addEventListener("click", event => {
     if (event.target.closest("a")) event.stopPropagation();
   }, true);
@@ -597,17 +876,42 @@ function render() {
 
   if (state.activeSystemId && !visibleSystems.some(system => system.id === state.activeSystemId)) {
     state.activeSystemId = null;
-    state.activeSubsystemId = null;
+    state.activeGroupId = null;
+    state.activeDiagramId = null;
     state.activeRowKey = null;
   }
 
   const system = getActiveSystem();
+  const useGroups = shouldUseGroupLanding(system);
+
+  if (useGroups) {
+    const group = getActiveGroup(system);
+    state.activeGroupId = group?.id || null;
+
+    if (group && !group.diagrams.some(diagram => diagram.id === state.activeDiagramId)) {
+      state.activeDiagramId = group.diagrams[0]?.id || null;
+      state.activeRowKey = null;
+    }
+
+    if (!group) {
+      state.activeDiagramId = null;
+      state.activeRowKey = null;
+    }
+  } else {
+    state.activeGroupId = null;
+    if (system && !system.diagrams.some(diagram => diagram.id === state.activeDiagramId)) {
+      state.activeDiagramId = system.diagrams[0]?.id || null;
+      state.activeRowKey = null;
+    }
+  }
 
   if (system) {
-    const activeDiagram = system.diagrams.find(d => d.id === state.activeSubsystemId) || system.diagrams[0];
+    const activeDiagram = getVisibleSubsystems(system).find(diagram => diagram.id === state.activeDiagramId);
     if (activeDiagram) {
       const visibleRows = buildRowsForDiagram(activeDiagram);
-      if (state.activeRowKey && !visibleRows.some(row => row.key === state.activeRowKey)) state.activeRowKey = null;
+      if (state.activeRowKey && !visibleRows.some(row => row.key === state.activeRowKey)) {
+        state.activeRowKey = null;
+      }
     }
   }
 
@@ -615,15 +919,16 @@ function render() {
   renderSubsystems(system);
   renderDiagramRows(system);
   renderMobileNav();
+  syncUrlState();
 }
 
-let _debounceGlobal = 0;
-let _debounceLocal = 0;
+let globalSearchDebounce = 0;
+let localSearchDebounce = 0;
 
 globalSearch.addEventListener("input", event => {
   const value = event.target.value || "";
-  clearTimeout(_debounceGlobal);
-  _debounceGlobal = setTimeout(() => {
+  clearTimeout(globalSearchDebounce);
+  globalSearchDebounce = setTimeout(() => {
     state.globalQuery = value;
     render();
   }, 180);
@@ -631,8 +936,8 @@ globalSearch.addEventListener("input", event => {
 
 localSearch.addEventListener("input", event => {
   const value = event.target.value || "";
-  clearTimeout(_debounceLocal);
-  _debounceLocal = setTimeout(() => {
+  clearTimeout(localSearchDebounce);
+  localSearchDebounce = setTimeout(() => {
     state.localQuery = value;
     state.activeRowKey = null;
     render();
@@ -652,4 +957,11 @@ window.addEventListener("resize", () => {
   renderMobileNav();
 });
 
+window.addEventListener("hashchange", () => {
+  if (isRestoringUrlState) return;
+  applyUrlState();
+  render();
+});
+
+applyUrlState();
 render();

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selected Finalized Components</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="catalog-shell protected-shell">
+    <header class="topbar">
+      <div class="topbar-copy">
+        <p class="eyebrow">Nissan GT-R R35 • OEM Parts Catalog</p>
+        <h1><a class="home-link" href="index.html">Selected Finalized Components</a></h1>
+        <div class="topbar-links">
+          <a class="secondary-link" href="index.html">Back to Systems Explorer</a>
+        </div>
+      </div>
+      <div class="topbar-search protected-topbar-copy">
+        <label class="field-label" for="protected-password">Protected Access</label>
+        <p class="protected-intro">Enter the shared password to view or download the workbook.</p>
+      </div>
+    </header>
+
+    <main class="protected-main">
+      <section class="panel protected-panel">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Private File</p>
+            <h2 id="protected-title">Selected Finalized Components</h2>
+          </div>
+          <span class="meta-pill" id="protected-status">Locked</span>
+        </div>
+
+        <div class="protected-panel-body">
+          <div id="protected-message" class="protected-message">
+            This page is restricted. Enter the password below to continue.
+          </div>
+
+          <form id="protected-form" class="protected-form">
+            <label class="field-label" for="protected-password">Password</label>
+            <div class="protected-form-row">
+              <input id="protected-password" name="password" type="password" autocomplete="current-password" placeholder="Enter password">
+              <button type="submit" class="primary-btn">Unlock</button>
+            </div>
+          </form>
+
+          <section id="protected-actions" class="protected-actions" hidden>
+            <div class="protected-actions-copy">
+              <h3>Workbook access granted</h3>
+              <p>Use the actions below to open the shared file in Google Drive or download it to your device.</p>
+            </div>
+            <div class="protected-action-buttons">
+              <a id="view-workbook-link" class="primary-btn" href="#" target="_blank" rel="noopener noreferrer">View workbook</a>
+              <a id="download-workbook-link" class="secondary-btn" href="#" target="_blank" rel="noopener noreferrer" download>Download Excel</a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="selected-finalized-components.js"></script>
+</body>
+</html>

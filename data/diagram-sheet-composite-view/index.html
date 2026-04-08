@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diagram Sheet Viewer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #dceeff;
+      --panel: #f8fbff;
+      --line: #b7d1ea;
+      --text: #15324d;
+      --muted: #577896;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        linear-gradient(180deg, #edf6ff 0%, #dceeff 100%);
+      color: var(--text);
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(248, 251, 255, 0.94);
+      backdrop-filter: blur(8px);
+    }
+    h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .open-link {
+      color: #0b62c4;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    main {
+      width: min(98vw, 4388px);
+      margin: 0 auto;
+      padding: 18px 0 32px;
+    }
+    .slice {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(37, 84, 132, 0.08);
+    }
+    .slice + .slice {
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Diagram Sheet Viewer</h1>
+      <p>4324 x 22364px split into 8 browser-friendly slices.</p>
+    </div>
+    <a class="open-link" href="../diagram-sheet-composite.png">Open original PNG</a>
+  </header>
+  <main>
+    <img class="slice" src="./slice-01.jpg" alt="slice-01.jpg" loading="lazy" />
+    <img class="slice" src="./slice-02.jpg" alt="slice-02.jpg" loading="lazy" />
+    <img class="slice" src="./slice-03.jpg" alt="slice-03.jpg" loading="lazy" />
+    <img class="slice" src="./slice-04.jpg" alt="slice-04.jpg" loading="lazy" />
+    <img class="slice" src="./slice-05.jpg" alt="slice-05.jpg" loading="lazy" />
+    <img class="slice" src="./slice-06.jpg" alt="slice-06.jpg" loading="lazy" />
+    <img class="slice" src="./slice-07.jpg" alt="slice-07.jpg" loading="lazy" />
+    <img class="slice" src="./slice-08.jpg" alt="slice-08.jpg" loading="lazy" />
+  </main>
+</body>
+</html>

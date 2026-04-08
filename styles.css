@@ -44,6 +44,10 @@ a {
   flex-direction: column;
 }
 
+.protected-shell {
+  min-height: 100vh;
+}
+
 .mobile-nav {
   display: none;
 }
@@ -116,6 +120,57 @@ a {
   color: var(--accent-strong);
 }
 
+.topbar-links {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.secondary-link,
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 120ms ease;
+}
+
+.secondary-link,
+.secondary-btn {
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  color: var(--accent-strong);
+}
+
+.secondary-link:hover,
+.secondary-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.primary-btn {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+.is-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .topbar-search input,
 .stage-toolbar input {
   width: 100%;
@@ -132,6 +187,96 @@ a {
 .stage-toolbar input:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(47, 111, 149, 0.12);
+}
+
+.protected-topbar-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.protected-intro {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.protected-main {
+  width: min(760px, calc(100% - 28px));
+  margin: 24px auto;
+}
+
+.protected-panel {
+  overflow: visible;
+}
+
+.protected-panel-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.protected-message {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel-soft);
+  line-height: 1.55;
+}
+
+.protected-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.protected-form.is-busy {
+  opacity: 0.75;
+}
+
+.protected-form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.protected-form-row input {
+  flex: 1;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-soft);
+  color: var(--text);
+  outline: none;
+}
+
+.protected-form-row input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47, 111, 149, 0.12);
+}
+
+.protected-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 4px;
+}
+
+.protected-actions-copy h3 {
+  margin: 0 0 6px;
+}
+
+.protected-actions-copy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.protected-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .workspace {
@@ -340,9 +485,10 @@ a {
 
 .diagram-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 46%;
+  grid-template-columns: minmax(0, 1.15fr) minmax(420px, 0.85fr);
   gap: 12px;
   align-items: stretch;
+  min-height: min(78vh, 900px);
 }
 
 .diagram-card,
@@ -377,8 +523,12 @@ a {
 .diagram-canvas {
   position: relative;
   background: #fff;
-  overflow: hidden;
-  min-height: 220px;
+  overflow: auto;
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .diagram-canvas.is-loading {
@@ -406,9 +556,17 @@ a {
   display: none;
 }
 
+.diagram-figure {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
 .diagram-image {
   display: block;
   width: 100%;
+  min-width: 100%;
   height: auto;
   opacity: 0;
   transition: opacity 240ms ease;
@@ -424,32 +582,64 @@ a {
   overflow: auto;
 }
 
+@media (min-width: 1121px) {
+  .stage-content {
+    overflow: hidden;
+  }
+
+  .diagram-stack {
+    min-height: 100%;
+  }
+
+  .diagram-row {
+    height: min(78vh, 900px);
+  }
+
+  .diagram-card,
+  .diagram-parts-window {
+    height: 100%;
+  }
+}
+
 .hotspot {
   position: absolute;
-  width: 18px;
-  height: 18px;
-  margin-left: -9px;
-  margin-top: -9px;
+  min-width: 22px;
+  height: 22px;
+  margin-left: -11px;
+  margin-top: -11px;
+  padding: 0 6px;
   border: 1px solid rgba(255, 255, 255, 0.95);
   background: rgba(47, 111, 149, 0.74);
-  border-radius: 50%;
+  border-radius: 999px;
   box-shadow: 0 0 0 1px rgba(27, 79, 112, 0.12);
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .hotspot.active,
 .hotspot.hovered {
-  width: 22px;
-  height: 22px;
-  margin-left: -11px;
-  margin-top: -11px;
+  min-width: 26px;
+  height: 26px;
+  margin-left: -13px;
+  margin-top: -13px;
   background: rgba(216, 80, 35, 0.95);
   box-shadow: 0 0 0 3px rgba(216, 80, 35, 0.18);
   z-index: 2;
 }
 
 .hotspot.dimmed {
-  opacity: 0.14;
+  opacity: 0.18;
+}
+
+.hotspot span {
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .parts-table {
@@ -609,6 +799,11 @@ a {
   white-space: nowrap;
 }
 
+.parts-table .col-ref {
+  width: 72px;
+  white-space: nowrap;
+}
+
 .parts-table .col-period {
   width: 120px;
   white-space: nowrap;
@@ -629,6 +824,21 @@ a {
 
 .pn-link:hover {
   text-decoration: underline;
+}
+
+.callout-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #eef6fb;
+  border: 1px solid #c6d9e8;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 700;
 }
 
 /* Supplier buy buttons */
@@ -714,6 +924,8 @@ a {
 
   .diagram-row {
     grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
   }
 }
 
@@ -735,6 +947,10 @@ a {
 
   .topbar h1 {
     font-size: 24px;
+  }
+
+  .topbar-links {
+    margin-top: 8px;
   }
 
   .topbar-search input,
@@ -837,6 +1053,25 @@ a {
     padding: 12px;
   }
 
+  .protected-main {
+    width: min(100% - 24px, 760px);
+    margin: 16px auto;
+  }
+
+  .protected-panel-body {
+    padding: 16px;
+  }
+
+  .protected-form-row {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .secondary-link {
+    width: 100%;
+  }
+
   .part-detail-card-head {
     align-items: flex-start;
     flex-direction: column;
@@ -890,17 +1125,17 @@ a {
   }
 
   .hotspot {
-    width: 20px;
-    height: 20px;
-    margin-left: -10px;
-    margin-top: -10px;
+    min-width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
   }
 
   .hotspot.active,
   .hotspot.hovered {
-    width: 24px;
-    height: 24px;
-    margin-left: -12px;
-    margin-top: -12px;
+    min-width: 28px;
+    height: 28px;
+    margin-left: -14px;
+    margin-top: -14px;
   }
 }

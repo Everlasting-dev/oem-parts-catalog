@@ -1,0 +1,715 @@
+{
+  "generatedAt": "2026-04-06T17:01:14.227Z",
+  "workbook": "data\\master_parts_lab.xlsx",
+  "tempWorkbook": "data\\master_parts_lab.selected-components.tmp.xlsx",
+  "backup": "data\\master_parts_lab.backup-before-selected-components.xlsx",
+  "sheet": "selected components",
+  "filesProcessed": 40,
+  "selections": [
+    {
+      "fileName": "Anti skid control.png",
+      "sectionTitle": "Anti Skid Control",
+      "diagramId": "diagram-087",
+      "matchedCallouts": [
+        "47600",
+        "47900M"
+      ],
+      "selectedRowCount": 2,
+      "flags": [
+        "Unmatched OCR token \"SEC462\" from \"Anti skid control.png\".",
+        "Unmatched OCR token \"SEC462\" from \"Anti skid control.png\".",
+        "Unmatched OCR token \"47910RH\" from \"Anti skid control.png\".",
+        "Unmatched OCR token \"47910MCLHD\" from \"Anti skid control.png\".",
+        "Unmatched OCR token \"B08146-6165M\" from \"Anti skid control.png\"."
+      ]
+    },
+    {
+      "fileName": "Brake servo & servo control.png",
+      "sectionTitle": "Brake Servo & Servo Control",
+      "diagramId": "diagram-086",
+      "matchedCallouts": [
+        "47030E",
+        "47474+A",
+        "47499",
+        "47499+A"
+      ],
+      "selectedRowCount": 4,
+      "flags": []
+    },
+    {
+      "fileName": "Camshaft & valve mechanism.png",
+      "sectionTitle": "Camshaft & Valve Mechanism",
+      "diagramId": "diagram-009",
+      "matchedCallouts": [
+        "13020",
+        "13024",
+        "13024AB",
+        "13024B",
+        "13025",
+        "13028",
+        "13028+A",
+        "13064M",
+        "13070",
+        "13070+A",
+        "13070CA",
+        "13070M",
+        "13085",
+        "13085+A",
+        "13085B",
+        "13086",
+        "13201",
+        "15041N",
+        "15043M",
+        "0812064028"
+      ],
+      "selectedRowCount": 20,
+      "flags": [
+        "Unmatched OCR token \"D10-4028\" from \"Camshaft & valve mechanism.png\".",
+        "Unmatched OCR token \"1307088\" from \"Camshaft & valve mechanism.png\".",
+        "Unmatched OCR token \"908918-3401A\" from \"Camshaft & valve mechanism.png\".",
+        "Unmatched OCR token \"SEC120\" from \"Camshaft & valve mechanism.png\"."
+      ]
+    },
+    {
+      "fileName": "Condenser,liquid tank & piping.png",
+      "sectionTitle": "Condenser,Liquid Tank & Piping",
+      "diagramId": "diagram-055",
+      "matchedCallouts": [
+        "27644EA",
+        "27644EB",
+        "92479",
+        "92490",
+        "92491"
+      ],
+      "selectedRowCount": 5,
+      "flags": [
+        "Unmatched OCR token \"6-56128485\" from \"Condenser,liquid tank & piping.png\".",
+        "Unmatched OCR token \"9292ES\" from \"Condenser,liquid tank & piping.png\"."
+      ]
+    },
+    {
+      "fileName": "Cooling unit.png",
+      "sectionTitle": "Cooling Unit",
+      "diagramId": "diagram-050",
+      "matchedCallouts": [],
+      "selectedRowCount": 0,
+      "flags": [
+        "Unmatched OCR token \"SEC270\" from \"Cooling unit.png\".",
+        "Unmatched OCR token \"2727401\" from \"Cooling unit.png\".",
+        "Unmatched OCR token \"CLEANFILTER\" from \"Cooling unit.png\"."
+      ]
+    },
+    {
+      "fileName": "Cylinder head & rocker cover.png",
+      "sectionTitle": "Cylinder Head & Rocker Cover",
+      "diagramId": "diagram-004",
+      "matchedCallouts": [
+        "13270",
+        "13270+A"
+      ],
+      "selectedRowCount": 2,
+      "flags": []
+    },
+    {
+      "fileName": "Distributor & ignition timing sensor.png",
+      "sectionTitle": "Distributor & Ignition Timing Sensor",
+      "diagramId": "diagram-029",
+      "matchedCallouts": [
+        "22406A",
+        "23731M",
+        "23731T"
+      ],
+      "selectedRowCount": 3,
+      "flags": [
+        "Unmatched OCR token \"B156-6165N\" from \"Distributor & ignition timing sensor.png\".",
+        "Unmatched OCR token \"BDEISE-6165N\" from \"Distributor & ignition timing sensor.png\"."
+      ]
+    },
+    {
+      "fileName": "Electrical unit.png",
+      "sectionTitle": "Electrical Unit",
+      "diagramId": "diagram-040",
+      "matchedCallouts": [
+        "25070"
+      ],
+      "selectedRowCount": 1,
+      "flags": [
+        "Unmatched OCR token \"PEESSURESWITCHS\" from \"Electrical unit.png\"."
+      ]
+    },
+    {
+      "fileName": "Emblem & name label.png",
+      "sectionTitle": "Emblem & Name Label",
+      "diagramId": "diagram-141",
+      "matchedCallouts": [
+        "62311",
+        "78861A",
+        "84815M"
+      ],
+      "selectedRowCount": 3,
+      "flags": [
+        "Unmatched OCR token \"NISSAN\" from \"Emblem & name label.png\".",
+        "Unmatched OCR token \"E2311+4\" from \"Emblem & name label.png\"."
+      ]
+    },
+    {
+      "fileName": "Engine & transmission mounting.png",
+      "sectionTitle": "Engine & Transmission Mounting",
+      "diagramId": "diagram-005",
+      "matchedCallouts": [
+        "11220",
+        "11270N",
+        "11510A",
+        "11510AA",
+        "11510B"
+      ],
+      "selectedRowCount": 5,
+      "flags": [
+        "Unmatched OCR token \"B08918-34014\" from \"Engine & transmission mounting.png\".",
+        "Unmatched OCR token \"08918-34014\" from \"Engine & transmission mounting.png\"."
+      ]
+    },
+    {
+      "fileName": "Engine control module.png",
+      "sectionTitle": "Engine Control Module",
+      "diagramId": "diagram-031",
+      "matchedCallouts": [
+        "22060P",
+        "22693"
+      ],
+      "selectedRowCount": 2,
+      "flags": [
+        "Unmatched OCR token \"08120-83024\" from \"Engine control module.png\".",
+        "Unmatched OCR token \"SEC240\" from \"Engine control module.png\".",
+        "Unmatched OCR token \"2407304A\" from \"Engine control module.png\".",
+        "Unmatched OCR token \"8120-83024\" from \"Engine control module.png\"."
+      ]
+    },
+    {
+      "fileName": "ENGINE CONTROL VACUUM PIPING.png",
+      "sectionTitle": "Engine Control Vacuum Piping",
+      "diagramId": "diagram-030",
+      "matchedCallouts": [
+        "14950",
+        "22365+B"
+      ],
+      "selectedRowCount": 2,
+      "flags": [
+        "Unmatched OCR token \"SEC173\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"18791NSEC173\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"172266\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"SEC173\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"18791IN\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"SEC173\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"SEC173\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"17335X5\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"173367\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"SEC173\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"17333X\" from \"ENGINE CONTROL VACUUM PIPING.png\".",
+        "Unmatched OCR token \"B08145-6205H\" from \"ENGINE CONTROL VACUUM PIPING.png\"."
+      ]
+    },
+    {
+      "fileName": "Fan,compressor & power steering belt.png",
+      "sectionTitle": "Fan,Compressor & Power Steering Belt",
+      "diagramId": "diagram-006",
+      "matchedCallouts": [
+        "11720N",
+        "11750B",
+        "11955"
+      ],
+      "selectedRowCount": 3,
+      "flags": [
+        "Unmatched OCR token \"IDLERPULLEY\" from \"Fan,compressor & power steering belt.png\".",
+        "Unmatched OCR token \"SEC273C11925MAS\" from \"Fan,compressor & power steering belt.png\".",
+        "Unmatched OCR token \"IDLERPULLEY\" from \"Fan,compressor & power steering belt.png\".",
+        "Unmatched OCR token \"SEC273C11923M\" from \"Fan,compressor & power steering belt.png\".",
+        "Unmatched OCR token \"TENSIONPULLEY\" from \"Fan,compressor & power steering belt.png\"."
+      ]
+    },
+    {
+      "fileName": "Floor fitting.png",
+      "sectionTitle": "Floor Fitting",
+      "diagramId": "diagram-112",
+      "matchedCallouts": [
+        "74811",
+        "75898M",
+        "081466165H",
+        "081466205H"
+      ],
+      "selectedRowCount": 4,
+      "flags": [
+        "Unmatched OCR token \"BUB146-6165H\" from \"Floor fitting.png\"."
+      ]
+    },
+    {
+      "fileName": "Front apron & radiator core support.png",
+      "sectionTitle": "Front Apron & Radiator Core Support",
+      "diagramId": "diagram-097",
+      "matchedCallouts": [
+        "21468PB",
+        "62500B",
+        "62501N",
+        "62528U",
+        "62542P",
+        "62542PC",
+        "62542PD",
+        "62550A",
+        "62550AA",
+        "62550AB",
+        "62550AC",
+        "62578N",
+        "62613G",
+        "62667PA",
+        "96010F"
+      ],
+      "selectedRowCount": 15,
+      "flags": [
+        "Unmatched OCR token \"525358\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"46-6205H\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"62667P-7\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"62823M-7\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"625162500B\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"WME2542P\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"HE2542PE\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"HEES42PE\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"HE2542PC\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"-6250087\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"6-6205H\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"F-B6-6205H\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"1468PAV\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"06146-6165H\" from \"Front apron & radiator core support.png\".",
+        "Unmatched OCR token \"HE2542PA\" from \"Front apron & radiator core support.png\"."
+      ]
+    },
+    {
+      "fileName": "Front bumper.png",
+      "sectionTitle": "Front Bumper",
+      "diagramId": "diagram-096",
+      "matchedCallouts": [
+        "62020H",
+        "62050G",
+        "62050GA",
+        "62673",
+        "62674P",
+        "085666205A"
+      ],
+      "selectedRowCount": 6,
+      "flags": []
+    },
+    {
+      "fileName": "Front cover,vacuum pump & fitting.png",
+      "sectionTitle": "Front Cover,Vacuum Pump & Fitting",
+      "diagramId": "diagram-010",
+      "matchedCallouts": [
+        "13035+A",
+        "13035H"
+      ],
+      "selectedRowCount": 2,
+      "flags": []
+    },
+    {
+      "fileName": "Front fender & fitting.png",
+      "sectionTitle": "Front Fender & Fitting",
+      "diagramId": "diagram-098",
+      "matchedCallouts": [
+        "63120A",
+        "63130G",
+        "63130GA"
+      ],
+      "selectedRowCount": 3,
+      "flags": [
+        "Unmatched OCR token \"63131LH\" from \"Front fender & fitting.png\".",
+        "Unmatched OCR token \"63130KRH\" from \"Front fender & fitting.png\".",
+        "Unmatched OCR token \"08913-63654\" from \"Front fender & fitting.png\".",
+        "Unmatched OCR token \"63821RHD\" from \"Front fender & fitting.png\".",
+        "Unmatched OCR token \"63822LH\" from \"Front fender & fitting.png\".",
+        "Unmatched OCR token \"VIEWA\" from \"Front fender & fitting.png\".",
+        "Unmatched OCR token \"EBB146-6165H\" from \"Front fender & fitting.png\".",
+        "Unmatched OCR token \"313064\" from \"Front fender & fitting.png\".",
+        "Unmatched OCR token \"63120A67\" from \"Front fender & fitting.png\"."
+      ]
+    },
+    {
+      "fileName": "Front final drive.png",
+      "sectionTitle": "Front Final Drive",
+      "diagramId": "diagram-072",
+      "matchedCallouts": [
+        "11128Y",
+        "38120Y",
+        "38151Z",
+        "38154Y",
+        "38210J",
+        "38424Y",
+        "38453X",
+        "38453Y",
+        "38540",
+        "38543+A",
+        "38551F",
+        "38589"
+      ],
+      "selectedRowCount": 12,
+      "flags": [
+        "Unmatched OCR token \"H3B4Z4YA\" from \"Front final drive.png\".",
+        "Unmatched OCR token \"M3I82LIX\" from \"Front final drive.png\".",
+        "Unmatched OCR token \"08144-02014\" from \"Front final drive.png\".",
+        "Unmatched OCR token \"9360-\" from \"Front final drive.png\".",
+        "Unmatched OCR token \"51214\" from \"Front final drive.png\".",
+        "Unmatched OCR token \"38333Y\" from \"Front final drive.png\".",
+        "Unmatched OCR token \"3IZ426Y\" from \"Front final drive.png\"."
+      ]
+    },
+    {
+      "fileName": "Front suspension.png",
+      "sectionTitle": "Front Suspension",
+      "diagramId": "diagram-076",
+      "matchedCallouts": [
+        "54040BA"
+      ],
+      "selectedRowCount": 1,
+      "flags": [
+        "Unmatched OCR token \"243500CRH\" from \"Front suspension.png\".",
+        "Unmatched OCR token \"34301CLH\" from \"Front suspension.png\"."
+      ]
+    },
+    {
+      "fileName": "Fuel pump.png",
+      "sectionTitle": "Fuel pump",
+      "diagramId": "amayama-fuel-pump-11-2014-04-2019-track-170a-001-0",
+      "matchedCallouts": [
+        "17001"
+      ],
+      "selectedRowCount": 0,
+      "flags": [
+        "No matching section found in \"Master Catalog\" for \"Fuel pump.png\".",
+        "Callout 17001 matched catalog OEM 17001-JF00A but no row was found in \"Master Catalog\".",
+        "Unmatched OCR token \"SD17020A\" from \"Fuel pump.png\"."
+      ]
+    },
+    {
+      "fileName": "Fuel tank.png",
+      "sectionTitle": "Fuel Tank",
+      "diagramId": "diagram-019",
+      "matchedCallouts": [
+        "17040",
+        "17201W",
+        "17341",
+        "17341+A",
+        "17342+A"
+      ],
+      "selectedRowCount": 5,
+      "flags": []
+    },
+    {
+      "fileName": "Key set & blank key.png",
+      "sectionTitle": "Key Set & Blank Key",
+      "diagramId": "diagram-144",
+      "matchedCallouts": [
+        "80600N"
+      ],
+      "selectedRowCount": 1,
+      "flags": [
+        "Unmatched OCR token \"298103\" from \"Key set & blank key.png\"."
+      ]
+    },
+    {
+      "fileName": "Lubricating system.png",
+      "sectionTitle": "Lubricating System",
+      "diagramId": "diagram-014",
+      "matchedCallouts": [
+        "15010",
+        "15050+A",
+        "15053",
+        "15055"
+      ],
+      "selectedRowCount": 4,
+      "flags": [
+        "Unmatched OCR token \"13030\" from \"Lubricating system.png\".",
+        "Unmatched OCR token \"ICFSBE\" from \"Lubricating system.png\".",
+        "Unmatched OCR token \"Q1B0-63014\" from \"Lubricating system.png\".",
+        "Unmatched OCR token \"81B0-6161A\" from \"Lubricating system.png\".",
+        "Unmatched OCR token \"SEC130\" from \"Lubricating system.png\".",
+        "Unmatched OCR token \"15043N5\" from \"Lubricating system.png\".",
+        "Unmatched OCR token \"B6180-65014\" from \"Lubricating system.png\".",
+        "Unmatched OCR token \"06180-65014\" from \"Lubricating system.png\".",
+        "Unmatched OCR token \"B0B1BO-6161A\" from \"Lubricating system.png\"."
+      ]
+    },
+    {
+      "fileName": "Manifold.png",
+      "sectionTitle": "Manifold",
+      "diagramId": "diagram-011",
+      "matchedCallouts": [
+        "14035",
+        "14040E",
+        "16293M"
+      ],
+      "selectedRowCount": 3,
+      "flags": []
+    },
+    {
+      "fileName": "Manual transmission, transaxle & fitting.png",
+      "sectionTitle": "Manual Transmission, Transaxle & Fitting",
+      "diagramId": "diagram-062",
+      "matchedCallouts": [
+        "32000X"
+      ],
+      "selectedRowCount": 1,
+      "flags": []
+    },
+    {
+      "fileName": "Oil cooler.png",
+      "sectionTitle": "Oil Cooler",
+      "diagramId": "diagram-026",
+      "matchedCallouts": [
+        "21014V",
+        "21304",
+        "21305JA",
+        "21311MB",
+        "21355N",
+        "21355NA",
+        "0823662210"
+      ],
+      "selectedRowCount": 7,
+      "flags": [
+        "Unmatched OCR token \"B081B0-64014\" from \"Oil cooler.png\".",
+        "Unmatched OCR token \"B081B0-6401A\" from \"Oil cooler.png\".",
+        "Unmatched OCR token \"STUDC2\" from \"Oil cooler.png\".",
+        "Unmatched OCR token \"18-30824\" from \"Oil cooler.png\".",
+        "Unmatched OCR token \"8918-3062A\" from \"Oil cooler.png\".",
+        "Unmatched OCR token \"18-3062A\" from \"Oil cooler.png\".",
+        "Unmatched OCR token \"W18-30624\" from \"Oil cooler.png\"."
+      ]
+    },
+    {
+      "fileName": "Piston,crankshaft & flywheel.png",
+      "sectionTitle": "Piston,Crankshaft & Flywheel",
+      "diagramId": "diagram-008",
+      "matchedCallouts": [
+        "12207",
+        "12208M",
+        "12303A",
+        "12303F",
+        "0092651600"
+      ],
+      "selectedRowCount": 5,
+      "flags": [
+        "Unmatched OCR token \"KEY15\" from \"Piston,crankshaft & flywheel.png\"."
+      ]
+    },
+    {
+      "fileName": "Propeller shaft.png",
+      "sectionTitle": "Propeller Shaft",
+      "diagramId": "amayama-propeller-shaft-11-2014-04-2019-track-370a-001-0",
+      "matchedCallouts": [
+        "37000A",
+        "37000AC",
+        "37000F",
+        "37211",
+        "37320"
+      ],
+      "selectedRowCount": 6,
+      "flags": []
+    },
+    {
+      "fileName": "Rear bumper.png",
+      "sectionTitle": "Rear Bumper",
+      "diagramId": "diagram-132",
+      "matchedCallouts": [
+        "79116A",
+        "84856P",
+        "84856PA",
+        "85010C",
+        "85010R",
+        "85010XA",
+        "85010XB",
+        "85012F",
+        "85012FB",
+        "85012J",
+        "85014B",
+        "85014M",
+        "85042M",
+        "85050",
+        "85050E",
+        "85206",
+        "85206C",
+        "85206G",
+        "85207+A",
+        "85294M",
+        "85294MA",
+        "85295MA",
+        "85814S",
+        "85834",
+        "90822X",
+        "90823X",
+        "96250M",
+        "99036"
+      ],
+      "selectedRowCount": 28,
+      "flags": [
+        "Unmatched OCR token \"8O66-6162A\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"SEC265\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"B6350+A\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"10537B5206+A\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"6165H\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"68501\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"6162A-85915D\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"S20103\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"85065M\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"62054\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"61624\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"-10537\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"SEC265\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"Q11-20H\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"BESSS+AY\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"1808566\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"PBL46-6165H\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"2062H\" from \"Rear bumper.png\".",
+        "Unmatched OCR token \"23037\" from \"Rear bumper.png\"."
+      ]
+    },
+    {
+      "fileName": "Rear combination lamp.png",
+      "sectionTitle": "Rear Combination Lamp",
+      "diagramId": "diagram-045",
+      "matchedCallouts": [],
+      "selectedRowCount": 0,
+      "flags": [
+        "Unmatched OCR token \"26330+ACRHD\" from \"Rear combination lamp.png\".",
+        "Unmatched OCR token \"26330+ACLHY\" from \"Rear combination lamp.png\"."
+      ]
+    },
+    {
+      "fileName": "Relay.png",
+      "sectionTitle": "Relay",
+      "diagramId": "diagram-039",
+      "matchedCallouts": [
+        "25224CB",
+        "25630+A"
+      ],
+      "selectedRowCount": 2,
+      "flags": [
+        "Unmatched OCR token \"CANTITHEFT\" from \"Relay.png\".",
+        "Unmatched OCR token \"25224JHONRELAYD\" from \"Relay.png\".",
+        "Unmatched OCR token \"CPWME\" from \"Relay.png\".",
+        "Unmatched OCR token \"RELAY2\" from \"Relay.png\".",
+        "Unmatched OCR token \"CAIRVALYWE\" from \"Relay.png\".",
+        "Unmatched OCR token \"RELAY\" from \"Relay.png\".",
+        "Unmatched OCR token \"RELAYS\" from \"Relay.png\".",
+        "Unmatched OCR token \"0224AB\" from \"Relay.png\".",
+        "Unmatched OCR token \"RELAY2\" from \"Relay.png\".",
+        "Unmatched OCR token \"CAIRPUMP\" from \"Relay.png\".",
+        "Unmatched OCR token \"RELAYD\" from \"Relay.png\"."
+      ]
+    },
+    {
+      "fileName": "Side marker lamp.png",
+      "sectionTitle": "Side Marker Lamp",
+      "diagramId": "diagram-043",
+      "matchedCallouts": [
+        "26040E"
+      ],
+      "selectedRowCount": 1,
+      "flags": [
+        "Unmatched OCR token \"51608\" from \"Side marker lamp.png\".",
+        "Unmatched OCR token \"561604\" from \"Side marker lamp.png\".",
+        "Unmatched OCR token \"261B0RHD\" from \"Side marker lamp.png\".",
+        "Unmatched OCR token \"5E185LH\" from \"Side marker lamp.png\"."
+      ]
+    },
+    {
+      "fileName": "Steering wheel.png",
+      "sectionTitle": "Steering Wheel",
+      "diagramId": "diagram-089",
+      "matchedCallouts": [
+        "48400M",
+        "48433A",
+        "48465M"
+      ],
+      "selectedRowCount": 3,
+      "flags": []
+    },
+    {
+      "fileName": "Switch.png",
+      "sectionTitle": "Switch",
+      "diagramId": "diagram-038",
+      "matchedCallouts": [],
+      "selectedRowCount": 0,
+      "flags": [
+        "Unmatched OCR token \"STOPLAMP\" from \"Switch.png\".",
+        "Unmatched OCR token \"SWITCHD\" from \"Switch.png\".",
+        "Unmatched OCR token \"C0320\" from \"Switch.png\".",
+        "Unmatched OCR token \"CASCDCANCEL\" from \"Switch.png\".",
+        "Unmatched OCR token \"SWITCHS\" from \"Switch.png\"."
+      ]
+    },
+    {
+      "fileName": "Transfer gear.png",
+      "sectionTitle": "Transfer Gear",
+      "diagramId": "diagram-067",
+      "matchedCallouts": [
+        "32140M"
+      ],
+      "selectedRowCount": 1,
+      "flags": []
+    },
+    {
+      "fileName": "TURBO CHARGER.png",
+      "sectionTitle": "Turbo Charger",
+      "diagramId": "amayama-turbo-charger-11-2014-04-2019-track-144a-005-0",
+      "matchedCallouts": [
+        "14445"
+      ],
+      "selectedRowCount": 1,
+      "flags": [
+        "Unmatched OCR token \"F14445+4H\" from \"TURBO CHARGER.png\"."
+      ]
+    },
+    {
+      "fileName": "Water hose & piping.png",
+      "sectionTitle": "Water Hose & Piping",
+      "diagramId": "diagram-025",
+      "matchedCallouts": [
+        "14053MA",
+        "14055B",
+        "21049"
+      ],
+      "selectedRowCount": 3,
+      "flags": [
+        "Unmatched OCR token \"E081AB-61214\" from \"Water hose & piping.png\".",
+        "Unmatched OCR token \"SEC210\" from \"Water hose & piping.png\".",
+        "Unmatched OCR token \"C11060+AD\" from \"Water hose & piping.png\"."
+      ]
+    },
+    {
+      "fileName": "Water pump, cooling fan & thermostat.png",
+      "sectionTitle": "Water Pump, Cooling Fan & Thermostat",
+      "diagramId": "diagram-024",
+      "matchedCallouts": [
+        "13050P",
+        "21010",
+        "21010JA",
+        "21200",
+        "21210A"
+      ],
+      "selectedRowCount": 5,
+      "flags": [
+        "Unmatched OCR token \"SEC135\" from \"Water pump, cooling fan & thermostat.png\".",
+        "Unmatched OCR token \"2101040\" from \"Water pump, cooling fan & thermostat.png\".",
+        "Unmatched OCR token \"SEC214\" from \"Water pump, cooling fan & thermostat.png\".",
+        "Unmatched OCR token \"213515\" from \"Water pump, cooling fan & thermostat.png\".",
+        "Unmatched OCR token \"SEC214\" from \"Water pump, cooling fan & thermostat.png\".",
+        "Unmatched OCR token \"21303\" from \"Water pump, cooling fan & thermostat.png\".",
+        "Unmatched OCR token \"FE08156-61633\" from \"Water pump, cooling fan & thermostat.png\"."
+      ]
+    },
+    {
+      "fileName": "wiring.png",
+      "sectionTitle": "Wiring",
+      "diagramId": "diagram-035",
+      "matchedCallouts": [],
+      "selectedRowCount": 0,
+      "flags": []
+    }
+  ]
+}
