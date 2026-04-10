@@ -174,6 +174,7 @@ a {
 }
 
 .topbar-search input,
+.panel-toolbar input,
 .stage-toolbar input {
   width: 100%;
   height: 40px;
@@ -187,9 +188,16 @@ a {
 }
 
 .topbar-search input:focus,
+.panel-toolbar input:focus,
 .stage-toolbar input:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(47, 111, 149, 0.12);
+}
+
+.panel-toolbar input:disabled,
+.stage-toolbar input:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
 }
 
 .protected-topbar-copy {
@@ -376,6 +384,12 @@ a {
   line-height: 1.1;
 }
 
+.panel-toolbar {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
 .panel-note {
   margin: 4px 0 0;
   color: var(--muted);
@@ -463,6 +477,68 @@ a {
   padding: 12px 14px;
   border-bottom: 1px solid var(--line);
   background: #fbfcfd;
+}
+
+.stage-context-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #fcfdff, #f6f9fc);
+}
+
+.stage-breadcrumbs,
+.stage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.stage-breadcrumbs {
+  flex: 1 1 auto;
+}
+
+.stage-actions {
+  justify-content: flex-end;
+}
+
+.crumb-btn,
+.context-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-soft);
+  color: var(--accent-strong);
+  min-height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.crumb-btn:hover,
+.context-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.context-btn:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.crumb-current,
+.crumb-separator,
+.context-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.crumb-current {
+  font-weight: 600;
+  color: var(--text);
 }
 
 .stage-content {
@@ -1055,6 +1131,7 @@ a {
   }
 
   .topbar-search input,
+  .panel-toolbar input,
   .stage-toolbar input {
     height: 44px;
     font-size: 16px;
@@ -1102,6 +1179,8 @@ a {
   }
 
   .panel-head,
+  .panel-toolbar,
+  .stage-context-bar,
   .stage-toolbar,
   .stage-content {
     padding-left: 14px;
@@ -1152,6 +1231,15 @@ a {
 
   .diagram-card-header {
     flex-wrap: wrap;
+  }
+
+  .stage-context-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stage-actions {
+    justify-content: flex-start;
   }
 
   .part-detail-card {
@@ -1234,6 +1322,8 @@ a {
 
   .diagram-card-header,
   .diagram-parts-head,
+  .panel-toolbar,
+  .stage-context-bar,
   .stage-toolbar {
     padding: 10px 12px;
   }

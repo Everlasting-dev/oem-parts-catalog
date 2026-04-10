@@ -3,8 +3,8 @@
  * download-api-images.js
  *
  * Downloads every unique apiImageUrl in catalog-data.json, saves them to
- * assets/diagrams/api/, then updates each diagram's imagePath so the local
- * file is used everywhere (gallery, main catalog, index page).
+ * assets/diagrams/api/, then updates each diagram's imagePath so the matching
+ * local API image is used everywhere (gallery, main catalog, index page).
  *
  * Usage:  node scripts/download-api-images.js
  */
@@ -104,7 +104,8 @@ async function main() {
   console.log(`  Skipped    : ${skipped}`);
   console.log(`  Failed     : ${failed}`);
 
-  // Update catalog-data.json: fill imagePath for diagrams that had none
+  // Update catalog-data.json so API-backed diagrams always point to the
+  // matching cached API image. This keeps hotspot coordinates aligned.
   let updated = 0;
   for (const d of catalog.diagrams || []) {
     if (!d.apiImageUrl) continue;
@@ -113,9 +114,7 @@ async function main() {
     const fullPath = path.join(ROOT, relPath);
     if (!fs.existsSync(fullPath) || fs.statSync(fullPath).size === 0) continue;
 
-    // Only set imagePath if missing or pointing to a non-existent file
-    const existingOk = d.imagePath && fs.existsSync(path.join(ROOT, d.imagePath));
-    if (!existingOk) {
+    if (d.imagePath !== relPath) {
       d.imagePath = relPath;
       updated++;
     }

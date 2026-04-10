@@ -28,7 +28,7 @@
 
     <nav class="mobile-nav" aria-label="Mobile section navigation">
       <button type="button" class="mobile-nav-btn active" data-mobile-view="systems">Systems</button>
-      <button type="button" class="mobile-nav-btn" data-mobile-view="subsystems">Sub Systems</button>
+      <button type="button" class="mobile-nav-btn" data-mobile-view="subsystems">Subcategories</button>
       <button type="button" class="mobile-nav-btn" data-mobile-view="stage">Diagram</button>
     </nav>
 
@@ -37,8 +37,8 @@
         <section class="panel systems-panel" id="systems-panel">
           <div class="panel-head">
             <div>
-              <p class="panel-kicker">Systems</p>
-              <h2>All systems</h2>
+              <p id="system-panel-kicker" class="panel-kicker">Systems</p>
+              <h2 id="system-panel-title">Browse by category</h2>
             </div>
             <span id="system-count" class="meta-pill">0</span>
           </div>
@@ -48,10 +48,14 @@
         <section class="panel subsystems-panel" id="subsystems-panel">
           <div class="panel-head">
             <div>
-              <p class="panel-kicker">Sub Systems</p>
+              <p class="panel-kicker">Subcategories</p>
               <h2 id="subsystem-title">Choose a system</h2>
             </div>
             <span id="subsystem-count" class="meta-pill">0</span>
+          </div>
+          <div class="panel-toolbar">
+            <label class="field-label" for="subsystem-search">Filter current list</label>
+            <input id="subsystem-search" type="search" placeholder="Select a system to filter families or diagrams..." autocomplete="off" disabled>
           </div>
           <div id="subsystem-list" class="subsystem-list"></div>
         </section>
@@ -68,8 +72,13 @@
             <span id="match-count" class="meta-pill">0 matched parts</span>
           </div>
 
+          <div id="stage-context-bar" class="stage-context-bar">
+            <div id="stage-breadcrumbs" class="stage-breadcrumbs"></div>
+            <div id="stage-actions" class="stage-actions"></div>
+          </div>
+
           <div class="stage-toolbar">
-            <label class="field-label" for="local-search">Search current section</label>
+            <label id="local-search-label" class="field-label" for="local-search">Filter parts in current diagram</label>
             <input id="local-search" type="search" placeholder="Filter items in the selected system..." autocomplete="off">
           </div>
 

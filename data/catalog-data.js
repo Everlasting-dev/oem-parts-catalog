@@ -91812,7 +91812,7 @@ window.CATALOG_DATA = {
       "title": "Bare & Short Engine",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6082440_4?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/001-bare-short-engine.gif",
+      "imagePath": "assets/diagrams/api/51da2d_e47a74d27e1b40a8aa9e37e54b924cb3.png",
       "hotspots": [],
       "apiImageUrl": "https://epc.partsbooster.com/schemas/nissan/e47a74d27e1b40a8aa9e37e54b924cb3.png"
     },
@@ -91821,7 +91821,7 @@ window.CATALOG_DATA = {
       "title": "Engine Gasket Kit",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5875129_68?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/002-engine-gasket-kit.gif",
+      "imagePath": "assets/diagrams/api/51da2d_afe72e1987143d1fff31fa24246e04f7.png",
       "hotspots": [
         {
           "callout": "11011K",
@@ -91845,7 +91845,7 @@ window.CATALOG_DATA = {
       "title": "Cylinder Block & Oil Pan",
       "subtitle": "Specification: COMPONENT PARTS; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6422756_72?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/003-cylinder-block-oil-pan.gif",
+      "imagePath": "assets/diagrams/api/51da2d_8a99a86395ae9f62cfd55f98e3e9486b.png",
       "hotspots": [
         {
           "callout": "11010",
@@ -91946,7 +91946,7 @@ window.CATALOG_DATA = {
       "title": "Cylinder Head & Rocker Cover",
       "subtitle": "Specification: ASSEMBLY; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5841737_8?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/004-cylinder-head-rocker-cover.gif",
+      "imagePath": "assets/diagrams/api/51da2d_455d4e4f4f22603d16ff0b3c8431b540.png",
       "hotspots": [
         {
           "callout": "10005",
@@ -92110,7 +92110,7 @@ window.CATALOG_DATA = {
       "title": "Engine & Transmission Mounting",
       "subtitle": "Specification: E/G MOUNT; App. model: VR38DETT • [08.2017-]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6871899_43?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/005-engine-transmission-mounting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_026603ab015a446fe7a505bab1394f7f.png",
       "hotspots": [
         {
           "callout": "11220",
@@ -92204,7 +92204,7 @@ window.CATALOG_DATA = {
       "title": "Fan,Compressor & Power Steering Belt",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5958311_56?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/006-fan-compressor-power-steering-belt.gif",
+      "imagePath": "assets/diagrams/api/51da2d_c6a0864586bc1d1611bbda675240f211.png",
       "hotspots": [
         {
           "callout": "11955",
@@ -92235,7 +92235,7 @@ window.CATALOG_DATA = {
       "title": "Crankcase Ventilation",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5945870_0?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/007-crankcase-ventilation.gif",
+      "imagePath": "assets/diagrams/api/51da2d_1447cccfba823cea006b40dc84ec56c2.png",
       "hotspots": [
         {
           "callout": "11810",
@@ -92336,7 +92336,7 @@ window.CATALOG_DATA = {
       "title": "Piston,Crankshaft & Flywheel",
       "subtitle": "Specification: MAIN PARTS; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5831616_60?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/008-piston-crankshaft-flywheel.gif",
+      "imagePath": "assets/diagrams/api/51da2d_bd437d9b4a93193c0b34ea34f0c2aa76.png",
       "hotspots": [
         {
           "callout": "12010",
@@ -92472,7 +92472,7 @@ window.CATALOG_DATA = {
       "title": "Camshaft & Valve Mechanism",
       "subtitle": "Specification: CAMSHAFT & VALVE MECHANISM; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6753844_48?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/009-camshaft-valve-mechanism.gif",
+      "imagePath": "assets/diagrams/api/51da2d_8fc25309c4812fe13c43f8ebe0d58436.png",
       "hotspots": [
         {
           "callout": "13020",
@@ -92769,7 +92769,7 @@ window.CATALOG_DATA = {
       "title": "Front Cover,Vacuum Pump & Fitting",
       "subtitle": "Specification: FRONT COVER; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6327217_20?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/010-front-cover-vacuum-pump-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_659fc0676bd4bca9fd890f4625ef6eac.png",
       "hotspots": [
         {
           "callout": "13035",
@@ -92898,7 +92898,7 @@ window.CATALOG_DATA = {
       "title": "Manifold",
       "subtitle": "Specification: INTAKE PARTS; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5906142_24?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/011-manifold.gif",
+      "imagePath": "assets/diagrams/api/51da2d_af79f6e2c6f3c478695b6b19f5cefd23.png",
       "hotspots": [
         {
           "callout": "14003",
@@ -92957,7 +92957,7 @@ window.CATALOG_DATA = {
       "title": "Turbo Charger",
       "subtitle": "Specification: TURBO CHARGER(LH); App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6927745_84?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/012-turbo-charger.gif",
+      "imagePath": "assets/diagrams/api/51da2d_44040a464cc91c3c55792f6fed29cf1c.png",
       "hotspots": [
         {
           "callout": "14432",
@@ -93170,7 +93170,7 @@ window.CATALOG_DATA = {
       "title": "Secondary Air System",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5903727_80?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/013-secondary-air-system.gif",
+      "imagePath": "assets/diagrams/api/51da2d_9a1755c781ee807b4a2ea45cfeca8083.png",
       "hotspots": [
         {
           "callout": "14810",
@@ -93369,7 +93369,7 @@ window.CATALOG_DATA = {
       "title": "Lubricating System",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6807678_36?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/014-lubricating-system.gif",
+      "imagePath": "assets/diagrams/api/51da2d_b5cd8ec6a85aeef511423ff54f3bf436.png",
       "hotspots": [
         {
           "callout": "15010",
@@ -93484,7 +93484,7 @@ window.CATALOG_DATA = {
       "title": "Throttle Chamber",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5992507_112?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/015-throttle-chamber.gif",
+      "imagePath": "assets/diagrams/api/51da2d_19127ecb75ca98995d85e82ac7d956fa.png",
       "hotspots": [
         {
           "callout": "16292M",
@@ -93515,7 +93515,7 @@ window.CATALOG_DATA = {
       "title": "Fuel Strainer & Fuel Hose",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5783244_104?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/016-fuel-strainer-fuel-hose.gif",
+      "imagePath": "assets/diagrams/api/51da2d_070ac4578811eb54ad5828a6d1443c13.png",
       "hotspots": [
         {
           "callout": "16603",
@@ -93693,7 +93693,7 @@ window.CATALOG_DATA = {
       "title": "Air Cleaner",
       "subtitle": "Specification: RH; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6550272_96?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/017-air-cleaner.gif",
+      "imagePath": "assets/diagrams/api/51da2d_8c7a969633fce5200675711a7319ac16.png",
       "hotspots": [
         {
           "callout": "16500",
@@ -93836,7 +93836,7 @@ window.CATALOG_DATA = {
       "title": "Fuel Pump Controller",
       "subtitle": "Fuel pump modulator / controller shown here, not the full pump assembly.",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6147179_128?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/018-fuel-pump.gif",
+      "imagePath": "assets/diagrams/api/51da2d_1425898d797e0067753f092fbfd1b9b1.png",
       "hotspots": [
         {
           "callout": "17001",
@@ -93860,7 +93860,7 @@ window.CATALOG_DATA = {
       "title": "Fuel Tank",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6818888_124?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/019-fuel-tank.gif",
+      "imagePath": "assets/diagrams/api/51da2d_2ac04b0a49a62d28fd23e236108a201b.png",
       "hotspots": [
         {
           "callout": "17040",
@@ -94185,7 +94185,7 @@ window.CATALOG_DATA = {
       "title": "Fuel Piping",
       "subtitle": "Specification: FUEL PIPING; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6568148_116?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/020-fuel-piping.gif",
+      "imagePath": "assets/diagrams/api/51da2d_7a3790a757a33af0b6185cbbee30b146.png",
       "hotspots": [
         {
           "callout": "17507",
@@ -94335,7 +94335,7 @@ window.CATALOG_DATA = {
       "title": "Accelerator Linkage",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6332958_108?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/021-accelerator-linkage.gif",
+      "imagePath": "assets/diagrams/api/51da2d_0deef2f38a742ae746ab42b226df334c.png",
       "hotspots": [
         {
           "callout": "18002",
@@ -94359,7 +94359,7 @@ window.CATALOG_DATA = {
       "title": "Exhaust Tube & Muffler",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6953273_152?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/022-exhaust-tube-muffler.gif",
+      "imagePath": "assets/diagrams/api/51da2d_a72e665c190785ab9371c81884064cc2.png",
       "hotspots": [
         {
           "callout": "20100",
@@ -94516,7 +94516,7 @@ window.CATALOG_DATA = {
       "title": "Catalyst Converter,Exhaust Fuel & Ure In",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6252058_163?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/023-catalyst-converter-exhaust-fuel-ure-in.gif",
+      "imagePath": "assets/diagrams/api/51da2d_5db9048e14d87dc64af487b90457c849.png",
       "hotspots": [
         {
           "callout": "20802",
@@ -94554,7 +94554,7 @@ window.CATALOG_DATA = {
       "title": "Water Pump, Cooling Fan & Thermostat",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6495797_136?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/024-water-pump-cooling-fan-thermostat.gif",
+      "imagePath": "assets/diagrams/api/51da2d_2663ee0bd0309741536e39fcc092b95b.png",
       "hotspots": [
         {
           "callout": "11060",
@@ -94711,7 +94711,7 @@ window.CATALOG_DATA = {
       "title": "Water Hose & Piping",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6573282_132?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/025-water-hose-piping.gif",
+      "imagePath": "assets/diagrams/api/51da2d_ae97f320a855362506085bb334210df3.png",
       "hotspots": [
         {
           "callout": "14055",
@@ -94798,7 +94798,7 @@ window.CATALOG_DATA = {
       "title": "Oil Cooler",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6768183_159?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/026-oil-cooler.gif",
+      "imagePath": "assets/diagrams/api/51da2d_248b8ae195ac21f377d9971b9eaaccb4.png",
       "hotspots": [
         {
           "callout": "21304",
@@ -94948,7 +94948,7 @@ window.CATALOG_DATA = {
       "title": "Radiator,Shroud & Inverter Cooling",
       "subtitle": "Specification: FITTING PARTS; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6051004_140?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/027-radiator-shroud-inverter-cooling.gif",
+      "imagePath": "assets/diagrams/api/51da2d_61ee836882588c38f836828ebe6c388e.png",
       "hotspots": [
         {
           "callout": "21430",
@@ -95070,7 +95070,7 @@ window.CATALOG_DATA = {
       "title": "Ignition System",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6040128_175?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/028-ignition-system.gif",
+      "imagePath": "assets/diagrams/api/51da2d_3b2c952e14013d47b5df9df8a57d2c97.png",
       "hotspots": [
         {
           "callout": "22401",
@@ -95101,7 +95101,7 @@ window.CATALOG_DATA = {
       "title": "Distributor & Ignition Timing Sensor",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6778801_195?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/029-distributor-ignition-timing-sensor.gif",
+      "imagePath": "assets/diagrams/api/51da2d_be7120575482c1d6ce8397c7a7b8aa23.png",
       "hotspots": [
         {
           "callout": "081566165N",
@@ -95146,7 +95146,7 @@ window.CATALOG_DATA = {
       "title": "Engine Control Vacuum Piping",
       "subtitle": "Specification: PIPING1&CANISTER; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6356554_183?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/030-engine-control-vacuum-piping.gif",
+      "imagePath": "assets/diagrams/api/51da2d_955e924c418da479fe722d91973562f8.png",
       "hotspots": [
         {
           "callout": "14908",
@@ -95331,7 +95331,7 @@ window.CATALOG_DATA = {
       "title": "Engine Control Module",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5652757_191?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/031-engine-control-module.gif",
+      "imagePath": "assets/diagrams/api/51da2d_1f7a3f53d58cecf73c2e12108ba2e54e.png",
       "hotspots": [
         {
           "callout": "22611",
@@ -95418,7 +95418,7 @@ window.CATALOG_DATA = {
       "title": "Alternator Fitting",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6652151_167?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/032-alternator-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_561ce4fcf28dec1e8132a81ffb5fb536.png",
       "hotspots": [
         {
           "callout": "11716",
@@ -95463,7 +95463,7 @@ window.CATALOG_DATA = {
       "title": "Alternator",
       "subtitle": "Specification: ALTERNATOR ASSY; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5776762_179?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/033-alternator.gif",
+      "imagePath": "assets/diagrams/api/51da2d_6ff899a827d9a4d0066e6be8245e6111.png",
       "hotspots": [
         {
           "callout": "23100",
@@ -95592,7 +95592,7 @@ window.CATALOG_DATA = {
       "title": "Starter Motor",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6301152_171?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/034-starter-motor.gif",
+      "imagePath": "assets/diagrams/api/51da2d_60f8fdaf5ee37af5a4e0230d788b6d4f.png",
       "hotspots": [
         {
           "callout": "23300",
@@ -95749,7 +95749,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "Specification: ALTNTR HARN; App. model: C • [11.2014-04.2016]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6306914_236?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/035-wiring.gif",
+      "imagePath": "assets/diagrams/api/51da2d_f81efb72f7c032031390b3616aa46d73.png",
       "hotspots": [
         {
           "callout": "24020",
@@ -95913,7 +95913,7 @@ window.CATALOG_DATA = {
       "title": "Battery & Battery Mounting",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5958569_296?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/036-battery-battery-mounting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_e7c2c4419024391d1e1d4662cdd8dd86.png",
       "hotspots": [
         {
           "callout": "24410",
@@ -95993,7 +95993,7 @@ window.CATALOG_DATA = {
       "title": "Instrument Meter & Gauge",
       "subtitle": "Specification: FRONT VIEW; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6956498_300?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/037-instrument-meter-gauge.gif",
+      "imagePath": "assets/diagrams/api/51da2d_c3a0e9af4db234ebbee9613c6e5f8ed0.png",
       "hotspots": [
         {
           "callout": "24813",
@@ -96038,7 +96038,7 @@ window.CATALOG_DATA = {
       "title": "Switch",
       "subtitle": "Specification: BODY; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6887317_363?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/038-switch.gif",
+      "imagePath": "assets/diagrams/api/51da2d_51ec81ed2b63244d2eba9b0ed7953941.png",
       "hotspots": [
         {
           "callout": "25320",
@@ -96104,7 +96104,7 @@ window.CATALOG_DATA = {
       "title": "Relay",
       "subtitle": "Specification: ENGINE ROOM; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5787881_224?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/039-relay.gif",
+      "imagePath": "assets/diagrams/api/51da2d_47dbcb92e34746f5a27f71605ba78b16.png",
       "hotspots": [
         {
           "callout": "25630",
@@ -96156,7 +96156,7 @@ window.CATALOG_DATA = {
       "title": "Electrical Unit",
       "subtitle": "Specification: ENGINE ROOM; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6731358_325?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/040-electrical-unit.gif",
+      "imagePath": "assets/diagrams/api/51da2d_0d5695192bfcfb6a88237fe8add1c890.png",
       "hotspots": [
         {
           "callout": "25070",
@@ -96236,7 +96236,7 @@ window.CATALOG_DATA = {
       "title": "Headlamp",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5872008_354?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/041-headlamp.gif",
+      "imagePath": "assets/diagrams/api/51da2d_4e9d62ab19288b9b35d7da52ebe67bd8.png",
       "hotspots": [
         {
           "callout": "26010",
@@ -96316,7 +96316,7 @@ window.CATALOG_DATA = {
       "title": "Front Combination Lamp",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6672732_382?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/042-front-combination-lamp.gif",
+      "imagePath": "assets/diagrams/api/51da2d_c88bdfe9c8770775c5ef1d92a63bd9ab.png",
       "hotspots": [
         {
           "callout": "26600",
@@ -96389,7 +96389,7 @@ window.CATALOG_DATA = {
       "title": "Side Marker Lamp",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6095976_390?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/043-side-marker-lamp.gif",
+      "imagePath": "assets/diagrams/api/51da2d_a31aa1a06e929fcb407e5ebf47bbff43.png",
       "hotspots": [
         {
           "callout": "26180",
@@ -96434,7 +96434,7 @@ window.CATALOG_DATA = {
       "title": "Room Lamp",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5828248_216?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/044-room-lamp.gif",
+      "imagePath": "assets/diagrams/api/51da2d_9cf47bd603b0b5453e6084f119e85ad5.png",
       "hotspots": [
         {
           "callout": "26428",
@@ -96479,7 +96479,7 @@ window.CATALOG_DATA = {
       "title": "Rear Combination Lamp",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5951933_208?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/045-rear-combination-lamp.gif",
+      "imagePath": "assets/diagrams/api/51da2d_ca4cf2cca9dec97ab8e87c2eb700a80a.png",
       "hotspots": [
         {
           "callout": "26550",
@@ -96552,7 +96552,7 @@ window.CATALOG_DATA = {
       "title": "Licence Plate Lamp",
       "subtitle": "Specification: LED; App. model: C • [07.2018-]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6725881_203?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/046-licence-plate-lamp.gif",
+      "imagePath": "assets/diagrams/api/51da2d_38ef77fae0fe222ab561552134bb0796.png",
       "hotspots": [
         {
           "callout": "26510N",
@@ -96569,7 +96569,7 @@ window.CATALOG_DATA = {
       "title": "Lamps (Others)",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5627931_199?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/047-lamps-others.gif",
+      "imagePath": "assets/diagrams/api/51da2d_e921dfc3a6398e91d6934766dc2adfb8.png",
       "hotspots": [
         {
           "callout": "26590",
@@ -96593,7 +96593,7 @@ window.CATALOG_DATA = {
       "title": "High Mounting Stop Lamp",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/403312_220?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/048-high-mounting-stop-lamp.gif",
+      "imagePath": "assets/diagrams/api/51da2d_15f95ab4133ef624ca1c76380a05a564.png",
       "hotspots": [
         {
           "callout": "26570M",
@@ -96610,7 +96610,7 @@ window.CATALOG_DATA = {
       "title": "Heater & Blower Unit",
       "subtitle": "Specification: HEATER-FR (2); App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6785541_309?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/049-heater-blower-unit.gif",
+      "imagePath": "assets/diagrams/api/51da2d_6314653ead88ca36abfa33ace681689d.png",
       "hotspots": [
         {
           "callout": "27010",
@@ -96809,7 +96809,7 @@ window.CATALOG_DATA = {
       "title": "Cooling Unit",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6397601_386?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/050-cooling-unit.gif",
+      "imagePath": "assets/diagrams/api/51da2d_688982273fc0afa5823effc4fcd86be8.png",
       "hotspots": [
         {
           "callout": "27229",
@@ -96952,7 +96952,7 @@ window.CATALOG_DATA = {
       "title": "Control Unit",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/7000748_304?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/051-control-unit.gif",
+      "imagePath": "assets/diagrams/api/51da2d_8aa514aa767c5e5ea88f04bdb8bb5cf7.png",
       "hotspots": [
         {
           "callout": "27705",
@@ -97004,7 +97004,7 @@ window.CATALOG_DATA = {
       "title": "Nozzle & Duct",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6146206_270?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/052-nozzle-duct.gif",
+      "imagePath": "assets/diagrams/api/51da2d_d8573aab8ea02ff8e25796ba3784873b.png",
       "hotspots": [
         {
           "callout": "27670",
@@ -97049,7 +97049,7 @@ window.CATALOG_DATA = {
       "title": "Compressor",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6103183_350?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/053-compressor.gif",
+      "imagePath": "assets/diagrams/api/51da2d_cb1d8d3de8202ceefe818851bcd70f7d.png",
       "hotspots": [
         {
           "callout": "27630",
@@ -97066,7 +97066,7 @@ window.CATALOG_DATA = {
       "title": "Compressor Mounting & Fitting",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6921436_321?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/054-compressor-mounting-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_9f204116953181ee1234bd453721304e.png",
       "hotspots": [
         {
           "callout": "11910A",
@@ -97097,7 +97097,7 @@ window.CATALOG_DATA = {
       "title": "Condenser,Liquid Tank & Piping",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6577809_373?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/055-condenser-liquid-tank-piping.gif",
+      "imagePath": "assets/diagrams/api/51da2d_2604cd36f5c314f5e7eac2bd009563fe.png",
       "hotspots": [
         {
           "callout": "27640",
@@ -97359,7 +97359,7 @@ window.CATALOG_DATA = {
       "title": "Heater Piping",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6738739_359?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/056-heater-piping.gif",
+      "imagePath": "assets/diagrams/api/51da2d_9915c5311587aedc09243e057b39e3e3.png",
       "hotspots": [
         {
           "callout": "27183",
@@ -97432,7 +97432,7 @@ window.CATALOG_DATA = {
       "title": "Audio & Visual",
       "subtitle": "Specification: DATA LOGGER FOR NISMO; App. model: C • [11.2014-04.2016]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6398030_276?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/057-audio-visual.gif",
+      "imagePath": "assets/diagrams/api/51da2d_70978bf61f252f5971e2598325d6cae6.png",
       "hotspots": [
         {
           "callout": "083405082A",
@@ -97512,7 +97512,7 @@ window.CATALOG_DATA = {
       "title": "Telephone",
       "subtitle": "App. model: C • [04.2016-08.2017]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6640294_377?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/058-telephone.gif",
+      "imagePath": "assets/diagrams/api/51da2d_98c12de51b830a79ad9b4e4e9a7a297a.png",
       "hotspots": [
         {
           "callout": "28275",
@@ -97550,7 +97550,7 @@ window.CATALOG_DATA = {
       "title": "Speaker",
       "subtitle": "App. model: C • [11.2014-04.2016]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6073160_232?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/059-speaker.gif",
+      "imagePath": "assets/diagrams/api/51da2d_a4b4424b49b7a7e2093cb53bacd5edf8.png",
       "hotspots": [
         {
           "callout": "27933",
@@ -97658,7 +97658,7 @@ window.CATALOG_DATA = {
       "title": "Windshield Wiper",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6748692_212?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/060-windshield-wiper.gif",
+      "imagePath": "assets/diagrams/api/51da2d_2208ecb1cd9ee6b8b91c8b2c3f835001.png",
       "hotspots": [
         {
           "callout": "26370",
@@ -97773,7 +97773,7 @@ window.CATALOG_DATA = {
       "title": "Windshield Washer",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6478560_346?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/061-windshield-washer.gif",
+      "imagePath": "assets/diagrams/api/51da2d_548ca149a5dd302997224e14d13dac9c.png",
       "hotspots": [
         {
           "callout": "27460",
@@ -97853,7 +97853,7 @@ window.CATALOG_DATA = {
       "title": "Manual Transmission, Transaxle & Fitting",
       "subtitle": "Specification: TCM & BRTHR; App. model: GR6 • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6646206_414?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/062-manual-transmission-transaxle-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_fc7528e67be702a4d99da00d33b0509c.png",
       "hotspots": [
         {
           "callout": "081466125G",
@@ -97919,7 +97919,7 @@ window.CATALOG_DATA = {
       "title": "Transmission Case & Clutch Release",
       "subtitle": "App. model: GR6 • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5783388_422?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/063-transmission-case-clutch-release.gif",
+      "imagePath": "assets/diagrams/api/51da2d_ae2073f007b83285d6e8e014cbed4ee0.png",
       "hotspots": [
         {
           "callout": "32102",
@@ -98041,7 +98041,7 @@ window.CATALOG_DATA = {
       "title": "Transmission Shift Control",
       "subtitle": "App. model: GR6 • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5945932_402?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/064-transmission-shift-control.gif",
+      "imagePath": "assets/diagrams/api/51da2d_12c725f05e5351b5f7ee107e5459d1ea.png",
       "hotspots": [
         {
           "callout": "32562D",
@@ -98065,7 +98065,7 @@ window.CATALOG_DATA = {
       "title": "Transfer Assembly & Fitting",
       "subtitle": "App. model: VR38DETT • [11.2014-04.2016]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/911355_462?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/065-transfer-assembly-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_dbd6b9861dd167f62984065e85dd0a83.png",
       "hotspots": [],
       "apiImageUrl": "https://epc.partsbooster.com/schemas/nissan/dbd6b9861dd167f62984065e85dd0a83.png"
     },
@@ -98074,7 +98074,7 @@ window.CATALOG_DATA = {
       "title": "Transfer Case",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6888315_458?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/066-transfer-case.gif",
+      "imagePath": "assets/diagrams/api/51da2d_3c92c626ebcc065fe4e3e77fc7efceb6.png",
       "hotspots": [
         {
           "callout": "38189X",
@@ -98091,7 +98091,7 @@ window.CATALOG_DATA = {
       "title": "Transfer Gear",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5653083_454?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/067-transfer-gear.gif",
+      "imagePath": "assets/diagrams/api/51da2d_bf90cd203f80447e31abca0d92706a3f.png",
       "hotspots": [
         {
           "callout": "32140J",
@@ -98115,7 +98115,7 @@ window.CATALOG_DATA = {
       "title": "Auto Transmission Control Device",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5960445_426?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/068-auto-transmission-control-device.gif",
+      "imagePath": "assets/diagrams/api/51da2d_0601d3f06142cf896b70c5d857ba2d34.png",
       "hotspots": [
         {
           "callout": "34902",
@@ -98251,7 +98251,7 @@ window.CATALOG_DATA = {
       "title": "Transfer Control Parts",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6302588_450?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/069-transfer-control-parts.gif",
+      "imagePath": "assets/diagrams/api/51da2d_230133d14815ccaa056f5719965f0ac5.png",
       "hotspots": [
         {
           "callout": "41650",
@@ -98275,7 +98275,7 @@ window.CATALOG_DATA = {
       "title": "Propeller Shaft",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6866719_446?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/070-propeller-shaft.gif",
+      "imagePath": "assets/diagrams/api/51da2d_cfcdb9c20ed4c3f16e5dae884a5ed478.png",
       "hotspots": [
         {
           "callout": "37200",
@@ -98376,7 +98376,7 @@ window.CATALOG_DATA = {
       "title": "Rear Final Drive",
       "subtitle": "Specification: BRTHR PIPING; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6735519_438?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/071-rear-final-drive.gif",
+      "imagePath": "assets/diagrams/api/51da2d_60f8b6391a21e8e751cc641b62be9654.png",
       "hotspots": [
         {
           "callout": "31305E",
@@ -98463,7 +98463,7 @@ window.CATALOG_DATA = {
       "title": "Front Final Drive",
       "subtitle": "Specification: F/D; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5981250_406?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/072-front-final-drive.gif",
+      "imagePath": "assets/diagrams/api/51da2d_8434586f47265d7eebacad93d0548fd0.png",
       "hotspots": [
         {
           "callout": "38500",
@@ -98732,7 +98732,7 @@ window.CATALOG_DATA = {
       "title": "Front Drive Shaft (Ff)",
       "subtitle": "Specification: RH SIDE; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6303269_394?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/073-front-drive-shaft-ff.gif",
+      "imagePath": "assets/diagrams/api/51da2d_57248e845062ed12e3d7d5fd38323e4a.png",
       "hotspots": [
         {
           "callout": "39125",
@@ -98833,7 +98833,7 @@ window.CATALOG_DATA = {
       "title": "Rear Drive Shaft",
       "subtitle": "Specification: RH SIDE; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6552572_430?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/074-rear-drive-shaft.gif",
+      "imagePath": "assets/diagrams/api/51da2d_dcc9f4141201e225591bd6bbe78c43eb.png",
       "hotspots": [
         {
           "callout": "39600",
@@ -98962,7 +98962,7 @@ window.CATALOG_DATA = {
       "title": "Front Axle",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5946866_500?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/075-front-axle.gif",
+      "imagePath": "assets/diagrams/api/51da2d_6bbc880dfd98013280ccd2b705fc69b0.png",
       "hotspots": [
         {
           "callout": "40014",
@@ -99091,7 +99091,7 @@ window.CATALOG_DATA = {
       "title": "Front Suspension",
       "subtitle": "Specification: ABSORBER; App. model: VR38DETT • [11.2014-04.2016]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6410452_475?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/076-front-suspension.gif",
+      "imagePath": "assets/diagrams/api/51da2d_489d03e4bd40ab1e2641740e407c883f.png",
       "hotspots": [
         {
           "callout": "54034",
@@ -99199,7 +99199,7 @@ window.CATALOG_DATA = {
       "title": "Rear Axle",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5842288_492?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/077-rear-axle.gif",
+      "imagePath": "assets/diagrams/api/51da2d_d1b007c2f3b997540d40cf730ae0ce9d.png",
       "hotspots": [
         {
           "callout": "43084",
@@ -99342,7 +99342,7 @@ window.CATALOG_DATA = {
       "title": "Rear Suspension",
       "subtitle": "Specification: MEMBER[NISMO]; App. model: VR38DETT.NISMO • [06.2014-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6553103_465?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/078-rear-suspension.gif",
+      "imagePath": "assets/diagrams/api/51da2d_d87a3a9484b27b36ae3227afb5df69b9.png",
       "hotspots": [
         {
           "callout": "55227",
@@ -99562,7 +99562,7 @@ window.CATALOG_DATA = {
       "title": "Road Wheel & Tire",
       "subtitle": "Specification: 6SPOKE[NISMO]; App. model: C.NISMO • [06.2014-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6096752_496?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/079-road-wheel-tire.gif",
+      "imagePath": "assets/diagrams/api/51da2d_dd491f838b00cb7a5c67ab417a04c29f.png",
       "hotspots": [
         {
           "callout": "40224",
@@ -99621,7 +99621,7 @@ window.CATALOG_DATA = {
       "title": "Front Brake",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6782524_536?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/080-front-brake.gif",
+      "imagePath": "assets/diagrams/api/51da2d_1e9cc4dc698c99b4ea4547f7f3292a1a.png",
       "hotspots": [
         {
           "callout": "41001",
@@ -99764,7 +99764,7 @@ window.CATALOG_DATA = {
       "title": "Rear Brake",
       "subtitle": "Specification: PARKING BRAKE; App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5833105_504?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/081-rear-brake.gif",
+      "imagePath": "assets/diagrams/api/51da2d_415796c05ce058b3df420267fed761d2.png",
       "hotspots": [
         {
           "callout": "44020",
@@ -99879,7 +99879,7 @@ window.CATALOG_DATA = {
       "title": "Parking Brake Control",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6568768_520?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/082-parking-brake-control.gif",
+      "imagePath": "assets/diagrams/api/51da2d_7c1f8866f4292e1a0a0549cf0fa414cc.png",
       "hotspots": [
         {
           "callout": "36010",
@@ -99973,7 +99973,7 @@ window.CATALOG_DATA = {
       "title": "Brake Master Cylinder",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6361871_532?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/083-brake-master-cylinder.gif",
+      "imagePath": "assets/diagrams/api/51da2d_491cb596040f8effdc97123456480638.png",
       "hotspots": [
         {
           "callout": "46010",
@@ -100046,7 +100046,7 @@ window.CATALOG_DATA = {
       "title": "Brake Piping & Control",
       "subtitle": "Specification: FRONT PIPING; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6695705_512?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/084-brake-piping-control.gif",
+      "imagePath": "assets/diagrams/api/51da2d_e5aa5ffae59001b17d99cb59727a88dd.png",
       "hotspots": [
         {
           "callout": "46240",
@@ -100294,7 +100294,7 @@ window.CATALOG_DATA = {
       "title": "Brake & Clutch Pedal",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6440543_524?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/085-brake-clutch-pedal.gif",
+      "imagePath": "assets/diagrams/api/51da2d_d9fbedba19ca5f97e65f370d8f4c319e.png",
       "hotspots": [
         {
           "callout": "46501",
@@ -100346,7 +100346,7 @@ window.CATALOG_DATA = {
       "title": "Brake Servo & Servo Control",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5878528_528?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/086-brake-servo-servo-control.gif",
+      "imagePath": "assets/diagrams/api/51da2d_1277c50c3065a140b955137852851a57.png",
       "hotspots": [
         {
           "callout": "47210",
@@ -100426,7 +100426,7 @@ window.CATALOG_DATA = {
       "title": "Anti Skid Control",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6891458_540?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/087-anti-skid-control.gif",
+      "imagePath": "assets/diagrams/api/51da2d_26b67ac0a1d8beb721f7234ee0fb6248.png",
       "hotspots": [
         {
           "callout": "47600",
@@ -100527,7 +100527,7 @@ window.CATALOG_DATA = {
       "title": "Steering Gear Mounting",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6122778_574?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/088-steering-gear-mounting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_0b79564b5e27f651c8c5ea1fe7f18fb8.png",
       "hotspots": [
         {
           "callout": "081A66125M",
@@ -100572,7 +100572,7 @@ window.CATALOG_DATA = {
       "title": "Steering Wheel",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5786014_548?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/089-steering-wheel.gif",
+      "imagePath": "assets/diagrams/api/51da2d_f5e63cfc9aabc03ba0cb2b159df23d8c.png",
       "hotspots": [
         {
           "callout": "48400M",
@@ -100617,7 +100617,7 @@ window.CATALOG_DATA = {
       "title": "Steering Column Shell Cover",
       "subtitle": "App. model: C • [07.2018-]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6956450_565?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/090-steering-column-shell-cover.gif",
+      "imagePath": "assets/diagrams/api/51da2d_895f264b9c3b393d08257f995c93eede.png",
       "hotspots": [
         {
           "callout": "48470",
@@ -100662,7 +100662,7 @@ window.CATALOG_DATA = {
       "title": "Steering Column",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6761285_553?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/091-steering-column.gif",
+      "imagePath": "assets/diagrams/api/51da2d_fbdba5908ff5024e08c2fb7fe6c3297c.png",
       "hotspots": [
         {
           "callout": "48080",
@@ -100819,7 +100819,7 @@ window.CATALOG_DATA = {
       "title": "Power Steering Pump",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5952943_557?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/092-power-steering-pump.gif",
+      "imagePath": "assets/diagrams/api/51da2d_02d08ac825c4a22342eb8f8f470e0120.png",
       "hotspots": [
         {
           "callout": "49110",
@@ -100948,7 +100948,7 @@ window.CATALOG_DATA = {
       "title": "Power Steering Gear",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5631343_561?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/093-power-steering-gear.gif",
+      "imagePath": "assets/diagrams/api/51da2d_cfdac2fe0dbd2b88d8ee145916b4a3ce.png",
       "hotspots": [
         {
           "callout": "49001",
@@ -101133,7 +101133,7 @@ window.CATALOG_DATA = {
       "title": "Power Steering Pump Mounting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6798539_570?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/094-power-steering-pump-mounting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_9b8415c64e11a0d22f6357efea7ab5fd.png",
       "hotspots": [
         {
           "callout": "11935",
@@ -101178,7 +101178,7 @@ window.CATALOG_DATA = {
       "title": "Power Steering Piping",
       "subtitle": "App. model: VR38DETT • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5963431_544?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/095-power-steering-piping.gif",
+      "imagePath": "assets/diagrams/api/51da2d_a376ba5a5e21121a67a18745e8726ac6.png",
       "hotspots": [
         {
           "callout": "49125",
@@ -101510,7 +101510,7 @@ window.CATALOG_DATA = {
       "title": "Front Bumper",
       "subtitle": "Specification: NISMO; App. model: C.NISMO • [07.2016-07.2018]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6572763_681?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/096-front-bumper.gif",
+      "imagePath": "assets/diagrams/api/51da2d_7079cf1cf8db8f17a629bffac675bb92.png",
       "hotspots": [
         {
           "callout": "62050",
@@ -101730,7 +101730,7 @@ window.CATALOG_DATA = {
       "title": "Front Apron & Radiator Core Support",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6083033_677?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/097-front-apron-radiator-core-support.gif",
+      "imagePath": "assets/diagrams/api/51da2d_cecf284b6a7ab40971c7e2d61da30ecc.png",
       "hotspots": [
         {
           "callout": "62516",
@@ -102006,7 +102006,7 @@ window.CATALOG_DATA = {
       "title": "Front Fender & Fitting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6886463_586?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/098-front-fender-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_72f2c0f41db0912b32df2afd6a841fde.png",
       "hotspots": [
         {
           "callout": "63100",
@@ -102170,7 +102170,7 @@ window.CATALOG_DATA = {
       "title": "Hood Ledge & Fitting",
       "subtitle": "Specification: PLUG; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6941810_614?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/099-hood-ledge-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_295ab9cdbc09d9f56e9e5c7d8f78a8c7.png",
       "hotspots": [
         {
           "callout": "64117",
@@ -102222,7 +102222,7 @@ window.CATALOG_DATA = {
       "title": "Hood Panel,Hinge & Fitting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6841181_582?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/100-hood-panel-hinge-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_ce9a7d31c8a20f15839301d63fbb9d81.png",
       "hotspots": [
         {
           "callout": "62840",
@@ -102358,7 +102358,7 @@ window.CATALOG_DATA = {
       "title": "Hood Lock Control",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6807249_610?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/101-hood-lock-control.gif",
+      "imagePath": "assets/diagrams/api/51da2d_d48420ba9b64221789a32500c5c0fc1d.png",
       "hotspots": [
         {
           "callout": "65620",
@@ -102487,7 +102487,7 @@ window.CATALOG_DATA = {
       "title": "Cowl Top & Fitting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5862698_643?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/102-cowl-top-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_0cb0310235a1976f185bd3f27f9ecfe0.png",
       "hotspots": [
         {
           "callout": "66852",
@@ -102651,7 +102651,7 @@ window.CATALOG_DATA = {
       "title": "Dash Panel & Fitting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5846453_669?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/103-dash-panel-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_0373f410766127b9cc935b6ac0ff2120.png",
       "hotspots": [
         {
           "callout": "67100",
@@ -102717,7 +102717,7 @@ window.CATALOG_DATA = {
       "title": "Dash Trimming & Fitting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6118806_647?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/104-dash-trimming-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_e32b86b858155a89a52c0096d0811a02.png",
       "hotspots": [
         {
           "callout": "66900",
@@ -102783,7 +102783,7 @@ window.CATALOG_DATA = {
       "title": "Instrument Panel,Pad & Cluster Lid",
       "subtitle": "Specification: INST PAD & CLUSTER LID; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6700511_631?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/105-instrument-panel-pad-cluster-lid.gif",
+      "imagePath": "assets/diagrams/api/51da2d_f0b52b0312220b569d38226c34d5f2ce.png",
       "hotspots": [
         {
           "callout": "26479",
@@ -103080,7 +103080,7 @@ window.CATALOG_DATA = {
       "title": "Ventilator",
       "subtitle": "App. model: C • [07.2016-08.2017]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6838829_626?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/106-ventilator.gif",
+      "imagePath": "assets/diagrams/api/51da2d_caf610b61053b194bfbb5d37ec8ccd68.png",
       "hotspots": [
         {
           "callout": "68742",
@@ -103118,7 +103118,7 @@ window.CATALOG_DATA = {
       "title": "Front Windshield",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5843399_594?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/107-front-windshield.gif",
+      "imagePath": "assets/diagrams/api/51da2d_615eb16c07068c1900d0e74708427bb0.png",
       "hotspots": [
         {
           "callout": "72613",
@@ -103177,7 +103177,7 @@ window.CATALOG_DATA = {
       "title": "Roof Panel & Fitting",
       "subtitle": "Specification: STD ROOF; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6847919_578?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/108-roof-panel-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_4fccb0e3041af4e852e5f703b2a13afe.png",
       "hotspots": [
         {
           "callout": "73111",
@@ -103201,7 +103201,7 @@ window.CATALOG_DATA = {
       "title": "Roof Trimming",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6310701_590?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/109-roof-trimming.gif",
+      "imagePath": "assets/diagrams/api/51da2d_6bea30eeab9b62067eb831a2fb91b922.png",
       "hotspots": [
         {
           "callout": "73996",
@@ -103246,7 +103246,7 @@ window.CATALOG_DATA = {
       "title": "Floor Panel",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6130957_622?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/110-floor-panel.gif",
+      "imagePath": "assets/diagrams/api/51da2d_b0c8c278f838e6b80e1a0ec818d3c13a.png",
       "hotspots": [
         {
           "callout": "74320",
@@ -103319,7 +103319,7 @@ window.CATALOG_DATA = {
       "title": "Floor Panel (Rear)",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6331941_606?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/111-floor-panel-rear.gif",
+      "imagePath": "assets/diagrams/api/51da2d_3df001d49ca0cbed2917d56133a6ab47.png",
       "hotspots": [
         {
           "callout": "74512",
@@ -103364,7 +103364,7 @@ window.CATALOG_DATA = {
       "title": "Floor Fitting",
       "subtitle": "Specification: FRONT NISMO; App. model: C • [06.2014-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6051615_652?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/112-floor-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_5ee3edea8698976f11b83c55ba9b7e63.png",
       "hotspots": [
         {
           "callout": "74560",
@@ -103521,7 +103521,7 @@ window.CATALOG_DATA = {
       "title": "Floor Fitting",
       "subtitle": "Specification: INSUL; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6781236_598?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/113-floor-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_b0baab80188305214b8e10d4c399bfb1.png",
       "hotspots": [
         {
           "callout": "74881P",
@@ -103545,7 +103545,7 @@ window.CATALOG_DATA = {
       "title": "Floor Trimming",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6887637_665?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/114-floor-trimming.gif",
+      "imagePath": "assets/diagrams/api/51da2d_6b1641aec2c6841e63e7b0d471fe08d2.png",
       "hotspots": [
         {
           "callout": "74900",
@@ -103632,7 +103632,7 @@ window.CATALOG_DATA = {
       "title": "Member & Fitting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5718363_673?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/115-member-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_fd413d282e5b3baf7efa64c77723ac47.png",
       "hotspots": [
         {
           "callout": "74842",
@@ -103831,7 +103831,7 @@ window.CATALOG_DATA = {
       "title": "Body Side Panel",
       "subtitle": "Specification: FRONT; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5730423_757?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/116-body-side-panel.gif",
+      "imagePath": "assets/diagrams/api/51da2d_c57982221abc39f9070a381aa9881a38.png",
       "hotspots": [
         {
           "callout": "76010",
@@ -103953,7 +103953,7 @@ window.CATALOG_DATA = {
       "title": "Body Side Moulding",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6216994_753?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/117-body-side-moulding.gif",
+      "imagePath": "assets/diagrams/api/51da2d_fabb8c6755b9a72353efef43b120df35.png",
       "hotspots": [
         {
           "callout": "76812",
@@ -104040,7 +104040,7 @@ window.CATALOG_DATA = {
       "title": "Body Side Fitting",
       "subtitle": "Specification: PLUG&INSULATER; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6938305_729?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/118-body-side-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_a1e8798d112cfa980b2ca751945a337e.png",
       "hotspots": [
         {
           "callout": "76630D",
@@ -104092,7 +104092,7 @@ window.CATALOG_DATA = {
       "title": "Body Side Trimming",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5923380_745?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/119-body-side-trimming.gif",
+      "imagePath": "assets/diagrams/api/51da2d_c9868bbe508c65982c7ad20e99789322.png",
       "hotspots": [
         {
           "callout": "76900",
@@ -104326,7 +104326,7 @@ window.CATALOG_DATA = {
       "title": "Rear Fender & Fitting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6567308_725?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/120-rear-fender-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_61585a1ac5567edd96ad8f48437e3dc0.png",
       "hotspots": [
         {
           "callout": "78110",
@@ -104413,7 +104413,7 @@ window.CATALOG_DATA = {
       "title": "Rear,Back Panel & Fitting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6637831_702?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/121-rear-back-panel-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_06181f3badafed054ce976575e8e26ef.png",
       "hotspots": [
         {
           "callout": "79110",
@@ -104465,7 +104465,7 @@ window.CATALOG_DATA = {
       "title": "Rear Window",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6800166_693?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/122-rear-window.gif",
+      "imagePath": "assets/diagrams/api/51da2d_213c01adc0ae9bccac822a129b459478.png",
       "hotspots": [
         {
           "callout": "79616",
@@ -104496,7 +104496,7 @@ window.CATALOG_DATA = {
       "title": "Rear & Back Panel Trimming",
       "subtitle": "Specification: NORMAL GRILLE; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6336351_697?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/123-rear-back-panel-trimming.gif",
+      "imagePath": "assets/diagrams/api/51da2d_6a9c71b7a48c7283981c1348fa9aefd4.png",
       "hotspots": [
         {
           "callout": "28174",
@@ -104555,7 +104555,7 @@ window.CATALOG_DATA = {
       "title": "Front Door Panel & Fitting",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6947017_706?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/124-front-door-panel-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_c8ea0e12f0d8f071094b6d2e61dbdf37.png",
       "hotspots": [
         {
           "callout": "80100",
@@ -104817,7 +104817,7 @@ window.CATALOG_DATA = {
       "title": "Front Door Window & Regulator",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6970586_712?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/125-front-door-window-regulator.gif",
+      "imagePath": "assets/diagrams/api/51da2d_03c42de2b1f805eac03e740136e753e0.png",
       "hotspots": [
         {
           "callout": "80300",
@@ -104883,7 +104883,7 @@ window.CATALOG_DATA = {
       "title": "Front Door Lock & Handle",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6652745_721?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/126-front-door-lock-handle.gif",
+      "imagePath": "assets/diagrams/api/51da2d_3acfd601bb7d13076a9f74f3a4e77bee.png",
       "hotspots": [
         {
           "callout": "80500",
@@ -105145,7 +105145,7 @@ window.CATALOG_DATA = {
       "title": "Front Door Trimming",
       "subtitle": "App. model: C • [08.2017-]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6975279_741?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/127-front-door-trimming.gif",
+      "imagePath": "assets/diagrams/api/51da2d_f555df69b1481e1e6a9e265d0a5d136b.png",
       "hotspots": [
         {
           "callout": "26420",
@@ -105344,7 +105344,7 @@ window.CATALOG_DATA = {
       "title": "Side Window",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6425961_765?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/128-side-window.gif",
+      "imagePath": "assets/diagrams/api/51da2d_46097aa91627fdb4c847fa0459736e03.png",
       "hotspots": [
         {
           "callout": "83300M",
@@ -105368,7 +105368,7 @@ window.CATALOG_DATA = {
       "title": "Trunk Lid & Fitting",
       "subtitle": "Specification: NOMAL; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6772328_685?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/129-trunk-lid-fitting.gif",
+      "imagePath": "assets/diagrams/api/51da2d_daee02ae14873120f7235504ce6dfad0.png",
       "hotspots": [
         {
           "callout": "84300",
@@ -105504,7 +105504,7 @@ window.CATALOG_DATA = {
       "title": "Trunk Opener",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5641089_749?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/130-trunk-opener.gif",
+      "imagePath": "assets/diagrams/api/51da2d_50c6bb350b550355af6a189b0b5152c8.png",
       "hotspots": [
         {
           "callout": "78520",
@@ -105556,7 +105556,7 @@ window.CATALOG_DATA = {
       "title": "Trunk & Luggage Room Trimming",
       "subtitle": "App. model: C • [11.2014-04.2016]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6490555_716?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/131-trunk-luggage-room-trimming.gif",
+      "imagePath": "assets/diagrams/api/51da2d_f9b3894a2a6ae770ba8e1f3a7fc80f38.png",
       "hotspots": [
         {
           "callout": "84900",
@@ -105643,7 +105643,7 @@ window.CATALOG_DATA = {
       "title": "Rear Bumper",
       "subtitle": "App. model: C.NISMO • [06.2014-07.2018]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6325827_710?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/132-rear-bumper.gif",
+      "imagePath": "assets/diagrams/api/51da2d_0b6ae1714c329385b26eb669e4949e92.png",
       "hotspots": [
         {
           "callout": "85022",
@@ -105989,7 +105989,7 @@ window.CATALOG_DATA = {
       "title": "Front Seat Belt",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6993862_785?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/133-front-seat-belt.gif",
+      "imagePath": "assets/diagrams/api/51da2d_edf4051cfb6219d361d4c565cc238e7b.png",
       "hotspots": [
         {
           "callout": "86842",
@@ -106055,7 +106055,7 @@ window.CATALOG_DATA = {
       "title": "Rear Seat Belt",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6271649_769?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/134-rear-seat-belt.gif",
+      "imagePath": "assets/diagrams/api/51da2d_7efb717e9cd988ebdfcd21843ffa78ff.png",
       "hotspots": [
         {
           "callout": "87850",
@@ -106107,7 +106107,7 @@ window.CATALOG_DATA = {
       "title": "Front Seat",
       "subtitle": "Specification: RH SEAT; App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6241626_777?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/135-front-seat.gif",
+      "imagePath": "assets/diagrams/api/51da2d_7096729ac5ee64ec568671cb78df8903.png",
       "hotspots": [
         {
           "callout": "86606",
@@ -106369,7 +106369,7 @@ window.CATALOG_DATA = {
       "title": "Rear Seat",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6331125_773?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/136-rear-seat.gif",
+      "imagePath": "assets/diagrams/api/51da2d_dd5b63ec2f57545f3c264ff29b418ad9.png",
       "hotspots": [
         {
           "callout": "88650",
@@ -106463,7 +106463,7 @@ window.CATALOG_DATA = {
       "title": "Air Spoiler",
       "subtitle": "Specification: NISMO; App. model: C • [06.2014-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6881708_790?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/137-air-spoiler.gif",
+      "imagePath": "assets/diagrams/api/51da2d_c28ceb882589db19605699aca9c4fe30.png",
       "hotspots": [
         {
           "callout": "089112062H",
@@ -106501,7 +106501,7 @@ window.CATALOG_DATA = {
       "title": "Rear View Mirror",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6288270_798?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/138-rear-view-mirror.gif",
+      "imagePath": "assets/diagrams/api/51da2d_6cbcb4352d46ab3c5cfb5bb1d221a741.png",
       "hotspots": [
         {
           "callout": "80292",
@@ -106595,7 +106595,7 @@ window.CATALOG_DATA = {
       "title": "Sunvisor",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6575332_806?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/139-sunvisor.gif",
+      "imagePath": "assets/diagrams/api/51da2d_8e2690bad9b0dfc1f78e06cfa4c2179c.png",
       "hotspots": [
         {
           "callout": "96400",
@@ -106668,7 +106668,7 @@ window.CATALOG_DATA = {
       "title": "Console Box",
       "subtitle": "App. model: C • [11.2013-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6642091_810?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/140-console-box.gif",
+      "imagePath": "assets/diagrams/api/51da2d_f961602cf045462515ac19665eca2a36.png",
       "hotspots": [
         {
           "callout": "96910",
@@ -106825,7 +106825,7 @@ window.CATALOG_DATA = {
       "title": "Emblem & Name Label",
       "subtitle": "Specification: NISMO; App. model: C • [06.2014-11.2014]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/5653700_822?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/141-emblem-name-label.gif",
+      "imagePath": "assets/diagrams/api/51da2d_124316fdf540313f99a9ca3ff0f32354.png",
       "hotspots": [
         {
           "callout": "62310",
@@ -106891,7 +106891,7 @@ window.CATALOG_DATA = {
       "title": "Caution Plate & Label",
       "subtitle": "App. model: C • [04.2016-08.2017]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6291381_804?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/142-caution-plate-label.gif",
+      "imagePath": "assets/diagrams/api/51da2d_37dbe96d4a42623ff4dd466e31b568ee.png",
       "hotspots": [
         {
           "callout": "14805",
@@ -106964,7 +106964,7 @@ window.CATALOG_DATA = {
       "title": "Tool Kit & Maintenance Manual",
       "subtitle": "App. model: C • [08.2017-]",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6038784_817?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/143-tool-kit-maintenance-manual.gif",
+      "imagePath": "assets/diagrams/api/51da2d_0af39dbe44067786d78f497d48657f7f.png",
       "hotspots": [
         {
           "callout": "99545",
@@ -106988,7 +106988,7 @@ window.CATALOG_DATA = {
       "title": "Key Set & Blank Key",
       "subtitle": "",
       "sourceUrl": "https://yoshiparts.com/parts/car/nissan/products/gt_r/r35-c-vr38dett-gr6-nismo-2/6371443_826?one=%5B%5B%22year_list%22%2C%222017%22%5D%2C%5B%22sales_region%22%2C%22USA%22%5D%5D&two=%5B%5B%22grade%22%2C%22NISMO%22%5D%5D",
-      "imagePath": "assets/diagrams/144-key-set-blank-key.gif",
+      "imagePath": "assets/diagrams/api/51da2d_a07928623ac7682bdff970d35e036b20.png",
       "hotspots": [
         {
           "callout": "48700",
@@ -192411,7 +192411,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_001.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_001.png",
       "hotspots": [
         {
@@ -192569,7 +192569,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_002.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_002.png",
       "hotspots": [
         {
@@ -192783,7 +192783,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_003.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_003.png",
       "hotspots": [
         {
@@ -192885,7 +192885,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_003.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_003.png",
       "hotspots": [
         {
@@ -192987,7 +192987,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_004.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_004.png",
       "hotspots": [
         {
@@ -193208,7 +193208,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_004.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_004.png",
       "hotspots": [
         {
@@ -193429,7 +193429,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_005.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_005.png",
       "hotspots": [
         {
@@ -193580,7 +193580,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_005.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_005.png",
       "hotspots": [
         {
@@ -193731,7 +193731,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "RR SEN HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_006.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_006.png",
       "hotspots": [
         {
@@ -193756,7 +193756,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "RR SEN HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_006.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_006.png",
       "hotspots": [
         {
@@ -193781,7 +193781,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -193876,7 +193876,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -193971,7 +193971,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -194066,7 +194066,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -194161,7 +194161,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -194256,7 +194256,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -194330,7 +194330,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -194404,7 +194404,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -194478,7 +194478,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -194552,7 +194552,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -194626,7 +194626,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_009.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_009.png",
       "hotspots": [
         {
@@ -194798,7 +194798,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -194928,7 +194928,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -195058,7 +195058,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -195188,7 +195188,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -195318,7 +195318,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -195448,7 +195448,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 12.2010 - 11.2011 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_015.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_015.png",
       "hotspots": [
         {
@@ -195613,7 +195613,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 12.2010 - 11.2011 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_016.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_016.png",
       "hotspots": [
         {
@@ -195848,7 +195848,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_017.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_017.png",
       "hotspots": [
         {
@@ -195936,7 +195936,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_017.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_017.png",
       "hotspots": [
         {
@@ -196024,7 +196024,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_017.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_017.png",
       "hotspots": [
         {
@@ -196112,7 +196112,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -196305,7 +196305,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -196498,7 +196498,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -196691,7 +196691,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -196884,7 +196884,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -197077,7 +197077,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 11.2011 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_019.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_019.png",
       "hotspots": [
         {
@@ -197305,7 +197305,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 11.2011 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_020.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_020.png",
       "hotspots": [
         {
@@ -197463,7 +197463,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_021.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_021.png",
       "hotspots": [
         {
@@ -197621,7 +197621,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_022.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_022.png",
       "hotspots": [
         {
@@ -197842,7 +197842,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -197993,7 +197993,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -198144,7 +198144,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -198295,7 +198295,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -198446,7 +198446,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_001.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_001.png",
       "hotspots": [
         {
@@ -198604,7 +198604,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_002.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_002.png",
       "hotspots": [
         {
@@ -198818,7 +198818,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_003.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_003.png",
       "hotspots": [
         {
@@ -198920,7 +198920,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_003.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_003.png",
       "hotspots": [
         {
@@ -199022,7 +199022,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_004.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_004.png",
       "hotspots": [
         {
@@ -199243,7 +199243,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_004.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_004.png",
       "hotspots": [
         {
@@ -199464,7 +199464,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_005.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_005.png",
       "hotspots": [
         {
@@ -199615,7 +199615,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_005.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_005.png",
       "hotspots": [
         {
@@ -199766,7 +199766,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "RR SEN HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_006.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_006.png",
       "hotspots": [
         {
@@ -199791,7 +199791,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "RR SEN HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_006.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_006.png",
       "hotspots": [
         {
@@ -199816,7 +199816,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -199911,7 +199911,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -200006,7 +200006,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -200101,7 +200101,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -200196,7 +200196,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -200291,7 +200291,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -200365,7 +200365,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -200439,7 +200439,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -200513,7 +200513,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -200587,7 +200587,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -200661,7 +200661,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_009.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_009.png",
       "hotspots": [
         {
@@ -200833,7 +200833,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -200963,7 +200963,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -201093,7 +201093,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -201223,7 +201223,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -201353,7 +201353,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -201483,7 +201483,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 12.2010 - 11.2011 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_015.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_015.png",
       "hotspots": [
         {
@@ -201648,7 +201648,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 12.2010 - 11.2011 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_016.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_016.png",
       "hotspots": [
         {
@@ -201883,7 +201883,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_017.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_017.png",
       "hotspots": [
         {
@@ -201971,7 +201971,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_017.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_017.png",
       "hotspots": [
         {
@@ -202059,7 +202059,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_017.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_017.png",
       "hotspots": [
         {
@@ -202147,7 +202147,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -202340,7 +202340,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -202533,7 +202533,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -202726,7 +202726,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -202919,7 +202919,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -203112,7 +203112,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 11.2011 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_019.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_019.png",
       "hotspots": [
         {
@@ -203340,7 +203340,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 11.2011 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_020.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_020.png",
       "hotspots": [
         {
@@ -203498,7 +203498,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_021.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_021.png",
       "hotspots": [
         {
@@ -203656,7 +203656,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_022.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_022.png",
       "hotspots": [
         {
@@ -203877,7 +203877,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -204028,7 +204028,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -204179,7 +204179,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -204330,7 +204330,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -204481,7 +204481,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_001.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_001.png",
       "hotspots": [
         {
@@ -204653,7 +204653,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_002.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_002.png",
       "hotspots": [
         {
@@ -204881,7 +204881,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_003.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_003.png",
       "hotspots": [
         {
@@ -205011,7 +205011,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_003.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_003.png",
       "hotspots": [
         {
@@ -205141,7 +205141,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_004.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_004.png",
       "hotspots": [
         {
@@ -205376,7 +205376,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_004.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_004.png",
       "hotspots": [
         {
@@ -205611,7 +205611,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_005.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_005.png",
       "hotspots": [
         {
@@ -205776,7 +205776,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_005.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_005.png",
       "hotspots": [
         {
@@ -205941,7 +205941,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "RR SEN HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_006.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_006.png",
       "hotspots": [
         {
@@ -205966,7 +205966,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "RR SEN HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_006.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_006.png",
       "hotspots": [
         {
@@ -205991,7 +205991,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 03.2008 - 12.2010 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -206093,7 +206093,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -206195,7 +206195,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -206297,7 +206297,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -206399,7 +206399,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -206501,7 +206501,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 1 • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_007.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_007.png",
       "hotspots": [
         {
@@ -206603,7 +206603,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 03.2008 - 12.2010 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -206684,7 +206684,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -206765,7 +206765,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -206846,7 +206846,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -206927,7 +206927,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -207008,7 +207008,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "EGI HARN 2 • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_008.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_008.png",
       "hotspots": [
         {
@@ -207089,7 +207089,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 03.2008 - 12.2010 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_009.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_009.png",
       "hotspots": [
         {
@@ -207282,7 +207282,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_009.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_009.png",
       "hotspots": [
         {
@@ -207475,7 +207475,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 03.2008 - 12.2009 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_010.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_010.png",
       "hotspots": [
         {
@@ -207801,7 +207801,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 03.2008 - 12.2010 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -208008,7 +208008,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -208215,7 +208215,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -208422,7 +208422,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -208629,7 +208629,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -208836,7 +208836,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ROOM LAMP & DOOR HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_011.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_011.png",
       "hotspots": [
         {
@@ -209043,7 +209043,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 03.2008 - 12.2010 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_012.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_012.png",
       "hotspots": [
         {
@@ -209145,7 +209145,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 03.2008 - 12.2010 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_013.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_013.png",
       "hotspots": [
         {
@@ -209373,7 +209373,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 03.2008 - 12.2010 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_014.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_014.png",
       "hotspots": [
         {
@@ -209615,7 +209615,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 12.2010 - 11.2011 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_015.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_015.png",
       "hotspots": [
         {
@@ -209850,7 +209850,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 12.2010 - 11.2011 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_016.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_016.png",
       "hotspots": [
         {
@@ -210099,7 +210099,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_017.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_017.png",
       "hotspots": [
         {
@@ -210208,7 +210208,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_017.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_017.png",
       "hotspots": [
         {
@@ -210317,7 +210317,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN RH • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_017.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_017.png",
       "hotspots": [
         {
@@ -210426,7 +210426,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 12.2009 - 12.2010 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -210759,7 +210759,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 12.2010 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -211092,7 +211092,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -211425,7 +211425,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -211758,7 +211758,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -212091,7 +212091,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "MAIN HARN • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_018.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_018.png",
       "hotspots": [
         {
@@ -212424,7 +212424,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 11.2011 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_019.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_019.png",
       "hotspots": [
         {
@@ -212666,7 +212666,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 11.2011 - 11.2013 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_020.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_020.png",
       "hotspots": [
         {
@@ -212894,7 +212894,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ALTNTR HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_021.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_021.png",
       "hotspots": [
         {
@@ -213066,7 +213066,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "ENGINE ROOM HARN • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_022.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_022.png",
       "hotspots": [
         {
@@ -213301,7 +213301,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 11.2013 - 11.2014 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -213522,7 +213522,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 11.2014 - 04.2016 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -213743,7 +213743,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 04.2016 - 08.2017 • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -213964,7 +213964,7 @@ window.CATALOG_DATA = {
       "title": "Wiring",
       "subtitle": "BODY HARN LH • 08.2017 - ... • C",
       "sourceUrl": "",
-      "imagePath": "",
+      "imagePath": "assets/diagrams/api/e97905_240A_023.png",
       "apiImageUrl": "https://nissan-img.amayama.com/imgus19/R35/240A_023.png",
       "hotspots": [
         {
@@ -214181,4 +214181,4 @@ window.CATALOG_DATA = {
       "sortKey": "03-023-03"
     }
   ]
-}
+};

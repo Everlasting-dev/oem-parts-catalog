@@ -176,6 +176,7 @@ body::-webkit-scrollbar-thumb:hover,
 }
 
 .topbar-search input,
+.panel-toolbar input,
 .stage-toolbar input,
 .protected-form-row input {
   border-color: var(--line);
@@ -184,17 +185,48 @@ body::-webkit-scrollbar-thumb:hover,
 }
 
 .topbar-search input::placeholder,
+.panel-toolbar input::placeholder,
 .stage-toolbar input::placeholder,
 .protected-form-row input::placeholder {
   color: #6b7280;
 }
 
 .topbar-search input:focus,
+.panel-toolbar input:focus,
 .stage-toolbar input:focus,
 .protected-form-row input:focus {
   border-color: #3f3f46;
   box-shadow: 0 0 0 1px #3f3f46;
   background: #121212;
+}
+
+.panel-toolbar,
+.stage-toolbar,
+.stage-context-bar {
+  border-bottom-color: var(--line);
+  background: #050505;
+}
+
+.crumb-btn,
+.context-btn {
+  border-color: var(--line);
+  background: #111;
+  color: #f5f5f5;
+}
+
+.crumb-btn:hover,
+.context-btn:hover {
+  border-color: var(--line-strong);
+  background: #171717;
+}
+
+.crumb-current {
+  color: #fff;
+}
+
+.crumb-separator,
+.context-note {
+  color: #8a8a93;
 }
 
 .workspace {
