@@ -40,6 +40,10 @@ a {
   font: inherit;
 }
 
+:focus-visible {
+  outline: none;
+}
+
 .catalog-shell {
   min-height: 100vh;
   display: flex;
@@ -436,6 +440,24 @@ a {
   border-color: var(--line);
   background: var(--panel-soft);
   transform: translateY(-1px);
+}
+
+.system-item:focus-visible,
+.subsystem-item:focus-visible,
+.mobile-nav-btn:focus-visible,
+.crumb-btn:focus-visible,
+.context-btn:focus-visible,
+.diagram-toggle-btn:focus-visible,
+.system-card:focus-visible,
+.hotspot:focus-visible,
+.pn-link:focus-visible,
+.supplier-btn:focus-visible,
+.secondary-link:focus-visible,
+.primary-btn:focus-visible,
+.secondary-btn:focus-visible,
+.home-link:focus-visible {
+  box-shadow: 0 0 0 3px rgba(44, 111, 151, 0.18);
+  border-color: var(--accent);
 }
 
 .system-item.active,
@@ -856,6 +878,11 @@ a {
   background: var(--accent-soft);
 }
 
+.parts-table tr[data-row-key]:focus-visible {
+  background: #eef5fb;
+  box-shadow: inset 0 0 0 2px rgba(44, 111, 151, 0.24);
+}
+
 /* Expansion row — appears inline below the clicked data row */
 .expansion-row td {
   padding: 0;
@@ -1072,6 +1099,41 @@ a {
   line-height: 1.5;
 }
 
+.loading-panel {
+  display: grid;
+  gap: 10px;
+  padding: 26px 20px;
+  border: 1px solid rgba(44, 111, 151, 0.14);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(72, 136, 179, 0.08), rgba(180, 216, 239, 0.18)),
+    #f7fbfe;
+  color: var(--accent-strong);
+}
+
+.loading-panel.compact {
+  padding: 14px 12px;
+  border-style: dashed;
+  border-radius: 14px;
+}
+
+.loading-panel h3,
+.loading-panel p {
+  margin: 0;
+}
+
+.loading-panel p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.loading-panel.is-error {
+  border-color: rgba(185, 28, 28, 0.2);
+  background:
+    linear-gradient(135deg, rgba(248, 113, 113, 0.08), rgba(255, 228, 230, 0.65)),
+    #fff7f7;
+}
+
 @keyframes shimmer {
   0% {
     background-position: 200% 0;
@@ -1079,6 +1141,29 @@ a {
 
   100% {
     background-position: -20% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .system-item:hover,
+  .subsystem-item:hover,
+  .system-card:hover {
+    transform: none;
+  }
+
+  .system-card-image,
+  .diagram-image,
+  .hotspot {
+    filter: none;
   }
 }
 

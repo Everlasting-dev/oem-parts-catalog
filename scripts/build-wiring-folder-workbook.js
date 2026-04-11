@@ -3,10 +3,10 @@
 const fs = require("fs");
 const path = require("path");
 const ExcelJS = require("exceljs");
+const { writeCatalogBundles } = require("./write-catalog-bundles");
 
 const ROOT = path.join(__dirname, "..");
 const CATALOG_PATH = path.join(ROOT, "data", "catalog-data.json");
-const JS_BUNDLE_PATH = path.join(ROOT, "data", "catalog-data.js");
 const OUTPUT_DIR = path.join(ROOT, "data", "wiring 2010,2013,2019");
 const OUTPUT_PATH = path.join(OUTPUT_DIR, "GT-R Wiring 2010-2013-2019 Parts Index.xlsx");
 
@@ -47,7 +47,7 @@ function loadCatalog() {
 function writeCatalog(catalog) {
   const json = JSON.stringify(catalog, null, 2);
   fs.writeFileSync(CATALOG_PATH, json, "utf8");
-  fs.writeFileSync(JS_BUNDLE_PATH, `window.CATALOG_DATA = ${json}\n`, "utf8");
+  writeCatalogBundles(catalog, { projectRoot: ROOT });
 }
 
 function splitBulletText(text) {

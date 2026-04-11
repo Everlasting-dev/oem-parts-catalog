@@ -42,7 +42,11 @@
             </div>
             <span id="system-count" class="meta-pill">0</span>
           </div>
-          <div id="system-list" class="system-list"></div>
+          <div id="system-list" class="system-list">
+            <div class="loading-panel compact">
+              <p>Preparing catalog index...</p>
+            </div>
+          </div>
         </section>
 
         <section class="panel subsystems-panel" id="subsystems-panel">
@@ -57,7 +61,11 @@
             <label class="field-label" for="subsystem-search">Filter current list</label>
             <input id="subsystem-search" type="search" placeholder="Select a system to filter families or diagrams..." autocomplete="off" disabled>
           </div>
-          <div id="subsystem-list" class="subsystem-list"></div>
+          <div id="subsystem-list" class="subsystem-list">
+            <div class="loading-panel compact">
+              <p>Select a system to load its families and diagrams.</p>
+            </div>
+          </div>
         </section>
       </aside>
 
@@ -82,13 +90,18 @@
             <input id="local-search" type="search" placeholder="Filter items in the selected system..." autocomplete="off">
           </div>
 
-          <div id="stage-content" class="stage-content"></div>
+          <div id="stage-content" class="stage-content">
+            <div class="loading-panel">
+              <h3>Preparing catalog workspace</h3>
+              <p>Loading the lightweight app shell first so the full catalog can stay fast.</p>
+            </div>
+          </div>
         </section>
       </section>
     </main>
   </div>
 
-  <script src="data/catalog-data.js"></script>
+  <script src="data/catalog-manifest.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

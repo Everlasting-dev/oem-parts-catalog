@@ -3,10 +3,10 @@
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
+const { writeCatalogBundles } = require('./write-catalog-bundles');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const CATALOG_FILE = path.join(PROJECT_ROOT, 'data', 'catalog-data.json');
-const JS_BUNDLE_FILE = path.join(PROJECT_ROOT, 'data', 'catalog-data.js');
 const REPORT_JSON = path.join(PROJECT_ROOT, 'data', 'supplier-verification.json');
 const REPORT_MD = path.join(PROJECT_ROOT, 'data', 'supplier-verification.md');
 
@@ -32,7 +32,7 @@ function loadJson(filePath) {
 function saveCatalog(catalog) {
   const json = JSON.stringify(catalog, null, 2);
   fs.writeFileSync(CATALOG_FILE, `${json}\n`, 'utf8');
-  fs.writeFileSync(JS_BUNDLE_FILE, `window.CATALOG_DATA = ${json}\n`, 'utf8');
+  writeCatalogBundles(catalog, { projectRoot: PROJECT_ROOT });
 }
 
 function sleep(ms) {

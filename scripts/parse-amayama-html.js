@@ -20,10 +20,10 @@
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
+const { writeCatalogBundles } = require('./write-catalog-bundles');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const CATALOG_FILE = path.join(PROJECT_ROOT, 'data', 'catalog-data.json');
-const JS_BUNDLE_FILE = path.join(PROJECT_ROOT, 'data', 'catalog-data.js');
 const DIAGRAMS_DIR = path.join(PROJECT_ROOT, 'assets', 'diagrams');
 
 const htmlPath = process.argv[2];
@@ -85,6 +85,13 @@ function slugify(text) {
 
 function amayamaUrl(pn) {
   return `https://www.amayama.com/en/part/nissan/${pn.replace(/[-\s]/g, '').toLowerCase()}`;
+}
+
+function normalizePartNumber(value) {
+  const raw = decodeEntities(value || '').toUpperCase().replace(/\s+/g, '');
+  if (/^[A-Z0-9]{5}-[A-Z0-9]{4,6}$/.test(raw)) return raw;
+  if (/^[A-Z0-9]{10,11}$/.test(raw)) return `${raw.slice(0, 5)}-${raw.slice(5)}`;
+  return '';
 }
 
 function ensureDir(dirPath) {
@@ -263,10 +270,9 @@ $('.epcSchema__schema').each((schemaIndex, schemaEl) => {
     }
 
     const link = row.find('.entriesTable__number a').first();
-    if (!link.length) return;
-
-    const partNumber = decodeEntities(link.text()).toUpperCase().trim();
-    if (!/^[A-Z0-9]{5}-[A-Z0-9]{4,6}$/.test(partNumber)) return;
+    const numberCellText = decodeEntities(row.find('.entriesTable__number').first().text());
+    const partNumber = normalizePartNumber(link.length ? link.text() : numberCellText);
+    if (!partNumber) return;
 
     const description = extractPartDescription(
       link.attr('title') || '',
@@ -300,9 +306,13 @@ $('.epcSchema__schema').each((schemaIndex, schemaEl) => {
 
     addOrMergePart(importedParts, part);
 
-    if (currentRef) {
-      if (!refToPartNumbers.has(currentRef)) refToPartNumbers.set(currentRef, []);
-      const list = refToPartNumbers.get(currentRef);
+    const rowKey = decodeEntities(row.attr('data-key') || '');
+    const rowRefMatch = rowKey.match(new RegExp(`^${schemaId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}-([A-Z0-9+]+)$`, 'i'));
+    const rowRef = rowRefMatch ? rowRefMatch[1] : currentRef;
+
+    if (rowRef) {
+      if (!refToPartNumbers.has(rowRef)) refToPartNumbers.set(rowRef, []);
+      const list = refToPartNumbers.get(rowRef);
       if (!list.includes(partNumber)) list.push(partNumber);
     }
   });
@@ -421,7 +431,7 @@ for (const part of catalog.parts) {
 
 const jsonStr = JSON.stringify(catalog, null, 2);
 fs.writeFileSync(CATALOG_FILE, jsonStr, 'utf8');
-fs.writeFileSync(JS_BUNDLE_FILE, `window.CATALOG_DATA = ${jsonStr}\n`, 'utf8');
+writeCatalogBundles(catalog, { projectRoot: PROJECT_ROOT });
 
 console.log(`Parsed "${pageTitle}"`);
 console.log(`  Source URL     : ${sourceUrl || '(not found)'}`);

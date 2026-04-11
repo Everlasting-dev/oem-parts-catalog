@@ -20,13 +20,13 @@
 const fs   = require('fs');
 const path = require('path');
 const sharp = require('sharp');
+const { writeCatalogBundles } = require('./write-catalog-bundles');
 
 const PROJECT_ROOT   = path.resolve(__dirname, '..');
 const CATALOG_FILE   = path.join(PROJECT_ROOT, 'data', 'catalog-data.json');
 const LABELS_FILE    = path.join(PROJECT_ROOT, 'data', 'detected-labels.json');
 const PARTS_MAP_FILE = path.join(PROJECT_ROOT, 'data', 'diagram-parts.json');
 const OVERRIDES_FILE = path.join(PROJECT_ROOT, 'data', 'diagram-overrides.json');
-const JS_BUNDLE_FILE = path.join(PROJECT_ROOT, 'data', 'catalog-data.js');
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -308,7 +308,7 @@ async function main() {
   // ── Write outputs ──
   const jsonStr = JSON.stringify(catalog, null, 2);
   fs.writeFileSync(CATALOG_FILE, jsonStr, 'utf8');
-  fs.writeFileSync(JS_BUNDLE_FILE, `window.CATALOG_DATA = ${jsonStr}\n`, 'utf8');
+  writeCatalogBundles(catalog, { projectRoot: PROJECT_ROOT });
 
   console.log('\n=== build-hotspots complete ===');
   console.log(`  Total hotspots    : ${totalHotspots}`);

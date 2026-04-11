@@ -8,6 +8,7 @@
     "scrape": "node scripts/scrape-diagram-parts.js",
     "scrape:amayama": "node scripts/scrape-amayama-catalog.js",
     "build:archive": "node scripts/build-catalog-archive-manifest.js",
+    "build:browser-data": "node scripts/write-catalog-bundles.js",
     "export:db": "powershell -ExecutionPolicy Bypass -File .\\scripts\\export-catalog-workbook.ps1",
     "build": "echo Static site - no build step",
     "build:hotspots": "node scripts/build-hotspots.js",

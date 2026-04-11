@@ -1,4 +1,12 @@
-const catalog = window.CATALOG_DATA || { parts: [], diagrams: [] };
+const catalogBootstrap = window.CATALOG_BOOTSTRAP || {
+  systems: [],
+  categories: [],
+  totalPartCount: 0,
+  totalDiagramCount: 0,
+  sources: [],
+};
+
+window.CATALOG_SYSTEM_CHUNKS = window.CATALOG_SYSTEM_CHUNKS || {};
 
 const state = {
   activeCategoryKey: null,
@@ -13,7 +21,9 @@ const state = {
   mobileHotspotsVisible: false,
 };
 
-const partsByNumber = new Map((catalog.parts || []).map(part => [part.partNumber, part]));
+const partsByNumber = new Map();
+const systemLoadPromises = new Map();
+const scriptLoadPromises = new Map();
 
 const SYSTEM_MERGE_ALIASES = new Map([
   ["alternator fitting", "alternator"],
@@ -49,6 +59,146 @@ const stageBreadcrumbs = document.getElementById("stage-breadcrumbs");
 const stageActions = document.getElementById("stage-actions");
 const stageContent = document.getElementById("stage-content");
 let isRestoringUrlState = false;
+let currentStageSelection = null;
+
+function initialiseSystemRecord(system) {
+  const diagrams = (system.diagrams || []).map(diagram => ({
+    ...diagram,
+    _rowsBase: null,
+    _rowQueryCache: new Map(),
+    _hotspotTargets: null,
+  }));
+  const diagramMap = new Map(diagrams.map(diagram => [diagram.id, diagram]));
+  const groups = (system.groups || []).map(group => ({
+    ...group,
+    diagramIds: [...(group.diagramIds || [])],
+  }));
+
+  return {
+    ...system,
+    diagrams,
+    diagramMap,
+    groups,
+    groupMap: new Map(groups.map(group => [group.id, group])),
+    isLoaded: false,
+    loadError: "",
+  };
+}
+
+const bootstrapSystems = (catalogBootstrap.systems || []).map(initialiseSystemRecord);
+const bootstrapSystemsById = new Map(bootstrapSystems.map(system => [system.id, system]));
+const bootstrapCategories = (catalogBootstrap.categories || [])
+  .map(category => ({
+    ...category,
+    systemIds: [...(category.systemIds || [])],
+    systems: (category.systemIds || [])
+      .map(systemId => bootstrapSystemsById.get(systemId))
+      .filter(Boolean),
+  }))
+  .filter(category => category.systems.length > 0);
+const bootstrapCategoriesByKey = new Map(bootstrapCategories.map(category => [category.key, category]));
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function getMotionBehavior() {
+  return prefersReducedMotion() ? "auto" : "smooth";
+}
+
+function getGroupDiagrams(system, group) {
+  if (!system || !group) return [];
+  return (group.diagramIds || [])
+    .map(diagramId => system.diagramMap.get(diagramId))
+    .filter(Boolean);
+}
+
+function loadScript(src) {
+  if (!src) return Promise.reject(new Error("Missing script path"));
+  if (scriptLoadPromises.has(src)) return scriptLoadPromises.get(src);
+
+  const promise = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error(`Failed to load ${src}`));
+    document.head.appendChild(script);
+  }).catch(error => {
+    scriptLoadPromises.delete(src);
+    throw error;
+  });
+
+  scriptLoadPromises.set(src, promise);
+  return promise;
+}
+
+function mergeSystemChunk(system, chunk) {
+  for (const part of chunk.parts || []) {
+    if (!part?.partNumber) continue;
+    partsByNumber.set(part.partNumber, part);
+  }
+
+  for (const fullDiagram of chunk.diagrams || []) {
+    const existing = system.diagramMap.get(fullDiagram.id);
+    if (existing) {
+      Object.assign(existing, fullDiagram);
+      existing._rowsBase = null;
+      existing._rowQueryCache = new Map();
+      existing._hotspotTargets = null;
+      continue;
+    }
+
+    const nextDiagram = {
+      ...fullDiagram,
+      _rowsBase: null,
+      _rowQueryCache: new Map(),
+      _hotspotTargets: null,
+    };
+    system.diagrams.push(nextDiagram);
+    system.diagramMap.set(nextDiagram.id, nextDiagram);
+  }
+
+  system.isLoaded = true;
+  system.loadError = "";
+}
+
+function ensureSystemLoaded(systemId) {
+  const system = bootstrapSystemsById.get(systemId);
+  if (!system) return Promise.resolve(null);
+  if (system.isLoaded) return Promise.resolve(system);
+  if (systemLoadPromises.has(systemId)) return systemLoadPromises.get(systemId);
+
+  const promise = loadScript(system.chunkPath)
+    .then(() => {
+      const chunk = window.CATALOG_SYSTEM_CHUNKS?.[systemId];
+      if (!chunk) throw new Error(`Missing browser data for ${systemId}`);
+      mergeSystemChunk(system, chunk);
+      delete window.CATALOG_SYSTEM_CHUNKS[systemId];
+      return system;
+    })
+    .catch(error => {
+      system.loadError = error instanceof Error ? error.message : String(error);
+      throw error;
+    })
+    .finally(() => {
+      systemLoadPromises.delete(systemId);
+    });
+
+  systemLoadPromises.set(systemId, promise);
+  return promise;
+}
+
+function requestSystemLoad(systemId) {
+  if (!systemId || systemLoadPromises.has(systemId) || bootstrapSystemsById.get(systemId)?.isLoaded) return;
+  ensureSystemLoaded(systemId)
+    .then(() => {
+      if (state.activeSystemId === systemId) render();
+    })
+    .catch(() => {
+      if (state.activeSystemId === systemId) render();
+    });
+}
 
 function isMobileViewport() {
   return window.matchMedia("(max-width: 820px)").matches;
@@ -417,7 +567,7 @@ function renderImageTag(src, altText, fallbackSrc = "", cssClass = "system-card-
   if (!src) return "";
   const safeAlt = escapeHtml(altText || "");
   const fallbackAttr = fallbackSrc ? ` data-fallback-src="${escapeHtml(fallbackSrc)}"` : "";
-  return `<img class="${escapeHtml(cssClass)}" src="${encodeURI(src)}" alt="${safeAlt}" loading="lazy"${fallbackAttr}>`;
+  return `<img class="${escapeHtml(cssClass)}" src="${encodeURI(src)}" alt="${safeAlt}" loading="lazy" decoding="async" fetchpriority="low"${fallbackAttr}>`;
 }
 
 function getVariantLabel(diagram) {
@@ -503,7 +653,7 @@ function outboundLink(url, label, cssClass, titleText) {
   const safeLabel = escapeHtml(label);
   const safeCls = escapeHtml(cssClass || "");
   const safeTitle = titleText ? ` title="${escapeHtml(titleText)}"` : "";
-  return `<a href="${safeUrl}" data-href="${safeUrl}" class="${safeCls}"${safeTitle} onclick="event.preventDefault();event.stopPropagation();window.open(this.dataset.href,'_blank','noopener,noreferrer')">${safeLabel}</a>`;
+  return `<a href="${safeUrl}" data-href="${safeUrl}" data-outbound-link="true" class="${safeCls}"${safeTitle}>${safeLabel}</a>`;
 }
 
 function buildUrlState() {
@@ -547,203 +697,19 @@ function syncUrlState() {
 }
 
 function buildSystems() {
-  const systems = new Map();
-
-  for (const diagram of catalog.diagrams || []) {
-    const systemId = makeSystemId(diagram);
-    if (!systems.has(systemId)) {
-      systems.set(systemId, {
-        id: systemId,
-        title: canonicalSystemTitle(diagram),
-        diagrams: [],
-        partNumbers: new Set(),
-      });
-    }
-
-    const system = systems.get(systemId);
-    system.diagrams.push(diagram);
-    for (const hotspot of diagram.hotspots || []) {
-      if (hotspot.partNumber) system.partNumbers.add(hotspot.partNumber);
-    }
-  }
-
-  return [...systems.values()]
-    .map(system => {
-      const partNumbers = [...system.partNumbers];
-      const previewDiagram = system.diagrams.find(diagram => getPreferredImage(diagram)) || null;
-      return {
-        ...system,
-        partNumbers,
-        previewDiagram,
-        previewImage: previewDiagram ? getPreferredImage(previewDiagram) : "",
-        previewFallbackImage: previewDiagram ? getFallbackImage(previewDiagram) : "",
-        previewImages: system.diagrams.map(getPreferredImage).filter(Boolean).slice(0, 2),
-        searchableText: normalise(
-          `${system.title} ${system.diagrams.map(d => `${getDiagramDisplayTitle(d, system.title)} ${getDiagramSecondaryLabel(d, system.title)} ${d.title} ${d.subtitle || ""}`).join(" ")} ${partNumbers.join(" ")} ${
-            partNumbers.map(partNumber => partsByNumber.get(partNumber)?.description || "").join(" ")
-          }`
-        ),
-        diagrams: system.diagrams.sort((a, b) =>
-          getVariantSortKey(a).localeCompare(getVariantSortKey(b)) ||
-          getVariantLabel(a).localeCompare(getVariantLabel(b))
-        ),
-      };
-    })
-    .sort((a, b) => a.title.localeCompare(b.title));
+  return bootstrapSystems;
 }
 
 const allSystems = buildSystems();
 
-const CATEGORY_DEFINITIONS = [
-  {
-    key: "electrical",
-    title: "Electrical & Wiring",
-    description: "Wiring, modules, relays, battery, lighting, and electronics",
-    patterns: [
-      /\bwiring\b/, /\bharness\b/, /\belectrical\b/, /\brelay\b/, /\bswitch\b/, /\bbattery\b/,
-      /\balternator\b/, /\bstarter\b/, /\bignition\b/, /\bengine control\b/, /\bcontrol module\b/,
-      /\bdistributor\b/, /\bmeter\b/, /\bgauge\b/, /\baudio\b/, /\btelephone\b/, /\bspeaker\b/,
-      /\blamp\b/, /\bheadlamp\b/, /\blighting\b/, /\bwiper\b/, /\bwasher\b/, /\bkey set\b/
-    ],
-  },
-  {
-    key: "engine",
-    title: "Engine & Turbo",
-    description: "Core engine assemblies, manifolds, turbo, and lubrication",
-    patterns: [
-      /\bengine\b/, /\bcylinder\b/, /\bpiston\b/, /\bcrankshaft\b/, /\bcamshaft\b/,
-      /\bvalve\b/, /\bmanifold\b/, /\bturbo\b/, /\bthrottle\b/, /\blubricating\b/,
-      /\bair cleaner\b/, /\bcrankcase\b/, /\bgasket kit\b/, /\bbare short\b/, /\bfront cover\b/
-    ],
-  },
-  {
-    key: "fuel-cooling",
-    title: "Fuel, Cooling & Exhaust",
-    description: "Fuel delivery, cooling, vacuum, radiator, and exhaust systems",
-    patterns: [
-      /\bfuel\b/, /\bwater\b/, /\bcooling\b/, /\bradiator\b/, /\boil cooler\b/, /\bvacuum\b/,
-      /\bevap\b/, /\bhose\b/, /\bpiping\b/, /\bexhaust\b/, /\bcatalyst\b/, /\bmuffler\b/,
-      /\baccelerator linkage\b/, /\bsecondary air\b/
-    ],
-  },
-  {
-    key: "climate",
-    title: "HVAC & Climate",
-    description: "Heater, blower, condenser, ducts, and cabin climate controls",
-    patterns: [
-      /\bheater\b/, /\bblower\b/, /\bcooling unit\b/, /\bcompressor\b/, /\bcondenser\b/,
-      /\bnozzle\b/, /\bduct\b/, /\bventilator\b/, /\bcontrol unit\b/, /\bheater piping\b/
-    ],
-  },
-  {
-    key: "drivetrain",
-    title: "Transmission & Driveline",
-    description: "Transmission, transfer, shafts, axles, and final drives",
-    patterns: [
-      /\btransmission\b/, /\btransaxle\b/, /\btransfer\b/, /\bpropeller shaft\b/, /\bdrive shaft\b/,
-      /\bfinal drive\b/, /\bgear\b/, /\baxle\b/, /\bclutch release\b/, /\bauto transmission\b/
-    ],
-  },
-  {
-    key: "chassis",
-    title: "Suspension & Brakes",
-    description: "Suspension, wheels, brakes, anti-skid, and pedal systems",
-    patterns: [
-      /\bsuspension\b/, /\bwheel\b/, /\btire\b/, /\bbrake\b/, /\banti skid\b/,
-      /\bmaster cylinder\b/, /\bservo\b/, /\bpedal\b/
-    ],
-  },
-  {
-    key: "steering",
-    title: "Steering",
-    description: "Steering wheel, column, gear, and power steering systems",
-    patterns: [/\bsteering\b/, /\bpower steering\b/],
-  },
-  {
-    key: "body",
-    title: "Body & Exterior",
-    description: "Body panels, bumpers, glass, doors, trunk, and exterior trim",
-    patterns: [
-      /\bbumper\b/, /\bfender\b/, /\bhood\b/, /\bcowl\b/, /\broof\b/, /\bfloor panel\b/,
-      /\bmember\b/, /\bbody side\b/, /\bapron\b/, /\bdash panel\b/, /\bwindshield\b/,
-      /\bwindow\b/, /\bdoor\b/, /\btrunk\b/, /\bmirror\b/, /\bspoiler\b/, /\bemblem\b/,
-      /\blabel\b/, /\bplate\b/, /\brear back panel\b/
-    ],
-  },
-  {
-    key: "interior",
-    title: "Interior & Trim",
-    description: "Dash, console, seats, luggage trim, and cabin finishing parts",
-    patterns: [
-      /\bdash trimming\b/, /\binstrument panel\b/, /\bconsole\b/, /\bseat\b/, /\bsunvisor\b/,
-      /\btrimming\b/, /\bluggage room\b/, /\bfloor fitting\b/, /\bfloor trimming\b/
-    ],
-  },
-  {
-    key: "general",
-    title: "General & Service",
-    description: "Service items, manuals, and uncategorized catalog entries",
-    patterns: [],
-  },
-];
-
-function getSystemCategoryDefinition(system) {
-  const haystack = normalise(
-    [
-      system?.title || "",
-      ...(system?.diagrams || []).flatMap(diagram => [
-        diagram.title || "",
-        diagram.subtitle || "",
-        diagram.pageVariantLabel || "",
-        diagram.viewFamilyTitle || "",
-      ]),
-    ].join(" ")
-  );
-
-  for (const category of CATEGORY_DEFINITIONS) {
-    if (category.patterns.some(pattern => pattern.test(haystack))) return category;
-  }
-
-  return CATEGORY_DEFINITIONS.find(category => category.key === "general");
-}
-
 function buildCategories(systems) {
-  const categories = new Map(
-    CATEGORY_DEFINITIONS.map(category => [category.key, {
-      ...category,
-      systems: [],
-      partNumbers: new Set(),
-      diagramCount: 0,
-      previewImage: "",
-      previewFallbackImage: "",
-    }])
-  );
-
-  for (const system of systems) {
-    const category = categories.get(getSystemCategoryDefinition(system).key);
-    category.systems.push(system);
-    category.diagramCount += system.diagrams.length;
-    for (const partNumber of system.partNumbers || []) category.partNumbers.add(partNumber);
-    if (!category.previewImage && system.previewImage) {
-      category.previewImage = system.previewImage;
-      category.previewFallbackImage = system.previewFallbackImage || "";
-    }
-  }
-
-  return CATEGORY_DEFINITIONS
-    .map(definition => categories.get(definition.key))
-    .filter(category => category.systems.length > 0)
-    .map(category => ({
-      ...category,
-      systemCount: category.systems.length,
-      partCount: category.partNumbers.size,
-    }));
+  return bootstrapCategories;
 }
 
 const allCategories = buildCategories(allSystems);
 
 function getActiveCategory() {
-  return allCategories.find(category => category.key === state.activeCategoryKey) || null;
+  return bootstrapCategoriesByKey.get(state.activeCategoryKey) || null;
 }
 
 function getVisibleSystems() {
@@ -753,60 +719,20 @@ function getVisibleSystems() {
 }
 
 function getActiveSystem() {
-  return allSystems.find(system => system.id === state.activeSystemId) || null;
+  return bootstrapSystemsById.get(state.activeSystemId) || null;
 }
 
 function buildGroups(system) {
-  if (!system) return [];
-
-  const groups = new Map();
-  for (const diagram of system.diagrams || []) {
-    const title = getDiagramGroupTitle(diagram);
-    const id = makeGroupId(system.id, title);
-    if (!groups.has(id)) {
-      groups.set(id, {
-        id,
-        title,
-        diagrams: [],
-        partNumbers: new Set(),
-      });
-    }
-
-    const group = groups.get(id);
-    group.diagrams.push(diagram);
-    for (const hotspot of diagram.hotspots || []) {
-      if (hotspot.partNumber) group.partNumbers.add(hotspot.partNumber);
-    }
-  }
-
-  return [...groups.values()]
-    .map(group => {
-      const sortedDiagrams = group.diagrams.sort((a, b) =>
-        getVariantSortKey(a).localeCompare(getVariantSortKey(b)) ||
-        getVariantLabel(a).localeCompare(getVariantLabel(b))
-      );
-      const previewDiagram = sortedDiagrams.find(diagram => getPreferredImage(diagram)) || null;
-      return {
-        ...group,
-        partCount: group.partNumbers.size,
-        diagrams: sortedDiagrams,
-        previewDiagram,
-        previewImage: previewDiagram ? getPreferredImage(previewDiagram) : "",
-        previewFallbackImage: previewDiagram ? getFallbackImage(previewDiagram) : "",
-      };
-    })
-    .sort((a, b) => a.title.localeCompare(b.title));
+  return system?.groups || [];
 }
 
 function shouldUseGroupLanding(system) {
-  const groups = buildGroups(system);
-  if (groups.length <= 1) return false;
-  return groups.some(group => normalise(group.title) !== normalise(system.title));
+  return Boolean(system?.useGroupLanding);
 }
 
 function getActiveGroup(system) {
   if (!system || !shouldUseGroupLanding(system)) return null;
-  return buildGroups(system).find(group => group.id === state.activeGroupId) || null;
+  return system.groupMap.get(state.activeGroupId) || null;
 }
 
 function getVisibleGroups(system) {
@@ -815,9 +741,7 @@ function getVisibleGroups(system) {
   const query = normalise(state.subsystemQuery);
   if (!query) return groups;
 
-  return groups.filter(group => normalise(
-    `${group.title} ${group.diagrams.map(diagram => `${getDiagramDisplayTitle(diagram, system.title)} ${getDiagramSecondaryLabel(diagram, system.title)}`).join(" ")}`
-  ).includes(query));
+  return groups.filter(group => (group.searchableText || "").includes(query));
 }
 
 function getVisibleSubsystems(system, options = {}) {
@@ -826,16 +750,15 @@ function getVisibleSubsystems(system, options = {}) {
   const query = ignoreFilter ? "" : normalise(state.subsystemQuery);
   const diagrams = !shouldUseGroupLanding(system)
     ? system.diagrams
-    : (getActiveGroup(system)?.diagrams || []);
+    : getGroupDiagrams(system, getActiveGroup(system));
 
   if (!query) return diagrams;
 
-  return diagrams.filter(diagram => normalise(
-    `${getDiagramDisplayTitle(diagram, system.title)} ${getDiagramSecondaryLabel(diagram, system.title)} ${diagram.title || ""} ${diagram.subtitle || ""}`
-  ).includes(query));
+  return diagrams.filter(diagram => (diagram.searchableText || "").includes(query));
 }
 
 function getHotspotTargets(diagram) {
+  if (diagram?._hotspotTargets) return diagram._hotspotTargets;
   const seen = new Set();
   const targets = [];
 
@@ -853,55 +776,65 @@ function getHotspotTargets(diagram) {
     });
   }
 
+  diagram._hotspotTargets = targets;
   return targets;
 }
 
 function buildRowsForDiagram(diagram) {
   if (!diagram) return [];
   const query = normalise(state.localQuery);
-  const rows = [];
-  const seen = new Set();
+  if (!diagram._rowsBase) {
+    const rows = [];
+    const seen = new Set();
 
-  for (const hotspot of diagram.hotspots || []) {
-    if (!hotspot.partNumber) continue;
-    const key = rowKey(diagram.id, hotspot);
-    if (seen.has(key)) continue;
-    seen.add(key);
+    for (const hotspot of diagram.hotspots || []) {
+      if (!hotspot.partNumber) continue;
+      const key = rowKey(diagram.id, hotspot);
+      if (seen.has(key)) continue;
+      seen.add(key);
 
-    const part = partsByNumber.get(hotspot.partNumber) || {
-      partNumber: hotspot.partNumber,
-      description: "",
-      appliesDetails: "",
-      period: "",
-      notes: "",
-    };
+      const part = partsByNumber.get(hotspot.partNumber) || {
+        partNumber: hotspot.partNumber,
+        description: "",
+        appliesDetails: "",
+        period: "",
+        notes: "",
+      };
 
-    const row = {
-      key,
-      pncKey: pncKey(diagram.id, hotspot.callout),
-      diagramId: diagram.id,
-      callout: hotspot.callout || "",
-      partNumber: hotspot.partNumber,
-      description: part.description || "",
-      appliesDetails: part.appliesDetails || "",
-      period: part.period || "",
-      notes: part.notes || "",
-      source: hotspot.source || diagram.source || "",
-      variantLabel: getVariantLabel(diagram),
-      links: part.links || [],
-    };
+      const row = {
+        key,
+        pncKey: pncKey(diagram.id, hotspot.callout),
+        diagramId: diagram.id,
+        callout: hotspot.callout || "",
+        partNumber: hotspot.partNumber,
+        description: part.description || "",
+        appliesDetails: part.appliesDetails || "",
+        period: part.period || "",
+        notes: part.notes || "",
+        source: hotspot.source || diagram.source || "",
+        variantLabel: getVariantLabel(diagram),
+        links: part.links || [],
+      };
 
-    row.searchableText = normalise(
-      `${row.callout} ${row.partNumber} ${row.description} ${row.appliesDetails} ${row.period} ${row.notes} ${row.source} ${row.variantLabel}`
+      row.searchableText = normalise(
+        `${row.callout} ${row.partNumber} ${row.description} ${row.appliesDetails} ${row.period} ${row.notes} ${row.source} ${row.variantLabel}`
+      );
+      rows.push(row);
+    }
+
+    diagram._rowsBase = rows.sort((a, b) =>
+      String(a.callout).localeCompare(String(b.callout), undefined, { numeric: true }) ||
+      a.partNumber.localeCompare(b.partNumber)
     );
-
-    if (!query || row.searchableText.includes(query)) rows.push(row);
+    diagram._rowQueryCache = new Map();
   }
 
-  return rows.sort((a, b) =>
-    String(a.callout).localeCompare(String(b.callout), undefined, { numeric: true }) ||
-    a.partNumber.localeCompare(b.partNumber)
-  );
+  if (!query) return diagram._rowsBase;
+  if (diagram._rowQueryCache?.has(query)) return diagram._rowQueryCache.get(query);
+
+  const filteredRows = diagram._rowsBase.filter(row => row.searchableText.includes(query));
+  diagram._rowQueryCache.set(query, filteredRows);
+  return filteredRows;
 }
 
 function resetPartsFilter() {
@@ -938,9 +871,8 @@ function selectSystem(system, options = {}) {
   if (!system) return;
   const { preserveSubsystemQuery = false } = options;
   const useGroups = shouldUseGroupLanding(system);
-  const category = getSystemCategoryDefinition(system);
 
-  state.activeCategoryKey = category?.key || null;
+  state.activeCategoryKey = system.categoryKey || null;
   state.activeSystemId = system.id;
   state.activeGroupId = null;
   state.activeDiagramId = useGroups ? null : (system.diagrams[0]?.id || null);
@@ -959,7 +891,7 @@ function selectSystem(system, options = {}) {
 function selectGroup(group) {
   if (!group) return;
   state.activeGroupId = group.id;
-  state.activeDiagramId = group.diagrams[0]?.id || null;
+  state.activeDiagramId = group.diagramIds?.[0] || null;
   state.activeRowKey = null;
   resetPartsFilter();
   if (isMobileViewport()) setMobileView("subsystems");
@@ -1190,7 +1122,7 @@ function renderSystems() {
     if (system.id === state.activeSystemId) button.classList.add("active");
     button.innerHTML = `
       <strong>${escapeHtml(getSystemDisplayTitle(system))}</strong>
-      <span>${system.diagrams.length} ${useGroups ? "variants" : "diagrams"} | ${system.partNumbers.length} indexed parts</span>
+      <span>${system.diagrams.length} ${useGroups ? "variants" : "diagrams"} | ${system.partCount} indexed parts</span>
     `;
     button.addEventListener("click", () => {
       selectSystem(system);
@@ -1215,7 +1147,7 @@ function renderGroupLanding(system) {
   stageNote.textContent = state.subsystemQuery
     ? "Filtered family view. Clear the list filter to see every family in this system."
     : "Select a family to open its variants, diagrams, and linked parts.";
-  matchCount.textContent = `${system.partNumbers.length} indexed parts`;
+  matchCount.textContent = `${system.partCount} indexed parts`;
 
   renderStageContext(system, null, null, []);
 
@@ -1232,27 +1164,18 @@ function renderGroupLanding(system) {
   stageContent.innerHTML = `
     <div class="system-grid">
       ${groups.map(group => `
-        <article class="system-card" data-group-id="${escapeHtml(group.id)}">
+        <article class="system-card" data-group-id="${escapeHtml(group.id)}" role="button" tabindex="0">
           ${group.previewImage ? `
             <div class="system-card-gallery single">
               ${renderImageTag(group.previewImage, `${group.title} preview`, group.previewFallbackImage)}
             </div>
           ` : ""}
           <h3>${escapeHtml(getGroupDisplayTitle(group.title))}</h3>
-          <p>${group.diagrams.length} variants | ${group.partCount} indexed parts</p>
+          <p>${group.diagramIds.length} variants | ${group.partCount} indexed parts</p>
         </article>
       `).join("")}
     </div>
   `;
-
-  for (const card of stageContent.querySelectorAll(".system-card")) {
-    card.addEventListener("click", () => {
-      const group = groups.find(item => item.id === card.dataset.groupId);
-      if (!group) return;
-      selectGroup(group);
-      render();
-    });
-  }
 
   initStageImages();
 }
@@ -1305,7 +1228,7 @@ function renderSubsystems(system) {
       button.className = "subsystem-item";
       button.innerHTML = `
         <strong>${escapeHtml(getGroupDisplayTitle(group.title))}</strong>
-        <span>${group.diagrams.length} variants | ${group.partCount} indexed parts</span>
+        <span>${group.diagramIds.length} variants | ${group.partCount} indexed parts</span>
       `;
       button.addEventListener("click", () => {
         selectGroup(group);
@@ -1423,6 +1346,67 @@ function renderPartDetailCard(row) {
     </div>`;
 }
 
+function clearStageHover() {
+  for (const el of stageContent.querySelectorAll(".hovered")) el.classList.remove("hovered");
+}
+
+function applyStageHover(pncKeyValue) {
+  clearStageHover();
+  if (!pncKeyValue) return;
+  for (const el of stageContent.querySelectorAll(`[data-pnc-key="${CSS.escape(pncKeyValue)}"]`)) {
+    el.classList.add("hovered");
+  }
+}
+
+function syncMobileHotspotToggle() {
+  const figure = stageContent.querySelector(".diagram-figure");
+  if (figure) {
+    figure.classList.toggle("show-mobile-hotspots", Boolean(isMobileViewport() && state.mobileHotspotsVisible));
+  }
+
+  const toggle = stageContent.querySelector("[data-toggle-mobile-hotspots='true']");
+  if (!toggle) return;
+  const pressed = Boolean(isMobileViewport() && state.mobileHotspotsVisible);
+  toggle.setAttribute("aria-pressed", pressed ? "true" : "false");
+  toggle.textContent = pressed ? "Hide callouts" : "Show callouts";
+}
+
+function syncStageSelection(options = {}) {
+  const { scrollExpansion = false } = options;
+  if (!currentStageSelection || currentStageSelection.diagramId !== state.activeDiagramId) return;
+
+  const activeRow = currentStageSelection.diagramRows.find(row => row.key === state.activeRowKey) || null;
+  const activePncKey = activeRow?.pncKey || "";
+
+  for (const rowEl of stageContent.querySelectorAll("tbody tr[data-row-key]")) {
+    rowEl.classList.toggle("active", rowEl.dataset.rowKey === state.activeRowKey);
+  }
+
+  for (const hotspotEl of stageContent.querySelectorAll(".hotspot")) {
+    hotspotEl.classList.toggle("active", hotspotEl.dataset.pncKey === activePncKey);
+  }
+
+  const existingExpansion = stageContent.querySelector(".expansion-row");
+  existingExpansion?.remove();
+
+  if (activeRow) {
+    const activeRowElement = stageContent.querySelector(`tbody tr[data-row-key="${CSS.escape(activeRow.key)}"]`);
+    if (activeRowElement) {
+      activeRowElement.insertAdjacentHTML(
+        "afterend",
+        `<tr class="expansion-row"><td colspan="7">${renderPartDetailCard(activeRow)}</td></tr>`
+      );
+      if (scrollExpansion) {
+        const expansion = stageContent.querySelector(".expansion-row");
+        expansion?.scrollIntoView({ behavior: getMotionBehavior(), block: "nearest" });
+      }
+    }
+  }
+
+  syncMobileHotspotToggle();
+  syncUrlState();
+}
+
 function renderDiagramRows(system) {
   if (!system) {
     const visibleSystems = getVisibleSystems();
@@ -1431,7 +1415,7 @@ function renderDiagramRows(system) {
     if (state.globalQuery) {
       stageTitle.textContent = "Matching systems";
       stageNote.textContent = "Filtered systems view. Select a result to jump straight into its diagrams and linked parts.";
-      matchCount.textContent = `${visibleSystems.reduce((sum, item) => sum + item.partNumbers.length, 0)} indexed parts`;
+      matchCount.textContent = `${visibleSystems.reduce((sum, item) => sum + item.partCount, 0)} indexed parts`;
     } else if (activeCategory) {
       stageTitle.textContent = activeCategory.title;
       stageNote.textContent = activeCategory.description;
@@ -1448,7 +1432,7 @@ function renderDiagramRows(system) {
       ? visibleSystems.map(item => ({
           key: item.id,
           title: getSystemDisplayTitle(item),
-          subtitle: `${item.diagrams.length} diagrams | ${item.partNumbers.length} indexed parts`,
+          subtitle: `${item.diagrams.length} diagrams | ${item.partCount} indexed parts`,
           previewImage: item.previewImage,
           previewFallbackImage: item.previewFallbackImage,
           datasetName: "systemId",
@@ -1457,7 +1441,7 @@ function renderDiagramRows(system) {
         ? activeCategory.systems.map(item => ({
             key: item.id,
             title: getSystemDisplayTitle(item),
-            subtitle: `${item.diagrams.length} diagrams | ${item.partNumbers.length} indexed parts`,
+            subtitle: `${item.diagrams.length} diagrams | ${item.partCount} indexed parts`,
             previewImage: item.previewImage,
             previewFallbackImage: item.previewFallbackImage,
             datasetName: "systemId",
@@ -1484,7 +1468,7 @@ function renderDiagramRows(system) {
     stageContent.innerHTML = `
       <div class="system-grid">
         ${rootCards.map(card => `
-          <article class="system-card" data-${card.datasetName === "categoryKey" ? "category-key" : "system-id"}="${escapeHtml(card.key)}">
+          <article class="system-card" data-${card.datasetName === "categoryKey" ? "category-key" : "system-id"}="${escapeHtml(card.key)}" role="button" tabindex="0">
             ${card.previewImage ? `
               <div class="system-card-gallery single">
                 ${renderImageTag(card.previewImage, `${card.title} preview`, card.previewFallbackImage)}
@@ -1496,21 +1480,6 @@ function renderDiagramRows(system) {
         `).join("")}
       </div>
     `;
-
-    for (const card of stageContent.querySelectorAll(".system-card")) {
-      card.addEventListener("click", () => {
-        if (card.dataset.categoryKey) {
-          selectCategory(card.dataset.categoryKey);
-          render();
-          return;
-        }
-
-        const nextSystem = allSystems.find(item => item.id === card.dataset.systemId);
-        if (!nextSystem) return;
-        selectSystem(nextSystem);
-        render();
-      });
-    }
 
     initStageImages();
 
@@ -1531,7 +1500,7 @@ function renderDiagramRows(system) {
 
   if (!activeDiagram) {
     stageNote.textContent = "No diagrams matched the current list filter.";
-    matchCount.textContent = `${system.partNumbers.length} indexed parts`;
+    matchCount.textContent = `${system.partCount} indexed parts`;
     renderStageContext(system, activeGroup, null, visibleSubsystems);
     stageContent.innerHTML = `
       <div class="empty-state">
@@ -1539,6 +1508,22 @@ function renderDiagramRows(system) {
         <p>Clear the list filter or choose a different family to keep moving.</p>
       </div>
     `;
+    return;
+  }
+
+  if (!system.isLoaded) {
+    stageNote.textContent = system.loadError
+      ? "The selected system could not be loaded."
+      : "Loading the selected system's diagrams and part records.";
+    matchCount.textContent = `${system.partCount} indexed parts`;
+    renderStageContext(system, activeGroup, activeDiagram, visibleSubsystems);
+    stageContent.innerHTML = `
+      <div class="loading-panel${system.loadError ? " is-error" : ""}">
+        <h3>${system.loadError ? "Could not load this system" : "Preparing diagram data"}</h3>
+        <p>${system.loadError || "Pulling in only the active system so startup stays light."}</p>
+      </div>
+    `;
+    if (!system.loadError) requestSystemLoad(system.id);
     return;
   }
 
@@ -1552,7 +1537,7 @@ function renderDiagramRows(system) {
   stageNote.textContent = useGroups
     ? `${getGroupDisplayTitle(activeGroup?.title || "Family")} | ${visibleSubsystems.length} variants`
     : `${visibleSubsystems.length} diagrams in this system`;
-  matchCount.textContent = `${system.partNumbers.length} indexed parts`;
+  matchCount.textContent = `${system.partCount} indexed parts`;
   renderStageContext(system, activeGroup, activeDiagram, visibleSubsystems);
 
   stageContent.innerHTML = `
@@ -1582,6 +1567,7 @@ function renderDiagramRows(system) {
                 ${getFallbackImage(activeDiagram) ? `data-fallback-src="${escapeHtml(getFallbackImage(activeDiagram))}"` : ""}
                 alt="${escapeHtml(activeDiagram.title || system.title)}"
                 decoding="async"
+                fetchpriority="high"
               >
               ${hotspotTargets.map(target => `
                 <button
@@ -1636,6 +1622,7 @@ function renderDiagramRows(system) {
                       data-diagram-id="${escapeHtml(row.diagramId)}"
                       class="${isActive ? "active" : ""}"
                       title="Click to inspect this part and highlight its callout"
+                      tabindex="0"
                     >
                       <td class="col-ref"><span class="callout-badge">${escapeHtml(row.callout || "-")}</span></td>
                       <td class="col-oem">${primaryUrl ? outboundLink(primaryUrl, row.partNumber, "pn-link") : escapeHtml(row.partNumber)}</td>
@@ -1664,61 +1651,11 @@ function renderDiagramRows(system) {
       </section>
     </div>
   `;
-
-  function clearHover() {
-    for (const el of stageContent.querySelectorAll(".hovered")) el.classList.remove("hovered");
-  }
-
-  function applyHover(pncKeyValue) {
-    clearHover();
-    if (!pncKeyValue) return;
-    for (const el of stageContent.querySelectorAll(`[data-pnc-key="${CSS.escape(pncKeyValue)}"]`)) {
-      el.classList.add("hovered");
-    }
-  }
-
-  for (const hotspot of stageContent.querySelectorAll(".hotspot")) {
-    hotspot.addEventListener("mouseenter", () => applyHover(hotspot.dataset.pncKey));
-    hotspot.addEventListener("mouseleave", clearHover);
-    hotspot.addEventListener("click", () => {
-      const nextRow = diagramRows.find(row => row.pncKey === hotspot.dataset.pncKey) || null;
-      state.activeDiagramId = hotspot.dataset.diagramId || state.activeDiagramId;
-      state.activeRowKey = nextRow?.key || null;
-      if (isMobileViewport()) setMobileView("stage");
-      render();
-      const expansion = stageContent.querySelector(".expansion-row");
-      expansion?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    });
-  }
-
-  for (const button of stageContent.querySelectorAll("[data-toggle-mobile-hotspots='true']")) {
-    button.addEventListener("click", () => {
-      state.mobileHotspotsVisible = !state.mobileHotspotsVisible;
-      render();
-    });
-  }
-
-  for (const row of stageContent.querySelectorAll("tbody tr[data-row-key]")) {
-    row.addEventListener("mouseenter", () => applyHover(row.dataset.pncKey));
-    row.addEventListener("mouseleave", clearHover);
-    row.addEventListener("click", event => {
-      if (event.target.closest("a")) return;
-      const newKey = state.activeRowKey === row.dataset.rowKey ? null : (row.dataset.rowKey || null);
-      state.activeRowKey = newKey;
-      state.activeDiagramId = row.dataset.diagramId || state.activeDiagramId;
-      if (isMobileViewport()) setMobileView("stage");
-      render();
-      if (newKey) {
-        const expansion = stageContent.querySelector(".expansion-row");
-        expansion?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-    });
-  }
-
-  stageContent.addEventListener("click", event => {
-    if (event.target.closest("a")) event.stopPropagation();
-  }, true);
-
+  currentStageSelection = {
+    diagramId: activeDiagram.id,
+    diagramRows,
+  };
+  syncMobileHotspotToggle();
   initStageImages();
 }
 
@@ -1735,7 +1672,7 @@ function render() {
 
   const system = getActiveSystem();
   if (system) {
-    state.activeCategoryKey = getSystemCategoryDefinition(system).key;
+    state.activeCategoryKey = system.categoryKey || null;
   } else if (state.activeCategoryKey && !allCategories.some(category => category.key === state.activeCategoryKey)) {
     state.activeCategoryKey = null;
   }
@@ -1768,7 +1705,7 @@ function render() {
 
   if (system) {
     const activeDiagram = getVisibleSubsystems(system).find(diagram => diagram.id === state.activeDiagramId);
-    if (activeDiagram) {
+    if (activeDiagram && system.isLoaded) {
       const visibleRows = buildRowsForDiagram(activeDiagram);
       if (state.activeRowKey && !visibleRows.some(row => row.key === state.activeRowKey)) {
         state.activeRowKey = null;
@@ -1778,9 +1715,54 @@ function render() {
 
   renderSystems();
   renderSubsystems(system);
+  currentStageSelection = null;
   renderDiagramRows(system);
   renderMobileNav();
   syncUrlState();
+}
+
+function activateSystemCard(card) {
+  if (!card) return;
+
+  if (card.dataset.categoryKey) {
+    selectCategory(card.dataset.categoryKey);
+    render();
+    return;
+  }
+
+  if (card.dataset.systemId) {
+    const nextSystem = bootstrapSystemsById.get(card.dataset.systemId);
+    if (!nextSystem) return;
+    selectSystem(nextSystem);
+    render();
+    return;
+  }
+
+  if (card.dataset.groupId) {
+    const system = getActiveSystem();
+    const group = system?.groupMap.get(card.dataset.groupId);
+    if (!group) return;
+    selectGroup(group);
+    render();
+  }
+}
+
+function activateStageRow(rowKey, diagramId, options = {}) {
+  if (!rowKey || !currentStageSelection) return;
+  const { scrollExpansion = false } = options;
+  state.activeDiagramId = diagramId || state.activeDiagramId;
+  state.activeRowKey = state.activeRowKey === rowKey ? null : rowKey;
+  if (isMobileViewport()) setMobileView("stage");
+  syncStageSelection({ scrollExpansion: scrollExpansion && Boolean(state.activeRowKey) });
+}
+
+function activateHotspot(pncKeyValue, diagramId) {
+  if (!pncKeyValue || !currentStageSelection) return;
+  const nextRow = currentStageSelection.diagramRows.find(row => row.pncKey === pncKeyValue) || null;
+  state.activeDiagramId = diagramId || state.activeDiagramId;
+  state.activeRowKey = nextRow?.key || null;
+  if (isMobileViewport()) setMobileView("stage");
+  syncStageSelection({ scrollExpansion: Boolean(nextRow) });
 }
 
 let globalSearchDebounce = 0;
@@ -1823,6 +1805,78 @@ for (const button of mobileNavButtons) {
     renderMobileNav();
   });
 }
+
+document.addEventListener("click", event => {
+  const link = event.target.closest("a[data-outbound-link='true']");
+  if (!link) return;
+  event.preventDefault();
+  event.stopPropagation();
+  window.open(link.dataset.href, "_blank", "noopener,noreferrer");
+});
+
+stageContent?.addEventListener("click", event => {
+  if (event.target.closest("a[data-outbound-link='true']")) return;
+
+  const toggle = event.target.closest("[data-toggle-mobile-hotspots='true']");
+  if (toggle) {
+    state.mobileHotspotsVisible = !state.mobileHotspotsVisible;
+    syncMobileHotspotToggle();
+    return;
+  }
+
+  const row = event.target.closest("tbody tr[data-row-key]");
+  if (row && currentStageSelection?.diagramId === row.dataset.diagramId) {
+    activateStageRow(row.dataset.rowKey || "", row.dataset.diagramId || "", { scrollExpansion: true });
+    return;
+  }
+
+  const hotspot = event.target.closest(".hotspot");
+  if (hotspot && currentStageSelection?.diagramId === hotspot.dataset.diagramId) {
+    activateHotspot(hotspot.dataset.pncKey || "", hotspot.dataset.diagramId || "");
+    return;
+  }
+
+  const card = event.target.closest(".system-card");
+  if (card && stageContent.contains(card)) {
+    activateSystemCard(card);
+  }
+});
+
+stageContent?.addEventListener("keydown", event => {
+  if (event.defaultPrevented) return;
+  if (event.key !== "Enter" && event.key !== " ") return;
+
+  const row = event.target.closest("tbody tr[data-row-key]");
+  if (row && currentStageSelection?.diagramId === row.dataset.diagramId) {
+    event.preventDefault();
+    activateStageRow(row.dataset.rowKey || "", row.dataset.diagramId || "", { scrollExpansion: true });
+    return;
+  }
+
+  const card = event.target.closest(".system-card");
+  if (card && stageContent.contains(card)) {
+    event.preventDefault();
+    activateSystemCard(card);
+  }
+});
+
+stageContent?.addEventListener("mouseover", event => {
+  const target = event.target.closest("[data-pnc-key]");
+  if (!target || !stageContent.contains(target)) return;
+  applyStageHover(target.dataset.pncKey || "");
+});
+
+stageContent?.addEventListener("mouseout", event => {
+  const target = event.target.closest("[data-pnc-key]");
+  if (!target || !stageContent.contains(target)) return;
+  const nextTarget = event.relatedTarget?.closest?.("[data-pnc-key]");
+  if (nextTarget && stageContent.contains(nextTarget)) {
+    if ((nextTarget.dataset.pncKey || "") === (target.dataset.pncKey || "")) return;
+    applyStageHover(nextTarget.dataset.pncKey || "");
+    return;
+  }
+  clearStageHover();
+});
 
 stageContextBar?.addEventListener("click", event => {
   const trigger = event.target.closest("[data-nav-action]");
@@ -1929,6 +1983,7 @@ window.addEventListener("keydown", event => {
 window.addEventListener("resize", () => {
   syncMobileView();
   renderMobileNav();
+  syncMobileHotspotToggle();
 });
 
 window.addEventListener("hashchange", () => {

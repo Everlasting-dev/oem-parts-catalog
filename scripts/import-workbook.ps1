@@ -421,10 +421,10 @@ try {
   }
 
   $json = $catalogData | ConvertTo-Json -Depth 10
-  $js = "window.CATALOG_DATA = $json`r`n"
+  $jsonPath = Join-Path $dataDir 'catalog-data.json'
 
-  Set-Content -LiteralPath (Join-Path $dataDir 'catalog-data.json') -Value $json -Encoding UTF8
-  Set-Content -LiteralPath (Join-Path $dataDir 'catalog-data.js') -Value $js -Encoding UTF8
+  Set-Content -LiteralPath $jsonPath -Value $json -Encoding UTF8
+  & node (Join-Path $root 'scripts\write-catalog-bundles.js') $jsonPath | Out-Null
 
   Write-Output ("Imported {0} parts and {1} diagrams." -f $parts.Count, $diagrams.Count)
   Write-Output ("Wrote data files to {0}" -f $dataDir)

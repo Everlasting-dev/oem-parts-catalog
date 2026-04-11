@@ -14,10 +14,10 @@ const fs     = require("fs");
 const https  = require("https");
 const http   = require("http");
 const crypto = require("crypto");
+const { writeCatalogBundles } = require("./write-catalog-bundles");
 
 const ROOT      = path.join(__dirname, "..");
 const JSON_PATH = path.join(ROOT, "data", "catalog-data.json");
-const JS_PATH   = path.join(ROOT, "data", "catalog-data.js");
 const SAVE_DIR  = path.join(ROOT, "assets", "diagrams", "api");
 
 if (!fs.existsSync(SAVE_DIR)) fs.mkdirSync(SAVE_DIR, { recursive: true });
@@ -125,9 +125,10 @@ async function main() {
   fs.writeFileSync(JSON_PATH, JSON.stringify(catalog, null, 2), "utf8");
   console.log("  Saved catalog-data.json");
 
-  // Rebuild JS bundle
-  fs.writeFileSync(JS_PATH, "window.CATALOG_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
-  console.log("  Rebuilt catalog-data.js  (" + (fs.statSync(JS_PATH).size / 1024 / 1024).toFixed(2) + " MB)");
+  const result = writeCatalogBundles(catalog, { projectRoot: ROOT });
+  console.log("  Rebuilt browser bundles");
+  console.log("    Manifest: " + (result.manifestSize / 1024).toFixed(1) + " KB");
+  console.log("    Compat bundle: " + (result.fullBundleSize / 1024 / 1024).toFixed(2) + " MB");
 
   console.log("\nDone! Re-run add-gallery-sheet.js to refresh the Excel gallery.");
 }
