@@ -8,6 +8,7 @@ const DATA_DIR = path.join(PROJECT_ROOT, 'data');
 const FULL_BUNDLE_PATH = path.join(DATA_DIR, 'catalog-data.js');
 const MANIFEST_JS_PATH = path.join(DATA_DIR, 'catalog-manifest.js');
 const MANIFEST_JSON_PATH = path.join(DATA_DIR, 'catalog-manifest.json');
+const PART_INDEX_JS_PATH = path.join(DATA_DIR, 'catalog-part-index.js');
 const CHUNK_DIR = path.join(DATA_DIR, 'catalog-systems');
 
 const SYSTEM_MERGE_ALIASES = new Map([
@@ -184,6 +185,23 @@ const CATEGORY_DEFINITIONS = [
 
 function normalise(text) {
   return String(text || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+function normalizePartNumber(partNumber) {
+  return String(partNumber || '').trim().toUpperCase().replace(/\s+/g, '');
+}
+
+function compactPartNumber(partNumber) {
+  return normalizePartNumber(partNumber).replace(/[^A-Z0-9]/g, '');
+}
+
+function ocrCanonicalPartNumber(partNumber) {
+  return compactPartNumber(partNumber)
+    .replace(/[OQD]/g, '0')
+    .replace(/[IL]/g, '1')
+    .replace(/S/g, '5')
+    .replace(/B/g, '8')
+    .replace(/G/g, '6');
 }
 
 function titleCase(text) {
@@ -616,7 +634,7 @@ function buildSystemManifest(catalog) {
         searchableText: normalise(
           `${system.title} ${sortedDiagrams.map(diagram => `${diagram.displayTitle} ${diagram.secondaryLabel}`).join(' ')} ${partNumbers.join(' ')} ${
             partNumbers.map(partNumber => partsByNumber.get(partNumber)?.description || '').join(' ')
-          }`
+          } ${partNumbers.map(compactPartNumber).join(' ')}`
         ),
         diagrams: sortedDiagrams,
         groups: manifestGroups,
@@ -656,6 +674,56 @@ function buildSystemManifest(catalog) {
       .map(definition => categories.get(definition.key))
       .filter(category => category.systemIds.length > 0),
   };
+}
+
+function buildPartIndex(catalog, systems) {
+  const systemsById = new Map(systems.map(system => [system.id, system]));
+  const locationsByPartNumber = new Map();
+
+  for (const diagram of catalog.diagrams || []) {
+    const systemId = makeSystemId(diagram);
+    const system = systemsById.get(systemId);
+    if (!system) continue;
+
+    const groupTitle = getDiagramGroupTitle(diagram);
+    const diagramTitle = getDiagramDisplayTitle(diagram, system.title);
+    const diagramSecondaryLabel = getDiagramSecondaryLabel(diagram, system.title);
+    const groupId = makeGroupId(systemId, groupTitle);
+    const seenPartNumbers = new Set();
+
+    for (const hotspot of diagram.hotspots || []) {
+      const partNumber = normalizePartNumber(hotspot.partNumber);
+      if (!partNumber || seenPartNumbers.has(partNumber)) continue;
+
+      seenPartNumbers.add(partNumber);
+      if (!locationsByPartNumber.has(partNumber)) locationsByPartNumber.set(partNumber, []);
+      locationsByPartNumber.get(partNumber).push({
+        systemId,
+        systemTitle: system.title,
+        groupId,
+        groupTitle,
+        diagramId: diagram.id,
+        diagramTitle,
+        diagramSecondaryLabel,
+        callout: hotspot.callout || '',
+      });
+    }
+  }
+
+  return (catalog.parts || [])
+    .map(part => {
+      const partNumber = normalizePartNumber(part.partNumber);
+      const locations = locationsByPartNumber.get(partNumber) || [];
+
+      return {
+        partNumber,
+        description: part.description || '',
+        appliesDetails: part.appliesDetails || '',
+        period: part.period || '',
+        locations: locations.slice(0, 8),
+      };
+    })
+    .sort((left, right) => left.partNumber.localeCompare(right.partNumber));
 }
 
 function buildReverseRelations(parts) {
@@ -733,12 +801,14 @@ function writeCatalogBundles(catalog, options = {}) {
   const fullBundlePath = path.join(dataDir, path.basename(FULL_BUNDLE_PATH));
   const manifestJsPath = path.join(dataDir, path.basename(MANIFEST_JS_PATH));
   const manifestJsonPath = path.join(dataDir, path.basename(MANIFEST_JSON_PATH));
+  const partIndexJsPath = path.join(dataDir, path.basename(PART_INDEX_JS_PATH));
   const chunkDir = path.join(dataDir, path.basename(CHUNK_DIR));
 
   ensureDirectory(dataDir);
   clearChunkDirectory(chunkDir);
 
   const { systems, categories } = buildSystemManifest(catalog);
+  const partIndex = buildPartIndex(catalog, systems);
   const chunkFileMap = createChunkFileMap(systems);
   const partsByNumber = new Map((catalog.parts || []).map(part => [part.partNumber, part]));
   const reverseRelations = buildReverseRelations(catalog.parts || []);
@@ -765,6 +835,7 @@ function writeCatalogBundles(catalog, options = {}) {
     sources: catalog.sources || [],
     totalPartCount: catalog.parts?.length || 0,
     totalDiagramCount: catalog.diagrams?.length || 0,
+    partIndexPath: 'data/catalog-part-index.js',
     systems,
     categories,
   };
@@ -772,17 +843,21 @@ function writeCatalogBundles(catalog, options = {}) {
   const fullBundle = `window.CATALOG_DATA=${JSON.stringify(catalog)};`;
   const manifestJson = JSON.stringify(manifest);
   const manifestBundle = `window.CATALOG_BOOTSTRAP=${manifestJson};`;
+  const partIndexBundle = `window.CATALOG_PART_INDEX=${JSON.stringify(partIndex)};`;
 
   fs.writeFileSync(fullBundlePath, fullBundle, 'utf8');
   fs.writeFileSync(manifestJsPath, manifestBundle, 'utf8');
   fs.writeFileSync(manifestJsonPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
+  fs.writeFileSync(partIndexJsPath, partIndexBundle, 'utf8');
 
   return {
     manifestPath: manifestJsPath,
     manifestJsonPath,
+    partIndexPath: partIndexJsPath,
     chunkDir,
     fullBundlePath,
     manifestSize: Buffer.byteLength(manifestBundle),
+    partIndexSize: Buffer.byteLength(partIndexBundle),
     fullBundleSize: Buffer.byteLength(fullBundle),
     systemCount: systems.length,
     categoryCount: categories.length,
@@ -805,6 +880,7 @@ function main() {
 
   console.log(`Wrote browser bundles for ${result.systemCount} systems.`);
   console.log(`Manifest: ${path.relative(PROJECT_ROOT, result.manifestPath)} (${(result.manifestSize / 1024).toFixed(1)} KB)`);
+  console.log(`Part index: ${path.relative(PROJECT_ROOT, result.partIndexPath)} (${(result.partIndexSize / 1024).toFixed(1)} KB)`);
   console.log(`Compat bundle: ${path.relative(PROJECT_ROOT, result.fullBundlePath)} (${(result.fullBundleSize / 1024 / 1024).toFixed(2)} MB)`);
   console.log(`System chunks: ${path.relative(PROJECT_ROOT, result.chunkDir)}`);
 }

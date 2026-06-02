@@ -23,6 +23,14 @@
       <div class="topbar-search">
         <label class="field-label" for="global-search">Search all systems</label>
         <input id="global-search" type="search" placeholder="Search system names, part numbers, descriptions..." autocomplete="off">
+        <div class="topbar-search-actions">
+          <button id="open-part-lookup" type="button" class="secondary-btn">Open Part</button>
+          <button id="ocr-camera-trigger" type="button" class="primary-btn">Scan Part</button>
+          <button id="ocr-upload-trigger" type="button" class="secondary-btn">Upload Image</button>
+        </div>
+        <p id="ocr-status" class="ocr-status" aria-live="polite">Part lookup accepts both hyphenated and compact OEM numbers.</p>
+        <input id="ocr-camera-input" type="file" accept="image/*" capture="environment" hidden>
+        <input id="ocr-upload-input" type="file" accept="image/*" hidden>
       </div>
     </header>
 

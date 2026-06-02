@@ -19,11 +19,25 @@ const state = {
   activeRowKey: null,
   mobileView: "systems",
   mobileHotspotsVisible: false,
+  pinnedPartMatches: null,
+  pinnedPartMatchesLabel: "",
+  ocrStatus: "Part lookup accepts both hyphenated and compact OEM numbers.",
+  ocrStatusTone: "idle",
+  ocrLastText: "",
+  ocrBusy: false,
 };
 
 const partsByNumber = new Map();
 const systemLoadPromises = new Map();
 const scriptLoadPromises = new Map();
+const partLookupByCompact = new Map();
+const partLookupByCanonical = new Map();
+const manifestPartIndex = [];
+const partIndexPath = catalogBootstrap.partIndexPath || "data/catalog-part-index.js";
+let ocrWorkerInstance = null;
+let ocrWorkerPromise = null;
+let partIndexReady = false;
+let partIndexLoadPromise = null;
 
 const SYSTEM_MERGE_ALIASES = new Map([
   ["alternator fitting", "alternator"],
@@ -39,9 +53,15 @@ const API_IMAGE_HOST_PREFIXES = new Map([
 ]);
 
 const globalSearch = document.getElementById("global-search");
+const openPartLookupButton = document.getElementById("open-part-lookup");
 const subsystemSearch = document.getElementById("subsystem-search");
 const localSearch = document.getElementById("local-search");
 const localSearchLabel = document.getElementById("local-search-label");
+const ocrCameraTrigger = document.getElementById("ocr-camera-trigger");
+const ocrUploadTrigger = document.getElementById("ocr-upload-trigger");
+const ocrCameraInput = document.getElementById("ocr-camera-input");
+const ocrUploadInput = document.getElementById("ocr-upload-input");
+const ocrStatus = document.getElementById("ocr-status");
 const catalogShell = document.querySelector(".catalog-shell");
 const mobileNavButtons = [...document.querySelectorAll(".mobile-nav-btn")];
 const systemPanelKicker = document.getElementById("system-panel-kicker");
@@ -97,6 +117,9 @@ const bootstrapCategories = (catalogBootstrap.categories || [])
   }))
   .filter(category => category.systems.length > 0);
 const bootstrapCategoriesByKey = new Map(bootstrapCategories.map(category => [category.key, category]));
+if (catalogBootstrap.partIndex?.length) {
+  hydratePartIndex(catalogBootstrap.partIndex);
+}
 
 function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -243,6 +266,116 @@ function escapeHtml(value) {
 
 function normalise(text) {
   return String(text || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function normalizePartNumber(partNumber) {
+  return String(partNumber || "").trim().toUpperCase().replace(/\s+/g, "");
+}
+
+function compactPartNumber(partNumber) {
+  return normalizePartNumber(partNumber).replace(/[^A-Z0-9]/g, "");
+}
+
+function ocrCanonicalPartNumber(partNumber) {
+  return compactPartNumber(partNumber)
+    .replace(/[OQD]/g, "0")
+    .replace(/[IL]/g, "1")
+    .replace(/S/g, "5")
+    .replace(/B/g, "8")
+    .replace(/G/g, "6");
+}
+
+function weightedDistance(left, right) {
+  const aa = compactPartNumber(left);
+  const bb = compactPartNumber(right);
+  const dp = Array.from({ length: aa.length + 1 }, () => Array(bb.length + 1).fill(0));
+
+  for (let i = 0; i <= aa.length; i += 1) dp[i][0] = i;
+  for (let j = 0; j <= bb.length; j += 1) dp[0][j] = j;
+
+  const confusable = new Set([
+    "0O", "O0", "0Q", "Q0", "0D", "D0",
+    "1I", "I1", "1L", "L1",
+    "5S", "S5",
+    "6G", "G6",
+    "8B", "B8",
+    "2Z", "Z2",
+  ]);
+
+  for (let i = 1; i <= aa.length; i += 1) {
+    for (let j = 1; j <= bb.length; j += 1) {
+      const leftChar = aa[i - 1];
+      const rightChar = bb[j - 1];
+      let cost = 1;
+
+      if (leftChar === rightChar) {
+        cost = 0;
+      } else if (ocrCanonicalPartNumber(leftChar) === ocrCanonicalPartNumber(rightChar)) {
+        cost = 0.25;
+      } else if (confusable.has(`${leftChar}${rightChar}`)) {
+        cost = 0.4;
+      }
+
+      dp[i][j] = Math.min(
+        dp[i - 1][j] + 1,
+        dp[i][j - 1] + 1,
+        dp[i - 1][j - 1] + cost
+      );
+    }
+  }
+
+  return dp[aa.length][bb.length];
+}
+
+function hydratePartIndex(records) {
+  manifestPartIndex.length = 0;
+  partLookupByCompact.clear();
+  partLookupByCanonical.clear();
+
+  for (const part of records || []) {
+    const hydrated = {
+      ...part,
+      partNumber: String(part.partNumber || "").toUpperCase(),
+      compactPartNumber: String(part.compactPartNumber || compactPartNumber(part.partNumber || "")).toUpperCase(),
+      ocrCanonicalPartNumber: String(part.ocrCanonicalPartNumber || ocrCanonicalPartNumber(part.partNumber || "")).toUpperCase(),
+      searchableText: String(part.searchableText || normalise(
+        `${part.partNumber || ""} ${part.description || ""} ${part.appliesDetails || ""} ${part.period || ""} ${part.notes || ""}`
+      )),
+      locations: [...(part.locations || [])],
+    };
+
+    manifestPartIndex.push(hydrated);
+
+    if (hydrated.compactPartNumber) {
+      if (!partLookupByCompact.has(hydrated.compactPartNumber)) partLookupByCompact.set(hydrated.compactPartNumber, []);
+      partLookupByCompact.get(hydrated.compactPartNumber).push(hydrated);
+    }
+
+    if (hydrated.ocrCanonicalPartNumber) {
+      if (!partLookupByCanonical.has(hydrated.ocrCanonicalPartNumber)) partLookupByCanonical.set(hydrated.ocrCanonicalPartNumber, []);
+      partLookupByCanonical.get(hydrated.ocrCanonicalPartNumber).push(hydrated);
+    }
+  }
+
+  partIndexReady = manifestPartIndex.length > 0;
+  return manifestPartIndex;
+}
+
+async function ensurePartIndexLoaded() {
+  if (partIndexReady) return manifestPartIndex;
+  if (partIndexLoadPromise) return partIndexLoadPromise;
+
+  partIndexLoadPromise = loadScript(partIndexPath)
+    .then(() => {
+      hydratePartIndex(window.CATALOG_PART_INDEX || []);
+      return manifestPartIndex;
+    })
+    .catch(error => {
+      partIndexLoadPromise = null;
+      throw error;
+    });
+
+  return partIndexLoadPromise;
 }
 
 function titleCase(text) {
@@ -818,7 +951,7 @@ function buildRowsForDiagram(diagram) {
 
       row.searchableText = normalise(
         `${row.callout} ${row.partNumber} ${row.description} ${row.appliesDetails} ${row.period} ${row.notes} ${row.source} ${row.variantLabel}`
-      );
+      ) + ` ${compactPartNumber(row.partNumber).toLowerCase()}`;
       rows.push(row);
     }
 
@@ -835,6 +968,403 @@ function buildRowsForDiagram(diagram) {
   const filteredRows = diagram._rowsBase.filter(row => row.searchableText.includes(query));
   diagram._rowQueryCache.set(query, filteredRows);
   return filteredRows;
+}
+
+function setOcrStatusMessage(message, tone = "idle") {
+  state.ocrStatus = message;
+  state.ocrStatusTone = tone;
+  syncOcrUi();
+}
+
+function clearPinnedPartMatches() {
+  state.pinnedPartMatches = null;
+  state.pinnedPartMatchesLabel = "";
+}
+
+function syncOcrUi() {
+  if (ocrStatus) {
+    ocrStatus.textContent = state.ocrStatus || "";
+    ocrStatus.dataset.tone = state.ocrStatusTone || "idle";
+  }
+
+  if (openPartLookupButton) {
+    openPartLookupButton.disabled = state.ocrBusy || !String(state.globalQuery || "").trim();
+  }
+
+  if (ocrCameraTrigger) {
+    ocrCameraTrigger.disabled = state.ocrBusy;
+    ocrCameraTrigger.textContent = state.ocrBusy ? "Scanning..." : "Scan Part";
+  }
+
+  if (ocrUploadTrigger) {
+    ocrUploadTrigger.disabled = state.ocrBusy;
+    ocrUploadTrigger.textContent = state.ocrBusy ? "Reading..." : "Upload Image";
+  }
+}
+
+function addScoredPartMatch(matchMap, part, score, matchedFrom = "") {
+  if (!part || score <= 0) return;
+  const existing = matchMap.get(part.partNumber);
+  if (!existing || score > existing.score) {
+    matchMap.set(part.partNumber, {
+      ...part,
+      score,
+      matchedFrom,
+    });
+  }
+}
+
+function getPartLookupMatches(query, options = {}) {
+  if (!partIndexReady) return [];
+
+  const { limit = 12, includeFuzzy = false } = options;
+  const rawQuery = String(query || "").trim();
+  if (!rawQuery) return [];
+
+  const normalQuery = normalise(rawQuery);
+  const compactQuery = compactPartNumber(rawQuery);
+  const canonicalQuery = ocrCanonicalPartNumber(rawQuery);
+  const matchMap = new Map();
+
+  if (compactQuery) {
+    for (const part of partLookupByCompact.get(compactQuery) || []) {
+      addScoredPartMatch(matchMap, part, 220, rawQuery);
+    }
+    for (const part of partLookupByCanonical.get(canonicalQuery) || []) {
+      addScoredPartMatch(matchMap, part, 205, rawQuery);
+    }
+  }
+
+  for (const part of manifestPartIndex) {
+    let score = 0;
+
+    if (compactQuery) {
+      if (part.compactPartNumber.startsWith(compactQuery)) {
+        score = Math.max(score, compactQuery.length === part.compactPartNumber.length ? 220 : 140);
+      } else if (part.compactPartNumber.includes(compactQuery)) {
+        score = Math.max(score, 118);
+      }
+    }
+
+    if (normalQuery && part.searchableText.includes(normalQuery)) {
+      score = Math.max(score, 96);
+    }
+
+    if (includeFuzzy && compactQuery.length >= 6 && score < 180) {
+      const distance = weightedDistance(compactQuery, part.compactPartNumber);
+      const lengthGap = Math.abs(compactQuery.length - part.compactPartNumber.length);
+      if (distance <= 1.5 && lengthGap <= 2) {
+        score = Math.max(score, 88 - distance * 10);
+      }
+    }
+
+    addScoredPartMatch(matchMap, part, score, rawQuery);
+  }
+
+  return [...matchMap.values()]
+    .sort((left, right) =>
+      right.score - left.score ||
+      left.partNumber.localeCompare(right.partNumber)
+    )
+    .slice(0, limit);
+}
+
+function renderPartLookupResults(matches, options = {}) {
+  if (!matches.length) return "";
+
+  const {
+    heading = "Matching parts",
+    note = "Select a part number to jump straight into its diagram and expanded detail card.",
+  } = options;
+
+  return `
+    <section class="part-lookup-panel">
+      <div class="part-lookup-head">
+        <div>
+          <p class="panel-kicker">Part Lookup</p>
+          <h3>${escapeHtml(heading)}</h3>
+          <p>${escapeHtml(note)}</p>
+        </div>
+        <span class="meta-pill">${matches.length}</span>
+      </div>
+      <div class="part-lookup-list">
+        ${matches.map(match => {
+          const location = match.locations?.[0] || null;
+          const locationBits = [
+            location?.systemTitle || "",
+            location?.groupTitle && normalise(location.groupTitle) !== normalise(location.systemTitle || "")
+              ? location.groupTitle
+              : "",
+            location?.diagramSecondaryLabel || "",
+          ].filter(Boolean);
+
+          return `
+            <button
+              type="button"
+              class="part-lookup-card"
+              data-part-lookup="true"
+              data-part-number="${escapeHtml(match.partNumber)}"
+            >
+              <span class="part-lookup-number">${escapeHtml(match.partNumber)}</span>
+              <strong>${escapeHtml(match.description || "Catalog part")}</strong>
+              <span>${escapeHtml(locationBits.join(" | ") || location?.diagramTitle || "Open part detail")}</span>
+              <small>${escapeHtml(match.appliesDetails || match.period || "Linked OEM record")}</small>
+            </button>
+          `;
+        }).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function findRowKeyForPart(diagram, partNumber) {
+  const normalizedPartNumber = normalizePartNumber(partNumber);
+  const rows = buildRowsForDiagram(diagram);
+  return rows.find(row => normalizePartNumber(row.partNumber) === normalizedPartNumber)?.key || null;
+}
+
+async function openPartLookupMatch(match) {
+  const partNumber = normalizePartNumber(match?.partNumber);
+  const locations = match?.locations || [];
+  if (!partNumber || !locations.length) return false;
+
+  state.globalQuery = partNumber;
+  clearPinnedPartMatches();
+  if (globalSearch) globalSearch.value = partNumber;
+  if (subsystemSearch) subsystemSearch.value = "";
+  state.subsystemQuery = "";
+  resetPartsFilter();
+  syncOcrUi();
+
+  for (const location of locations) {
+    const system = bootstrapSystemsById.get(location.systemId);
+    if (!system) continue;
+
+    selectSystem(system);
+    if (shouldUseGroupLanding(system) && location.groupId) {
+      state.activeGroupId = location.groupId;
+    }
+    state.activeDiagramId = location.diagramId;
+    state.activeRowKey = null;
+    render();
+
+    try {
+      await ensureSystemLoaded(system.id);
+      if (shouldUseGroupLanding(system) && location.groupId) {
+        state.activeGroupId = location.groupId;
+      }
+      state.activeDiagramId = location.diagramId;
+      const diagram = system.diagramMap.get(location.diagramId);
+      if (!diagram) continue;
+      state.activeRowKey = findRowKeyForPart(diagram, partNumber);
+      if (isMobileViewport()) setMobileView("stage");
+      render();
+      if (state.activeRowKey) syncStageSelection({ scrollExpansion: true });
+      return true;
+    } catch (error) {
+      system.loadError = error instanceof Error ? error.message : String(error);
+    }
+  }
+
+  render();
+  return false;
+}
+
+function extractPartNumberCandidatesFromText(text) {
+  const lines = String(text || "").toUpperCase().split(/\n+/);
+  const candidates = new Set();
+
+  function pushCandidate(value) {
+    const normalized = normalizePartNumber(value).replace(/[^A-Z0-9-]/g, "");
+    const compact = compactPartNumber(normalized);
+    if (!(compact.length === 10 || compact.length === 11)) return;
+
+    if (normalized) candidates.add(normalized);
+    if (compact) candidates.add(compact);
+    if (!normalized.includes("-") && compact.length >= 10) {
+      candidates.add(`${compact.slice(0, 5)}-${compact.slice(5)}`);
+    }
+  }
+
+  for (const line of lines) {
+    const rawChunks = line.match(/[A-Z0-9-]{6,}/g) || [];
+    const words = line.match(/[A-Z0-9]+/g) || [];
+
+    for (const chunk of rawChunks) pushCandidate(chunk);
+    for (const word of words) pushCandidate(word);
+
+    for (let index = 0; index < words.length; index += 1) {
+      const first = words[index];
+      const second = words[index + 1];
+      const third = words[index + 2];
+
+      if (second) {
+        pushCandidate(first + second);
+        if (first.length === 5 && (second.length === 5 || second.length === 6)) {
+          pushCandidate(`${first}-${second}`);
+        }
+      }
+
+      if (second && third) {
+        pushCandidate(first + second + third);
+      }
+    }
+
+    pushCandidate(words.join(""));
+  }
+
+  return [...candidates];
+}
+
+async function prepareImageForOcr(file) {
+  if (typeof window.createImageBitmap !== "function") return file;
+
+  const bitmap = await window.createImageBitmap(file);
+  const targetWidth = Math.max(1800, bitmap.width || 1800);
+  const scale = targetWidth / Math.max(1, bitmap.width || targetWidth);
+  const targetHeight = Math.max(1, Math.round((bitmap.height || targetWidth) * scale));
+  const canvas = document.createElement("canvas");
+  canvas.width = targetWidth;
+  canvas.height = targetHeight;
+
+  const context = canvas.getContext("2d", { willReadFrequently: true });
+  if (!context) return file;
+
+  context.drawImage(bitmap, 0, 0, targetWidth, targetHeight);
+  const imageData = context.getImageData(0, 0, targetWidth, targetHeight);
+  const pixels = imageData.data;
+  const luminance = new Uint8ClampedArray(pixels.length / 4);
+  let min = 255;
+  let max = 0;
+
+  for (let pixelIndex = 0, luminanceIndex = 0; pixelIndex < pixels.length; pixelIndex += 4, luminanceIndex += 1) {
+    const value = Math.round(pixels[pixelIndex] * 0.299 + pixels[pixelIndex + 1] * 0.587 + pixels[pixelIndex + 2] * 0.114);
+    luminance[luminanceIndex] = value;
+    if (value < min) min = value;
+    if (value > max) max = value;
+  }
+
+  const range = Math.max(1, max - min);
+  for (let pixelIndex = 0, luminanceIndex = 0; pixelIndex < pixels.length; pixelIndex += 4, luminanceIndex += 1) {
+    const value = Math.round(((luminance[luminanceIndex] - min) / range) * 255);
+    const boosted = value < 160
+      ? Math.max(0, value - 12)
+      : Math.min(255, value + 22);
+    pixels[pixelIndex] = boosted;
+    pixels[pixelIndex + 1] = boosted;
+    pixels[pixelIndex + 2] = boosted;
+    pixels[pixelIndex + 3] = 255;
+  }
+
+  context.putImageData(imageData, 0, 0);
+  bitmap.close?.();
+  return canvas;
+}
+
+async function ensureOcrWorker() {
+  if (ocrWorkerInstance) return ocrWorkerInstance;
+  if (ocrWorkerPromise) return ocrWorkerPromise;
+
+  ocrWorkerPromise = (async () => {
+    await loadScript("vendor/tesseract/tesseract.min.js");
+    if (!window.Tesseract?.createWorker) {
+      throw new Error("OCR runtime could not be loaded.");
+    }
+
+    const worker = await window.Tesseract.createWorker("eng", 1, {
+      workerPath: "vendor/tesseract/worker.min.js",
+      corePath: "vendor/tesseract-core",
+      langPath: ".",
+      gzip: false,
+      logger: message => {
+        if (!state.ocrBusy || !message?.status) return;
+        const progress = typeof message.progress === "number"
+          ? ` ${Math.round(message.progress * 100)}%`
+          : "";
+        setOcrStatusMessage(`${titleCase(String(message.status))}${progress}`, "loading");
+      },
+    });
+
+    await worker.setParameters({
+      tessedit_pageseg_mode: "11",
+      tessedit_char_whitelist: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-",
+      preserve_interword_spaces: "1",
+      user_defined_dpi: "200",
+    });
+
+    ocrWorkerInstance = worker;
+    return worker;
+  })().catch(error => {
+    ocrWorkerPromise = null;
+    ocrWorkerInstance = null;
+    throw error;
+  });
+
+  return ocrWorkerPromise;
+}
+
+async function runOcrLookupForFile(file) {
+  if (!file) return;
+
+  state.ocrBusy = true;
+  state.ocrLastText = "";
+  clearPinnedPartMatches();
+  syncOcrUi();
+  setOcrStatusMessage(`Preparing ${file.name} for OCR...`, "loading");
+
+  try {
+    const worker = await ensureOcrWorker();
+    const preparedImage = await prepareImageForOcr(file);
+    const result = await worker.recognize(preparedImage);
+    const text = String(result?.data?.text || "").trim();
+    state.ocrLastText = text;
+    await ensurePartIndexLoaded();
+
+    const candidates = extractPartNumberCandidatesFromText(text);
+    const partMatches = new Map();
+    for (const candidate of candidates) {
+      for (const match of getPartLookupMatches(candidate, { limit: 4, includeFuzzy: true })) {
+        addScoredPartMatch(partMatches, match, match.score, candidate);
+      }
+    }
+
+    const rankedMatches = [...partMatches.values()]
+      .sort((left, right) =>
+        right.score - left.score ||
+        left.partNumber.localeCompare(right.partNumber)
+      )
+      .slice(0, 8);
+
+    if (!rankedMatches.length) {
+      selectRoot();
+      render();
+      setOcrStatusMessage(`OCR finished for ${file.name}, but no catalog part number matched.`, "error");
+      return;
+    }
+
+    const [bestMatch, secondMatch] = rankedMatches;
+    state.globalQuery = bestMatch.partNumber;
+    if (globalSearch) globalSearch.value = bestMatch.partNumber;
+
+    const strongExactHit = bestMatch.score >= 200 && (!secondMatch || (bestMatch.score - secondMatch.score) >= 20);
+    if (strongExactHit || rankedMatches.length === 1) {
+      setOcrStatusMessage(`Opened ${bestMatch.partNumber} from ${file.name}.`, "success");
+      await openPartLookupMatch(bestMatch);
+      return;
+    }
+
+    state.pinnedPartMatches = rankedMatches;
+    state.pinnedPartMatchesLabel = `OCR candidates from ${file.name}`;
+    selectRoot();
+    render();
+    setOcrStatusMessage(`Found ${rankedMatches.length} likely part matches in ${file.name}. Pick the best one below.`, "success");
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    setOcrStatusMessage(`OCR failed: ${message}`, "error");
+  } finally {
+    state.ocrBusy = false;
+    syncOcrUi();
+  }
 }
 
 function resetPartsFilter() {
@@ -1411,8 +1941,20 @@ function renderDiagramRows(system) {
   if (!system) {
     const visibleSystems = getVisibleSystems();
     const activeCategory = getActiveCategory();
+    const pinnedPartMatches = state.pinnedPartMatches || [];
+    const partMatches = pinnedPartMatches.length
+      ? pinnedPartMatches
+      : getPartLookupMatches(state.globalQuery);
 
-    if (state.globalQuery) {
+    if (pinnedPartMatches.length) {
+      stageTitle.textContent = state.pinnedPartMatchesLabel || "OCR part matches";
+      stageNote.textContent = "OCR found likely catalog matches. Pick a part to jump into the exact diagram and detail card.";
+      matchCount.textContent = `${partMatches.length} candidate parts`;
+    } else if (state.globalQuery && partMatches.length) {
+      stageTitle.textContent = "Matching parts and systems";
+      stageNote.textContent = "Direct part hits are shown first. You can still drop into any matching system underneath.";
+      matchCount.textContent = `${partMatches.length} part hits | ${visibleSystems.length} systems`;
+    } else if (state.globalQuery) {
       stageTitle.textContent = "Matching systems";
       stageNote.textContent = "Filtered systems view. Select a result to jump straight into its diagrams and linked parts.";
       matchCount.textContent = `${visibleSystems.reduce((sum, item) => sum + item.partCount, 0)} indexed parts`;
@@ -1452,33 +1994,43 @@ function renderDiagramRows(system) {
             subtitle: `${category.systemCount} systems | ${category.partCount} indexed parts`,
             previewImage: category.previewImage,
             previewFallbackImage: category.previewFallbackImage,
-            datasetName: "categoryKey",
-          }));
+          datasetName: "categoryKey",
+        }));
 
-    if (!rootCards.length) {
+    if (!rootCards.length && !partMatches.length) {
       stageContent.innerHTML = `
         <div class="empty-state">
-          <h3>${state.globalQuery ? "No systems matched" : "No categories available"}</h3>
-          <p>${state.globalQuery ? "Try a broader system search to bring matching categories back." : "The grouped catalog view is empty right now."}</p>
+          <h3>${state.globalQuery ? "No parts or systems matched" : "No categories available"}</h3>
+          <p>${state.globalQuery ? "Try a broader part number, description, or system search." : "The grouped catalog view is empty right now."}</p>
         </div>
       `;
       return;
     }
 
     stageContent.innerHTML = `
-      <div class="system-grid">
-        ${rootCards.map(card => `
-          <article class="system-card" data-${card.datasetName === "categoryKey" ? "category-key" : "system-id"}="${escapeHtml(card.key)}" role="button" tabindex="0">
-            ${card.previewImage ? `
-              <div class="system-card-gallery single">
-                ${renderImageTag(card.previewImage, `${card.title} preview`, card.previewFallbackImage)}
-              </div>
-            ` : ""}
-            <h3>${escapeHtml(card.title)}</h3>
-            <p>${escapeHtml(card.subtitle)}</p>
-          </article>
-        `).join("")}
-      </div>
+      ${renderPartLookupResults(partMatches, {
+        heading: pinnedPartMatches.length
+          ? (state.pinnedPartMatchesLabel || "OCR part matches")
+          : "Matching parts",
+        note: pinnedPartMatches.length
+          ? "OCR produced multiple likely catalog matches. Select one to open the full record."
+          : "Select a part number to jump directly into its system, diagram, and detailed variants.",
+      })}
+      ${rootCards.length ? `
+        <div class="system-grid">
+          ${rootCards.map(card => `
+            <article class="system-card" data-${card.datasetName === "categoryKey" ? "category-key" : "system-id"}="${escapeHtml(card.key)}" role="button" tabindex="0">
+              ${card.previewImage ? `
+                <div class="system-card-gallery single">
+                  ${renderImageTag(card.previewImage, `${card.title} preview`, card.previewFallbackImage)}
+                </div>
+              ` : ""}
+              <h3>${escapeHtml(card.title)}</h3>
+              <p>${escapeHtml(card.subtitle)}</p>
+            </article>
+          `).join("")}
+        </div>
+      ` : ""}
     `;
 
     initStageImages();
@@ -1718,6 +2270,7 @@ function render() {
   currentStageSelection = null;
   renderDiagramRows(system);
   renderMobileNav();
+  syncOcrUi();
   syncUrlState();
 }
 
@@ -1765,6 +2318,65 @@ function activateHotspot(pncKeyValue, diagramId) {
   syncStageSelection({ scrollExpansion: Boolean(nextRow) });
 }
 
+async function openBestPartMatchFromQuery(query, options = {}) {
+  const {
+    includeFuzzy = false,
+    label = "Matching parts",
+    showStatus = false,
+  } = options;
+
+  const rawQuery = String(query || "").trim();
+  if (!rawQuery) return false;
+  await ensurePartIndexLoaded();
+
+  const matches = getPartLookupMatches(rawQuery, { limit: 12, includeFuzzy });
+  if (!matches.length) {
+    clearPinnedPartMatches();
+    selectRoot();
+    render();
+    if (showStatus) {
+      setOcrStatusMessage(`No catalog part matched "${rawQuery}".`, "error");
+    }
+    return false;
+  }
+
+  const compactQuery = compactPartNumber(rawQuery);
+  const canonicalQuery = ocrCanonicalPartNumber(rawQuery);
+  const exactMatches = matches.filter(match =>
+    compactQuery && (
+      match.compactPartNumber === compactQuery ||
+      match.ocrCanonicalPartNumber === canonicalQuery
+    )
+  );
+
+  if (exactMatches.length === 1) {
+    if (showStatus) {
+      setOcrStatusMessage(`Opened ${exactMatches[0].partNumber}.`, "success");
+    }
+    await openPartLookupMatch(exactMatches[0]);
+    return true;
+  }
+
+  if (matches.length === 1) {
+    if (showStatus) {
+      setOcrStatusMessage(`Opened ${matches[0].partNumber}.`, "success");
+    }
+    await openPartLookupMatch(matches[0]);
+    return true;
+  }
+
+  state.pinnedPartMatches = exactMatches.length > 1 ? exactMatches : matches;
+  state.pinnedPartMatchesLabel = label;
+  selectRoot();
+  render();
+
+  if (showStatus) {
+    setOcrStatusMessage(`Found ${state.pinnedPartMatches.length} matching parts for "${rawQuery}".`, "success");
+  }
+
+  return false;
+}
+
 let globalSearchDebounce = 0;
 let subsystemSearchDebounce = 0;
 let localSearchDebounce = 0;
@@ -1774,8 +2386,29 @@ globalSearch.addEventListener("input", event => {
   clearTimeout(globalSearchDebounce);
   globalSearchDebounce = setTimeout(() => {
     state.globalQuery = value;
+    clearPinnedPartMatches();
+    if (!state.ocrBusy) {
+      setOcrStatusMessage("Part lookup accepts both hyphenated and compact OEM numbers.", "idle");
+    }
+    if (String(value).trim() && !partIndexReady) {
+      ensurePartIndexLoaded()
+        .then(() => {
+          if (state.globalQuery === value) render();
+        })
+        .catch(() => {});
+    }
     render();
   }, 180);
+});
+
+globalSearch.addEventListener("keydown", event => {
+  if (event.key !== "Enter") return;
+  event.preventDefault();
+  void openBestPartMatchFromQuery(globalSearch.value, {
+    includeFuzzy: false,
+    label: "Matching parts",
+    showStatus: true,
+  });
 });
 
 subsystemSearch?.addEventListener("input", event => {
@@ -1796,6 +2429,36 @@ localSearch.addEventListener("input", event => {
     state.activeRowKey = null;
     render();
   }, 180);
+});
+
+openPartLookupButton?.addEventListener("click", () => {
+  void openBestPartMatchFromQuery(globalSearch.value, {
+    includeFuzzy: false,
+    label: "Matching parts",
+    showStatus: true,
+  });
+});
+
+ocrCameraTrigger?.addEventListener("click", () => {
+  if (state.ocrBusy) return;
+  ocrCameraInput?.click();
+});
+
+ocrUploadTrigger?.addEventListener("click", () => {
+  if (state.ocrBusy) return;
+  ocrUploadInput?.click();
+});
+
+ocrCameraInput?.addEventListener("change", event => {
+  const file = event.target.files?.[0];
+  event.target.value = "";
+  void runOcrLookupForFile(file);
+});
+
+ocrUploadInput?.addEventListener("change", event => {
+  const file = event.target.files?.[0];
+  event.target.value = "";
+  void runOcrLookupForFile(file);
 });
 
 for (const button of mobileNavButtons) {
@@ -1824,6 +2487,13 @@ stageContent?.addEventListener("click", event => {
     return;
   }
 
+  const partLookupCard = event.target.closest("[data-part-lookup='true']");
+  if (partLookupCard && stageContent.contains(partLookupCard)) {
+    const match = manifestPartIndex.find(part => part.partNumber === partLookupCard.dataset.partNumber);
+    if (match) void openPartLookupMatch(match);
+    return;
+  }
+
   const row = event.target.closest("tbody tr[data-row-key]");
   if (row && currentStageSelection?.diagramId === row.dataset.diagramId) {
     activateStageRow(row.dataset.rowKey || "", row.dataset.diagramId || "", { scrollExpansion: true });
@@ -1845,6 +2515,14 @@ stageContent?.addEventListener("click", event => {
 stageContent?.addEventListener("keydown", event => {
   if (event.defaultPrevented) return;
   if (event.key !== "Enter" && event.key !== " ") return;
+
+  const partLookupCard = event.target.closest("[data-part-lookup='true']");
+  if (partLookupCard && stageContent.contains(partLookupCard)) {
+    event.preventDefault();
+    const match = manifestPartIndex.find(part => part.partNumber === partLookupCard.dataset.partNumber);
+    if (match) void openPartLookupMatch(match);
+    return;
+  }
 
   const row = event.target.closest("tbody tr[data-row-key]");
   if (row && currentStageSelection?.diagramId === row.dataset.diagramId) {
@@ -1893,7 +2571,11 @@ stageContextBar?.addEventListener("click", event => {
 
   if (action === "clear-global-filter") {
     state.globalQuery = "";
+    clearPinnedPartMatches();
     if (globalSearch) globalSearch.value = "";
+    if (!state.ocrBusy) {
+      setOcrStatusMessage("Part lookup accepts both hyphenated and compact OEM numbers.", "idle");
+    }
     render();
     return;
   }
