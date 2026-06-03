@@ -1357,6 +1357,12 @@ function extractPartNumberCandidatesFromText(text) {
   for (const line of lines) {
     const rawChunks = line.match(/[A-Z0-9][A-Z0-9-\s]{4,}[A-Z0-9]/g) || [];
     const words = line.match(/[A-Z0-9]+/g) || [];
+    const compactLine = compactPartNumber(line);
+
+    for (let index = 0; index < compactLine.length; index += 1) {
+      pushCandidate(compactLine.slice(index, index + 10));
+      pushCandidate(compactLine.slice(index, index + 11));
+    }
 
     for (const chunk of rawChunks) pushCandidate(chunk);
     for (const word of words) pushCandidate(word);
@@ -1445,7 +1451,28 @@ function createOcrCropCanvas(bitmap, crop, mode = "contrast") {
   const context = canvas.getContext("2d", { willReadFrequently: true });
   if (!context) return null;
   context.drawImage(bitmap, cropX, cropY, cropWidth, cropHeight, 0, 0, canvas.width, canvas.height);
-  return preprocessOcrCanvas(canvas, mode);
+
+  let workingCanvas = canvas;
+  const rotate = Number(crop.rotate || 0);
+  if (rotate) {
+    const radians = rotate * Math.PI / 180;
+    const sin = Math.abs(Math.sin(radians));
+    const cos = Math.abs(Math.cos(radians));
+    const rotated = document.createElement("canvas");
+    rotated.width = Math.ceil(canvas.width * cos + canvas.height * sin);
+    rotated.height = Math.ceil(canvas.width * sin + canvas.height * cos);
+    const rotatedContext = rotated.getContext("2d", { willReadFrequently: true });
+    if (rotatedContext) {
+      rotatedContext.fillStyle = "#fff";
+      rotatedContext.fillRect(0, 0, rotated.width, rotated.height);
+      rotatedContext.translate(rotated.width / 2, rotated.height / 2);
+      rotatedContext.rotate(radians);
+      rotatedContext.drawImage(canvas, -canvas.width / 2, -canvas.height / 2);
+      workingCanvas = rotated;
+    }
+  }
+
+  return preprocessOcrCanvas(workingCanvas, mode);
 }
 
 async function prepareImagesForOcr(file) {
@@ -1457,6 +1484,10 @@ async function prepareImagesForOcr(file) {
     { name: "label band", x: 0.02, y: 0.30, w: 0.96, h: 0.44, minWidth: 2400, scale: 2.8, modes: ["contrast", "binary"] },
     { name: "label lower", x: 0.02, y: 0.40, w: 0.96, h: 0.34, minWidth: 2400, scale: 3, modes: ["contrast"] },
     { name: "number strip", x: 0.08, y: 0.43, w: 0.76, h: 0.20, minWidth: 2500, scale: 3.2, modes: ["contrast", "binary"] },
+    { name: "number strip rotate left", x: 0.08, y: 0.43, w: 0.76, h: 0.20, minWidth: 2500, scale: 3.2, rotate: -8, modes: ["contrast"] },
+    { name: "number strip rotate right", x: 0.08, y: 0.43, w: 0.76, h: 0.20, minWidth: 2500, scale: 3.2, rotate: 8, modes: ["contrast"] },
+    { name: "tight number rotate left", x: 0.12, y: 0.47, w: 0.62, h: 0.13, minWidth: 2400, scale: 4, rotate: -10, modes: ["contrast", "binary"] },
+    { name: "tight number rotate right", x: 0.12, y: 0.47, w: 0.62, h: 0.13, minWidth: 2400, scale: 4, rotate: 10, modes: ["contrast", "binary"] },
   ];
 
   const prepared = [];
@@ -1469,6 +1500,32 @@ async function prepareImagesForOcr(file) {
 
   bitmap.close?.();
   return prepared.length ? prepared : [file];
+}
+
+async function detectBarcodeTextForFile(file) {
+  if (typeof window.BarcodeDetector !== "function" || typeof window.createImageBitmap !== "function") return [];
+
+  let detector = null;
+  try {
+    detector = new window.BarcodeDetector({
+      formats: ["code_128", "code_39", "ean_13", "ean_8", "upc_a", "upc_e"],
+    });
+  } catch {
+    try {
+      detector = new window.BarcodeDetector();
+    } catch {
+      return [];
+    }
+  }
+
+  try {
+    const bitmap = await window.createImageBitmap(file);
+    const barcodes = await detector.detect(bitmap);
+    bitmap.close?.();
+    return (barcodes || []).map(barcode => barcode.rawValue || "").filter(Boolean);
+  } catch {
+    return [];
+  }
 }
 
 async function ensureOcrWorker() {
@@ -1525,13 +1582,14 @@ async function runOcrLookupForFile(file) {
   try {
     const worker = await ensureOcrWorker();
     const preparedImages = await prepareImagesForOcr(file);
-    const ocrTexts = [];
+    const barcodeTexts = await detectBarcodeTextForFile(file);
+    const ocrTexts = [...barcodeTexts];
 
     for (let index = 0; index < preparedImages.length; index += 1) {
       const prepared = preparedImages[index];
       const image = prepared?.image || prepared;
       const label = prepared?.name || `pass ${index + 1}`;
-      const pageSegMode = /strip|band|lower/i.test(label) ? "6" : "11";
+      const pageSegMode = /tight|strip/i.test(label) ? "7" : (/band|lower/i.test(label) ? "6" : "11");
       await worker.setParameters({ tessedit_pageseg_mode: pageSegMode });
       setOcrStatusMessage(`Reading label ${index + 1}/${preparedImages.length}...`, "loading");
       const result = await worker.recognize(image);
