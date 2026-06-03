@@ -1340,7 +1340,10 @@ function scoreOcrPartCandidate(value) {
 }
 
 function extractPartNumberCandidatesFromText(text) {
-  const lines = String(text || "").toUpperCase().split(/\n+/);
+  const lines = String(text || "")
+    .toUpperCase()
+    .replace(/[‐‑‒–—―]/g, "-")
+    .split(/\n+/);
   const candidates = new Set();
 
   function pushCandidate(value) {
@@ -1362,6 +1365,13 @@ function extractPartNumberCandidatesFromText(text) {
       const first = words[index];
       const second = words[index + 1];
       const third = words[index + 2];
+
+      let combined = "";
+      for (let endIndex = index; endIndex < Math.min(words.length, index + 6); endIndex += 1) {
+        combined += words[endIndex];
+        pushCandidate(combined);
+        if (combined.length > 14) break;
+      }
 
       if (second) {
         pushCandidate(first + second);
@@ -1385,22 +1395,11 @@ function extractPartNumberCandidatesFromText(text) {
   return [...candidates];
 }
 
-async function prepareImageForOcr(file) {
-  if (typeof window.createImageBitmap !== "function") return file;
-
-  const bitmap = await window.createImageBitmap(file);
-  const targetWidth = Math.max(1800, bitmap.width || 1800);
-  const scale = targetWidth / Math.max(1, bitmap.width || targetWidth);
-  const targetHeight = Math.max(1, Math.round((bitmap.height || targetWidth) * scale));
-  const canvas = document.createElement("canvas");
-  canvas.width = targetWidth;
-  canvas.height = targetHeight;
-
+function preprocessOcrCanvas(canvas, mode = "contrast") {
   const context = canvas.getContext("2d", { willReadFrequently: true });
-  if (!context) return file;
+  if (!context) return canvas;
 
-  context.drawImage(bitmap, 0, 0, targetWidth, targetHeight);
-  const imageData = context.getImageData(0, 0, targetWidth, targetHeight);
+  const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
   const pixels = imageData.data;
   const luminance = new Uint8ClampedArray(pixels.length / 4);
   let min = 255;
@@ -1416,9 +1415,9 @@ async function prepareImageForOcr(file) {
   const range = Math.max(1, max - min);
   for (let pixelIndex = 0, luminanceIndex = 0; pixelIndex < pixels.length; pixelIndex += 4, luminanceIndex += 1) {
     const value = Math.round(((luminance[luminanceIndex] - min) / range) * 255);
-    const boosted = value < 160
-      ? Math.max(0, value - 12)
-      : Math.min(255, value + 22);
+    const boosted = mode === "binary"
+      ? (value > 142 ? 255 : 0)
+      : (value < 160 ? Math.max(0, value - 18) : Math.min(255, value + 30));
     pixels[pixelIndex] = boosted;
     pixels[pixelIndex + 1] = boosted;
     pixels[pixelIndex + 2] = boosted;
@@ -1426,8 +1425,50 @@ async function prepareImageForOcr(file) {
   }
 
   context.putImageData(imageData, 0, 0);
-  bitmap.close?.();
   return canvas;
+}
+
+function createOcrCropCanvas(bitmap, crop, mode = "contrast") {
+  const sourceWidth = Math.max(1, bitmap.width || 1);
+  const sourceHeight = Math.max(1, bitmap.height || 1);
+  const cropX = Math.max(0, Math.round(sourceWidth * crop.x));
+  const cropY = Math.max(0, Math.round(sourceHeight * crop.y));
+  const cropWidth = Math.max(1, Math.min(sourceWidth - cropX, Math.round(sourceWidth * crop.w)));
+  const cropHeight = Math.max(1, Math.min(sourceHeight - cropY, Math.round(sourceHeight * crop.h)));
+  const targetWidth = Math.max(crop.minWidth || 1800, Math.min(2800, cropWidth * (crop.scale || 2.3)));
+  const scale = targetWidth / cropWidth;
+  const targetHeight = Math.max(1, Math.round(cropHeight * scale));
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(targetWidth);
+  canvas.height = targetHeight;
+
+  const context = canvas.getContext("2d", { willReadFrequently: true });
+  if (!context) return null;
+  context.drawImage(bitmap, cropX, cropY, cropWidth, cropHeight, 0, 0, canvas.width, canvas.height);
+  return preprocessOcrCanvas(canvas, mode);
+}
+
+async function prepareImagesForOcr(file) {
+  if (typeof window.createImageBitmap !== "function") return [file];
+
+  const bitmap = await window.createImageBitmap(file);
+  const crops = [
+    { name: "full", x: 0, y: 0, w: 1, h: 1, minWidth: 2200, scale: 2.1, modes: ["contrast"] },
+    { name: "label band", x: 0.02, y: 0.30, w: 0.96, h: 0.44, minWidth: 2400, scale: 2.8, modes: ["contrast", "binary"] },
+    { name: "label lower", x: 0.02, y: 0.40, w: 0.96, h: 0.34, minWidth: 2400, scale: 3, modes: ["contrast"] },
+    { name: "number strip", x: 0.08, y: 0.43, w: 0.76, h: 0.20, minWidth: 2500, scale: 3.2, modes: ["contrast", "binary"] },
+  ];
+
+  const prepared = [];
+  for (const crop of crops) {
+    for (const mode of crop.modes) {
+      const canvas = createOcrCropCanvas(bitmap, crop, mode);
+      if (canvas) prepared.push({ name: `${crop.name} ${mode}`, image: canvas });
+    }
+  }
+
+  bitmap.close?.();
+  return prepared.length ? prepared : [file];
 }
 
 async function ensureOcrWorker() {
@@ -1456,7 +1497,7 @@ async function ensureOcrWorker() {
 
     await worker.setParameters({
       tessedit_pageseg_mode: "11",
-      tessedit_char_whitelist: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-",
+      tessedit_char_whitelist: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789- ",
       preserve_interword_spaces: "1",
       user_defined_dpi: "200",
     });
@@ -1483,9 +1524,22 @@ async function runOcrLookupForFile(file) {
 
   try {
     const worker = await ensureOcrWorker();
-    const preparedImage = await prepareImageForOcr(file);
-    const result = await worker.recognize(preparedImage);
-    const text = String(result?.data?.text || "").trim();
+    const preparedImages = await prepareImagesForOcr(file);
+    const ocrTexts = [];
+
+    for (let index = 0; index < preparedImages.length; index += 1) {
+      const prepared = preparedImages[index];
+      const image = prepared?.image || prepared;
+      const label = prepared?.name || `pass ${index + 1}`;
+      const pageSegMode = /strip|band|lower/i.test(label) ? "6" : "11";
+      await worker.setParameters({ tessedit_pageseg_mode: pageSegMode });
+      setOcrStatusMessage(`Reading label ${index + 1}/${preparedImages.length}...`, "loading");
+      const result = await worker.recognize(image);
+      const passText = String(result?.data?.text || "").trim();
+      if (passText) ocrTexts.push(passText);
+    }
+
+    const text = ocrTexts.join("\n").trim();
     state.ocrLastText = text;
     await ensurePartIndexLoaded();
 
