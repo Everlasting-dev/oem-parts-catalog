@@ -1063,6 +1063,54 @@ function addScoredPartMatch(matchMap, part, score, matchedFrom = "") {
   }
 }
 
+function getFallbackManifestPartMatches(query) {
+  const formattedPartNumber = formatPartNumberCandidate(query);
+  if (!formattedPartNumber) return [];
+
+  const compactQuery = compactPartNumber(formattedPartNumber).toLowerCase();
+  const canonicalQuery = ocrCanonicalPartNumber(formattedPartNumber).toLowerCase();
+  const normalQuery = normalise(formattedPartNumber);
+  const matches = [];
+
+  for (const system of allSystems) {
+    const searchableText = String(system.searchableText || "").toLowerCase();
+    if (
+      !searchableText.includes(compactQuery) &&
+      !searchableText.includes(canonicalQuery) &&
+      !searchableText.includes(normalQuery)
+    ) {
+      continue;
+    }
+
+    const catalogCompact = searchableText.includes(canonicalQuery) ? canonicalQuery.toUpperCase() : compactQuery.toUpperCase();
+    const catalogPartNumber = `${catalogCompact.slice(0, 5)}-${catalogCompact.slice(5)}`;
+
+    matches.push({
+      partNumber: catalogPartNumber,
+      compactPartNumber: compactPartNumber(catalogPartNumber),
+      ocrCanonicalPartNumber: ocrCanonicalPartNumber(catalogPartNumber),
+      description: "Catalog part",
+      appliesDetails: "",
+      period: "",
+      searchableText: normalise(`${catalogPartNumber} ${system.title || ""}`),
+      locations: [{
+        systemId: system.id,
+        systemTitle: system.title,
+        groupId: "",
+        groupTitle: "",
+        diagramId: "",
+        diagramTitle: "",
+        diagramSecondaryLabel: "",
+        callout: "",
+      }],
+      matchedFrom: query,
+      score: 168,
+    });
+  }
+
+  return matches;
+}
+
 function getPartLookupMatches(query, options = {}) {
   if (!partIndexReady) return [];
 
@@ -1108,6 +1156,10 @@ function getPartLookupMatches(query, options = {}) {
     }
 
     addScoredPartMatch(matchMap, part, score, rawQuery);
+  }
+
+  for (const part of getFallbackManifestPartMatches(rawQuery)) {
+    addScoredPartMatch(matchMap, part, part.score, rawQuery);
   }
 
   return [...matchMap.values()]
@@ -1172,6 +1224,30 @@ function findRowKeyForPart(diagram, partNumber) {
   return rows.find(row => normalizePartNumber(row.partNumber) === normalizedPartNumber)?.key || null;
 }
 
+function findPartLocationInLoadedSystem(system, partNumber) {
+  const normalizedPartNumber = normalizePartNumber(partNumber);
+  if (!system || !normalizedPartNumber) return null;
+
+  for (const diagram of system.diagrams || []) {
+    const hotspot = (diagram.hotspots || []).find(item => normalizePartNumber(item.partNumber) === normalizedPartNumber);
+    if (!hotspot) continue;
+
+    const group = (system.groups || []).find(item => (item.diagramIds || []).includes(diagram.id)) || null;
+    return {
+      systemId: system.id,
+      systemTitle: system.title,
+      groupId: group?.id || "",
+      groupTitle: group?.title || "",
+      diagramId: diagram.id,
+      diagramTitle: getDiagramDisplayTitle(diagram, system.title),
+      diagramSecondaryLabel: getDiagramSecondaryLabel(diagram, system.title),
+      callout: hotspot.callout || "",
+    };
+  }
+
+  return null;
+}
+
 async function openPartLookupMatch(match) {
   const partNumber = normalizePartNumber(match?.partNumber);
   const locations = match?.locations || [];
@@ -1193,17 +1269,21 @@ async function openPartLookupMatch(match) {
     if (shouldUseGroupLanding(system) && location.groupId) {
       state.activeGroupId = location.groupId;
     }
-    state.activeDiagramId = location.diagramId;
+    state.activeDiagramId = location.diagramId || state.activeDiagramId;
     state.activeRowKey = null;
     render();
 
     try {
       await ensureSystemLoaded(system.id);
-      if (shouldUseGroupLanding(system) && location.groupId) {
-        state.activeGroupId = location.groupId;
+      const resolvedLocation = location.diagramId
+        ? location
+        : (findPartLocationInLoadedSystem(system, partNumber) || location);
+
+      if (shouldUseGroupLanding(system) && resolvedLocation.groupId) {
+        state.activeGroupId = resolvedLocation.groupId;
       }
-      state.activeDiagramId = location.diagramId;
-      const diagram = system.diagramMap.get(location.diagramId);
+      state.activeDiagramId = resolvedLocation.diagramId || state.activeDiagramId;
+      const diagram = system.diagramMap.get(state.activeDiagramId);
       if (!diagram) continue;
       state.activeRowKey = findRowKeyForPart(diagram, partNumber);
       if (isMobileViewport()) setMobileView("stage");
