@@ -569,7 +569,7 @@ function buildSystemManifest(catalog) {
             groupTitle,
             partCount: partNumbers.length,
             searchableText: normalise(
-              `${displayTitle} ${secondaryLabel} ${diagram.title || ''} ${diagram.subtitle || ''} ${diagram.pageVariantLabel || ''} ${diagram.viewFamilyTitle || ''}`
+              `${displayTitle} ${secondaryLabel} ${diagram.title || ''} ${diagram.subtitle || ''} ${diagram.pageVariantLabel || ''} ${diagram.viewFamilyTitle || ''} ${partNumbers.join(' ')} ${partNumbers.map(compactPartNumber).join(' ')} ${partNumbers.map(ocrCanonicalPartNumber).join(' ')}`
             ),
           };
         })
@@ -611,7 +611,7 @@ function buildSystemManifest(catalog) {
               `${group.title} ${group.diagramIds.map(diagramId => {
                 const diagram = sortedDiagrams.find(item => item.id === diagramId);
                 return `${diagram?.displayTitle || ''} ${diagram?.secondaryLabel || ''}`;
-              }).join(' ')}`
+              }).join(' ')} ${[...group.partNumbers].join(' ')} ${[...group.partNumbers].map(compactPartNumber).join(' ')} ${[...group.partNumbers].map(ocrCanonicalPartNumber).join(' ')}`
             ),
           };
         })
@@ -634,7 +634,7 @@ function buildSystemManifest(catalog) {
         searchableText: normalise(
           `${system.title} ${sortedDiagrams.map(diagram => `${diagram.displayTitle} ${diagram.secondaryLabel}`).join(' ')} ${partNumbers.join(' ')} ${
             partNumbers.map(partNumber => partsByNumber.get(partNumber)?.description || '').join(' ')
-          } ${partNumbers.map(compactPartNumber).join(' ')}`
+          } ${partNumbers.map(compactPartNumber).join(' ')} ${partNumbers.map(ocrCanonicalPartNumber).join(' ')}`
         ),
         diagrams: sortedDiagrams,
         groups: manifestGroups,

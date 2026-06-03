@@ -209,9 +209,94 @@ a {
   gap: 8px;
 }
 
-.topbar-search-actions .primary-btn,
-.topbar-search-actions .secondary-btn {
-  min-width: 132px;
+.scan-action-btn {
+  gap: 8px;
+  min-width: 118px;
+}
+
+.scan-action-icon {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.scan-action-icon--search,
+.scan-action-icon--lens {
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.scan-action-icon--search::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 2px;
+  right: -6px;
+  bottom: 0;
+  border-radius: 999px;
+  background: currentColor;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.scan-action-icon--lens::before,
+.scan-action-icon--lens::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.scan-action-icon--lens::before {
+  width: 7px;
+  height: 2px;
+  left: -5px;
+  top: 8px;
+}
+
+.scan-action-icon--lens::after {
+  width: 2px;
+  height: 7px;
+  right: 8px;
+  bottom: -5px;
+}
+
+.scan-action-icon--upload {
+  border: 2px solid currentColor;
+  border-top: 0;
+  border-radius: 0 0 5px 5px;
+}
+
+.scan-action-icon--upload::before,
+.scan-action-icon--upload::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+}
+
+.scan-action-icon--upload::before {
+  width: 2px;
+  height: 13px;
+  left: 50%;
+  top: -4px;
+  transform: translateX(-50%);
+}
+
+.scan-action-icon--upload::after {
+  width: 9px;
+  height: 9px;
+  left: 50%;
+  top: -5px;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  background: transparent;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.scan-action-label {
+  white-space: nowrap;
 }
 
 .ocr-status {
@@ -1307,7 +1392,7 @@ a {
 
 @media (max-width: 820px) {
   :root {
-    --topbar-height: 132px;
+    --topbar-height: 178px;
   }
 
   body {
@@ -1316,17 +1401,23 @@ a {
 
   .topbar {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
     align-items: stretch;
-    padding: 14px;
+    padding: 10px 12px;
   }
 
   .topbar h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .topbar-links {
-    margin-top: 8px;
+    margin-top: 6px;
+  }
+
+  .topbar-links .secondary-link {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
   }
 
   .topbar-search input,
@@ -1337,7 +1428,37 @@ a {
   }
 
   .topbar-search-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .scan-action-btn {
+    min-width: 0;
+    min-height: 46px;
     flex-direction: column;
+    gap: 3px;
+    padding: 5px 4px;
+    border-radius: 14px;
+    font-size: 11px;
+    line-height: 1.1;
+  }
+
+  .scan-action-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .scan-action-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .ocr-status {
+    min-height: 16px;
+    font-size: 11px;
+    line-height: 1.25;
   }
 
   .mobile-nav {

@@ -285,6 +285,29 @@ function ocrCanonicalPartNumber(partNumber) {
     .replace(/G/g, "6");
 }
 
+function buildSearchNeedles(query) {
+  const raw = String(query || "").trim();
+  if (!raw) return [];
+
+  const needles = new Set();
+  const normalized = normalise(raw);
+  const compact = compactPartNumber(raw).toLowerCase();
+  const canonical = ocrCanonicalPartNumber(raw).toLowerCase();
+
+  if (normalized) needles.add(normalized);
+  if (compact.length >= 4) needles.add(compact);
+  if (canonical.length >= 4 && canonical !== compact) needles.add(canonical);
+
+  return [...needles];
+}
+
+function searchableTextIncludes(searchableText, query) {
+  const haystack = String(searchableText || "").toLowerCase();
+  const needles = buildSearchNeedles(query);
+  if (!needles.length) return true;
+  return needles.some(needle => haystack.includes(needle));
+}
+
 function weightedDistance(left, right) {
   const aa = compactPartNumber(left);
   const bb = compactPartNumber(right);
@@ -846,9 +869,26 @@ function getActiveCategory() {
 }
 
 function getVisibleSystems() {
-  const query = normalise(state.globalQuery);
+  const query = String(state.globalQuery || "").trim();
   if (!query) return allSystems;
-  return allSystems.filter(system => system.searchableText.includes(query));
+
+  const visibleById = new Map();
+  for (const system of allSystems) {
+    if (searchableTextIncludes(system.searchableText, query)) {
+      visibleById.set(system.id, system);
+    }
+  }
+
+  if (partIndexReady) {
+    for (const match of getPartLookupMatches(query, { limit: 24, includeFuzzy: true })) {
+      for (const location of match.locations || []) {
+        const system = bootstrapSystemsById.get(location.systemId);
+        if (system) visibleById.set(system.id, system);
+      }
+    }
+  }
+
+  return [...visibleById.values()];
 }
 
 function getActiveSystem() {
@@ -871,23 +911,23 @@ function getActiveGroup(system) {
 function getVisibleGroups(system) {
   if (!system) return [];
   const groups = buildGroups(system);
-  const query = normalise(state.subsystemQuery);
+  const query = String(state.subsystemQuery || "").trim();
   if (!query) return groups;
 
-  return groups.filter(group => (group.searchableText || "").includes(query));
+  return groups.filter(group => searchableTextIncludes(group.searchableText, query));
 }
 
 function getVisibleSubsystems(system, options = {}) {
   if (!system) return [];
   const { ignoreFilter = false } = options;
-  const query = ignoreFilter ? "" : normalise(state.subsystemQuery);
+  const query = ignoreFilter ? "" : String(state.subsystemQuery || "").trim();
   const diagrams = !shouldUseGroupLanding(system)
     ? system.diagrams
     : getGroupDiagrams(system, getActiveGroup(system));
 
   if (!query) return diagrams;
 
-  return diagrams.filter(diagram => (diagram.searchableText || "").includes(query));
+  return diagrams.filter(diagram => searchableTextIncludes(diagram.searchableText, query));
 }
 
 function getHotspotTargets(diagram) {
@@ -915,7 +955,7 @@ function getHotspotTargets(diagram) {
 
 function buildRowsForDiagram(diagram) {
   if (!diagram) return [];
-  const query = normalise(state.localQuery);
+  const query = String(state.localQuery || "").trim();
   if (!diagram._rowsBase) {
     const rows = [];
     const seen = new Set();
@@ -951,7 +991,7 @@ function buildRowsForDiagram(diagram) {
 
       row.searchableText = normalise(
         `${row.callout} ${row.partNumber} ${row.description} ${row.appliesDetails} ${row.period} ${row.notes} ${row.source} ${row.variantLabel}`
-      ) + ` ${compactPartNumber(row.partNumber).toLowerCase()}`;
+      ) + ` ${compactPartNumber(row.partNumber).toLowerCase()} ${ocrCanonicalPartNumber(row.partNumber).toLowerCase()}`;
       rows.push(row);
     }
 
@@ -965,7 +1005,7 @@ function buildRowsForDiagram(diagram) {
   if (!query) return diagram._rowsBase;
   if (diagram._rowQueryCache?.has(query)) return diagram._rowQueryCache.get(query);
 
-  const filteredRows = diagram._rowsBase.filter(row => row.searchableText.includes(query));
+  const filteredRows = diagram._rowsBase.filter(row => searchableTextIncludes(row.searchableText, query));
   diagram._rowQueryCache.set(query, filteredRows);
   return filteredRows;
 }
@@ -982,6 +1022,15 @@ function clearPinnedPartMatches() {
 }
 
 function syncOcrUi() {
+  function setScanActionLabel(button, label) {
+    const labelEl = button?.querySelector?.(".scan-action-label");
+    if (labelEl) {
+      labelEl.textContent = label;
+    } else if (button) {
+      button.textContent = label;
+    }
+  }
+
   if (ocrStatus) {
     ocrStatus.textContent = state.ocrStatus || "";
     ocrStatus.dataset.tone = state.ocrStatusTone || "idle";
@@ -993,12 +1042,12 @@ function syncOcrUi() {
 
   if (ocrCameraTrigger) {
     ocrCameraTrigger.disabled = state.ocrBusy;
-    ocrCameraTrigger.textContent = state.ocrBusy ? "Scanning..." : "Scan Part";
+    setScanActionLabel(ocrCameraTrigger, state.ocrBusy ? "Scanning" : "Scan");
   }
 
   if (ocrUploadTrigger) {
     ocrUploadTrigger.disabled = state.ocrBusy;
-    ocrUploadTrigger.textContent = state.ocrBusy ? "Reading..." : "Upload Image";
+    setScanActionLabel(ocrUploadTrigger, state.ocrBusy ? "Reading" : "Upload");
   }
 }
 
@@ -1170,24 +1219,60 @@ async function openPartLookupMatch(match) {
   return false;
 }
 
+const PART_NUMBER_COMPACT_LENGTHS = new Set([10, 11]);
+const PART_NUMBER_TEXT_PATTERN = /^\d{5}[A-Z0-9]{5,6}$/;
+const PART_NUMBER_SUFFIX_PATTERN = /^[A-Z0-9]{5,6}$/;
+
+function canonicalizeOcrPartCandidate(value) {
+  const compact = compactPartNumber(value);
+  if (!compact) return "";
+  const canonical = ocrCanonicalPartNumber(compact);
+  const prefix = canonical.slice(0, 5);
+  if (!/^\d{5}$/.test(prefix)) return "";
+  const suffix = compact.slice(5);
+  if (!PART_NUMBER_SUFFIX_PATTERN.test(suffix)) return "";
+  return `${prefix}${suffix}`;
+}
+
+function isLikelyPartNumberCandidate(value) {
+  const canonical = canonicalizeOcrPartCandidate(value);
+  return PART_NUMBER_COMPACT_LENGTHS.has(canonical.length) && PART_NUMBER_TEXT_PATTERN.test(canonical);
+}
+
+function formatPartNumberCandidate(value) {
+  const canonical = canonicalizeOcrPartCandidate(value);
+  if (!isLikelyPartNumberCandidate(canonical)) return "";
+  return `${canonical.slice(0, 5)}-${canonical.slice(5)}`;
+}
+
+function scoreOcrPartCandidate(value) {
+  const normalized = normalizePartNumber(value);
+  const compact = compactPartNumber(value);
+  if (!isLikelyPartNumberCandidate(value)) return 0;
+
+  let score = 0;
+  if (/^\d{5}-[A-Z0-9]{5,6}$/.test(normalized)) score += 24;
+  if (PART_NUMBER_TEXT_PATTERN.test(compact)) score += 16;
+  if (partLookupByCompact.has(compact)) score += 32;
+  if (partLookupByCanonical.has(ocrCanonicalPartNumber(value))) score += 22;
+  if (/[OQDISBG]/i.test(String(value))) score += 4;
+  return score;
+}
+
 function extractPartNumberCandidatesFromText(text) {
   const lines = String(text || "").toUpperCase().split(/\n+/);
   const candidates = new Set();
 
   function pushCandidate(value) {
-    const normalized = normalizePartNumber(value).replace(/[^A-Z0-9-]/g, "");
-    const compact = compactPartNumber(normalized);
-    if (!(compact.length === 10 || compact.length === 11)) return;
-
-    if (normalized) candidates.add(normalized);
-    if (compact) candidates.add(compact);
-    if (!normalized.includes("-") && compact.length >= 10) {
-      candidates.add(`${compact.slice(0, 5)}-${compact.slice(5)}`);
-    }
+    const formatted = formatPartNumberCandidate(value);
+    if (!formatted) return;
+    const compact = compactPartNumber(formatted);
+    candidates.add(formatted);
+    candidates.add(compact);
   }
 
   for (const line of lines) {
-    const rawChunks = line.match(/[A-Z0-9-]{6,}/g) || [];
+    const rawChunks = line.match(/[A-Z0-9][A-Z0-9-\s]{4,}[A-Z0-9]/g) || [];
     const words = line.match(/[A-Z0-9]+/g) || [];
 
     for (const chunk of rawChunks) pushCandidate(chunk);
@@ -1202,6 +1287,10 @@ function extractPartNumberCandidatesFromText(text) {
         pushCandidate(first + second);
         if (first.length === 5 && (second.length === 5 || second.length === 6)) {
           pushCandidate(`${first}-${second}`);
+        }
+        const canonicalFirst = ocrCanonicalPartNumber(first);
+        if (/^\d{5}$/.test(canonicalFirst) && (second.length === 5 || second.length === 6)) {
+          pushCandidate(`${canonicalFirst}-${second}`);
         }
       }
 
@@ -1323,8 +1412,12 @@ async function runOcrLookupForFile(file) {
     const candidates = extractPartNumberCandidatesFromText(text);
     const partMatches = new Map();
     for (const candidate of candidates) {
+      const candidateScore = scoreOcrPartCandidate(candidate);
       for (const match of getPartLookupMatches(candidate, { limit: 4, includeFuzzy: true })) {
-        addScoredPartMatch(partMatches, match, match.score, candidate);
+        const exactCandidateHit = compactPartNumber(candidate) === match.compactPartNumber ||
+          ocrCanonicalPartNumber(candidate) === match.ocrCanonicalPartNumber;
+        const score = match.score + candidateScore + (exactCandidateHit ? 18 : 0);
+        addScoredPartMatch(partMatches, match, score, candidate);
       }
     }
 
