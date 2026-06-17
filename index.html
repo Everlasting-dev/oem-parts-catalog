@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Nissan GT-R R35 OEM parts catalog — browse diagrams, search part numbers, and look up supplier links.">
   <title>R35 Parts Catalog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +16,92 @@
 </head>
 <body>
   <div class="catalog-shell" data-mobile-view="systems">
+
+    <!-- ===================================================
+         TOPBAR
+         =================================================== -->
     <header class="topbar">
       <div class="topbar-copy">
-        <p class="eyebrow">Nissan GT-R R35 • OEM Parts Catalog</p>
+        <p class="eyebrow">Nissan GT-R R35 &bull; OEM Parts Catalog</p>
         <h1><a id="home-link" class="home-link" href="index.html">Systems Explorer</a></h1>
         <div class="topbar-links">
           <a class="secondary-link" href="selected-finalized-components.html">Finalized Components Register</a>
         </div>
       </div>
+
       <div class="topbar-search">
         <label class="field-label" for="global-search">Search all systems</label>
-        <input id="global-search" type="search" placeholder="Search system names, part numbers, descriptions..." autocomplete="off">
+        <input id="global-search" type="search" placeholder="Search system names, part numbers, descriptions&hellip;" autocomplete="off" spellcheck="false">
+        <div class="topbar-search-actions">
+          <button id="open-part-lookup" type="button" class="secondary-btn scan-action-btn" aria-label="Open part lookup">
+            <span class="scan-action-icon scan-action-icon--search" aria-hidden="true"></span>
+            <span class="scan-action-label">Open</span>
+          </button>
+          <button id="ocr-camera-trigger" type="button" class="primary-btn scan-action-btn" aria-label="Scan part label with camera">
+            <span class="scan-action-icon scan-action-icon--lens" aria-hidden="true"></span>
+            <span class="scan-action-label">Scan</span>
+          </button>
+          <button id="ocr-upload-trigger" type="button" class="secondary-btn scan-action-btn" aria-label="Upload part image">
+            <span class="scan-action-icon scan-action-icon--upload" aria-hidden="true"></span>
+            <span class="scan-action-label">Upload</span>
+          </button>
+        </div>
+        <p id="ocr-status" class="ocr-status" aria-live="polite">Part lookup accepts both hyphenated and compact OEM numbers.</p>
+        <input id="ocr-camera-input" type="file" accept="image/*" capture="environment" hidden>
+        <input id="ocr-upload-input" type="file" accept="image/*" hidden>
       </div>
     </header>
 
+    <!-- ===================================================
+         MOBILE BOTTOM TAB NAV
+         =================================================== -->
     <nav class="mobile-nav" aria-label="Mobile section navigation">
-      <button type="button" class="mobile-nav-btn active" data-mobile-view="systems">Systems</button>
-      <button type="button" class="mobile-nav-btn" data-mobile-view="subsystems">Subcategories</button>
-      <button type="button" class="mobile-nav-btn" data-mobile-view="stage">Diagram</button>
+
+      <!-- Systems tab -->
+      <button type="button" class="mobile-nav-btn active" data-mobile-view="systems">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <rect x="3"  y="3"  width="7.5" height="7.5" rx="1.5"/>
+          <rect x="13.5" y="3"  width="7.5" height="7.5" rx="1.5"/>
+          <rect x="3"  y="13.5" width="7.5" height="7.5" rx="1.5"/>
+          <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/>
+        </svg>
+        <span>Systems</span>
+      </button>
+
+      <!-- Browse (subcategories / families) tab -->
+      <button type="button" class="mobile-nav-btn" data-mobile-view="subsystems">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <circle cx="4.5" cy="6"  r="2.25"/>
+          <rect   x="9"   y="4.75" width="12" height="2.5" rx="1.25"/>
+          <circle cx="4.5" cy="12" r="2.25"/>
+          <rect   x="9"   y="10.75" width="12" height="2.5" rx="1.25"/>
+          <circle cx="4.5" cy="18" r="2.25"/>
+          <rect   x="9"   y="16.75" width="12" height="2.5" rx="1.25"/>
+        </svg>
+        <span>Browse</span>
+      </button>
+
+      <!-- Diagram tab -->
+      <button type="button" class="mobile-nav-btn" data-mobile-view="stage">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <path fill-rule="evenodd" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v12h16V6H4z"/>
+          <circle cx="8.5"  cy="14.5" r="2.5"/>
+          <circle cx="16"   cy="9.5"  r="2.5"/>
+        </svg>
+        <span>Diagram</span>
+      </button>
+
     </nav>
 
+    <!-- ===================================================
+         MAIN WORKSPACE
+         =================================================== -->
     <main class="workspace">
+
+      <!-- Left rail: systems + subsystems panels -->
       <aside class="left-rail">
+
+        <!-- Systems panel -->
         <section class="panel systems-panel" id="systems-panel">
           <div class="panel-head">
             <div>
@@ -44,11 +112,12 @@
           </div>
           <div id="system-list" class="system-list">
             <div class="loading-panel compact">
-              <p>Preparing catalog index...</p>
+              <p>Preparing catalog index&hellip;</p>
             </div>
           </div>
         </section>
 
+        <!-- Subcategories / families panel -->
         <section class="panel subsystems-panel" id="subsystems-panel">
           <div class="panel-head">
             <div>
@@ -59,7 +128,7 @@
           </div>
           <div class="panel-toolbar">
             <label class="field-label" for="subsystem-search">Filter current list</label>
-            <input id="subsystem-search" type="search" placeholder="Select a system to filter families or diagrams..." autocomplete="off" disabled>
+            <input id="subsystem-search" type="search" placeholder="Select a system to filter families or diagrams&hellip;" autocomplete="off" disabled>
           </div>
           <div id="subsystem-list" class="subsystem-list">
             <div class="loading-panel compact">
@@ -67,10 +136,13 @@
             </div>
           </div>
         </section>
+
       </aside>
 
+      <!-- Center stage: diagram viewer -->
       <section class="center-stage">
         <section class="panel stage-panel" id="stage-panel">
+
           <div class="panel-head stage-head">
             <div>
               <p class="panel-kicker">Diagram Window</p>
@@ -87,7 +159,7 @@
 
           <div class="stage-toolbar">
             <label id="local-search-label" class="field-label" for="local-search">Filter parts in current diagram</label>
-            <input id="local-search" type="search" placeholder="Filter items in the selected system..." autocomplete="off">
+            <input id="local-search" type="search" placeholder="Filter items in the selected system&hellip;" autocomplete="off">
           </div>
 
           <div id="stage-content" class="stage-content">
@@ -96,8 +168,10 @@
               <p>Loading the lightweight app shell first so the full catalog can stay fast.</p>
             </div>
           </div>
+
         </section>
       </section>
+
     </main>
   </div>
 
